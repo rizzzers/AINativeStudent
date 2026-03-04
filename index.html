@@ -891,7 +891,7 @@
     background: rgba(13,13,13,0.92);
     color: white;
     padding: 14px 28px;
-    border-radius: 100px;
+    border-radius: 16px;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.12);
     display: flex;
@@ -909,6 +909,21 @@
     transform: translateX(-50%) translateY(0);
     opacity: 1;
   }
+
+  .floating-apply-close {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0;
+    margin-left: 4px;
+    transition: color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .floating-apply-close:hover { color: white; }
 
   .floating-apply a {
     background: var(--accent);
@@ -1992,6 +2007,7 @@
 <div class="floating-apply" id="floating-apply">
   <span>Open for high school &amp; college students</span>
   <a href="#apply">Apply Now</a>
+  <button class="floating-apply-close" id="floating-apply-close" aria-label="Dismiss">&#x2715;</button>
 </div>
 
 <script>
@@ -2031,12 +2047,18 @@
 
   // Floating bar
   const floatingBar = document.getElementById('floating-apply');
+  let floatingDismissed = false;
   window.addEventListener('scroll', () => {
+    if (floatingDismissed) return;
     if (window.scrollY > 500) {
       floatingBar.classList.add('visible');
     } else {
       floatingBar.classList.remove('visible');
     }
+  });
+  document.getElementById('floating-apply-close').addEventListener('click', () => {
+    floatingDismissed = true;
+    floatingBar.classList.remove('visible');
   });
 
   // Curriculum tabs
