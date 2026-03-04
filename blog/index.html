@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — AI Native Student</title>
+<meta name="description" content="Insights on AI, education, and career readiness for high school and college students from the AI Native Student team.">
+<meta property="og:title" content="Blog — AI Native Student">
+<meta property="og:description" content="Insights on AI, education, and career readiness for high school and college students.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --off-white: #F8F6F2;
+    --ink: #0D0D0D;
+    --mid: #5A5A5A;
+    --light: #ADADAD;
+    --accent: #0057FF;
+    --accent-warm: #FF4D00;
+    --accent-green: #00C28B;
+    --surface: #F0EDE8;
+    --card: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(248,246,242,0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: padding 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); font-weight: 500; }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent) !important; transform: scale(1.03); }
+
+  /* ─── BLOG HERO ─── */
+  .blog-hero {
+    padding: 140px 24px 80px;
+    background: var(--off-white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    text-align: center;
+  }
+
+  .blog-hero-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+
+  .blog-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .blog-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  .blog-hero p {
+    font-size: 1.1rem;
+    color: var(--mid);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ─── BLOG FILTERS ─── */
+  .blog-filters {
+    padding: 32px 24px;
+    background: var(--off-white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .blog-filters-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-size: 0.78rem;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-right: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 20px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    font-size: 0.85rem;
+    font-weight: 400;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--mid);
+    font-family: 'DM Sans', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink);
+  }
+
+  /* ─── BLOG GRID ─── */
+  .blog-section {
+    padding: 72px 24px 100px;
+  }
+
+  .blog-section-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* Featured post */
+  .featured-post {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--card);
+    border-radius: 24px;
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    margin-bottom: 56px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .featured-post:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+
+  .featured-post-visual {
+    background: var(--ink);
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .featured-post-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 30% 40%, rgba(0,87,255,0.25) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 50% at 80% 80%, rgba(0,194,139,0.15) 0%, transparent 60%);
+  }
+
+  .featured-visual-stat {
+    position: relative;
+    z-index: 1;
+  }
+
+  .featured-visual-stat .stat-big {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    color: white;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .featured-visual-stat .stat-big em {
+    color: var(--accent-green);
+    font-style: normal;
+  }
+
+  .featured-visual-stat p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 280px;
+  }
+
+  .featured-post-content {
+    padding: 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .featured-post-top {}
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .post-tag {
+    display: inline-block;
+    background: rgba(0,87,255,0.08);
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  .post-date {
+    font-size: 0.82rem;
+    color: var(--light);
+  }
+
+  .post-read-time {
+    font-size: 0.82rem;
+    color: var(--light);
+  }
+
+  .featured-post h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .featured-post .post-excerpt {
+    font-size: 0.98rem;
+    color: var(--mid);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+
+  .featured-post-bottom {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 28px;
+    border-top: 1px solid var(--surface);
+  }
+
+  .post-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .post-author-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.9rem;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .post-author-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .post-author-role {
+    font-size: 0.75rem;
+    color: var(--light);
+  }
+
+  .read-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+
+  .read-link:hover { gap: 10px; }
+
+  /* Post grid (future posts) */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .post-card {
+    background: var(--card);
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.09);
+  }
+
+  .post-card-visual {
+    height: 200px;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .post-card-visual.blue-bg {
+    background: var(--ink);
+  }
+
+  .post-card-visual-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: -0.03em;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.1;
+    user-select: none;
+  }
+
+  .post-card-body {
+    padding: 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    color: var(--ink);
+    flex: 1;
+  }
+
+  .post-card .post-excerpt {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .post-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--surface);
+  }
+
+  /* Coming soon card */
+  .post-card.coming-soon {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  .coming-soon-badge {
+    display: inline-block;
+    background: var(--surface);
+    color: var(--light);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
+
+  /* Newsletter strip */
+  .newsletter-strip {
+    background: var(--ink);
+    padding: 72px 24px;
+  }
+
+  .newsletter-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .newsletter-strip .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .newsletter-strip h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    letter-spacing: -0.03em;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.15;
+  }
+
+  .newsletter-strip p {
+    font-size: 0.98rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    min-width: 240px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 100px;
+    padding: 14px 24px;
+    color: white;
+    font-size: 0.95rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .newsletter-input:focus { border-color: var(--accent); }
+  .newsletter-input::placeholder { color: rgba(255,255,255,0.25); }
+
+  .newsletter-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+
+  .newsletter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,87,255,0.4);
+  }
+
+  .newsletter-fine {
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: white;
+    padding: 64px 24px 40px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-inner { max-width: 1180px; margin: 0 auto; }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand .nav-logo { color: white; font-size: 1.4rem; }
+  .footer-tagline { font-size: 0.88rem; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 300; }
+
+  .footer-cols { display: flex; gap: 64px; flex-wrap: wrap; }
+
+  .footer-col h5 {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: white; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .featured-post { grid-template-columns: 1fr; }
+    .featured-post-visual { min-height: 280px; }
+    .posts-grid { grid-template-columns: 1fr; }
+    .newsletter-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .footer-cols { gap: 32px; }
+    .footer-top { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="/" class="nav-logo">AI <span>Native</span> Student</a>
+  <ul class="nav-links">
+    <li><a href="/#why">Why Now</a></li>
+    <li><a href="/#offerings">Programs</a></li>
+    <li><a href="/#curriculum">Curriculum</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#apply" class="nav-cta">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- BLOG HERO -->
+<header class="blog-hero">
+  <div class="blog-hero-inner">
+    <span class="blog-eyebrow">Perspectives &amp; Insights</span>
+    <h1>The AI Native Student Blog</h1>
+    <p>Research, analysis, and practical guidance for students navigating an AI-transformed world.</p>
+  </div>
+</header>
+
+<!-- FILTERS -->
+<div class="blog-filters">
+  <div class="blog-filters-inner">
+    <span class="filter-label">Topics</span>
+    <a href="#" class="filter-btn active">All</a>
+    <a href="#" class="filter-btn">Career Readiness</a>
+    <a href="#" class="filter-btn">AI Skills</a>
+    <a href="#" class="filter-btn">College &amp; Admissions</a>
+    <a href="#" class="filter-btn">Industry Trends</a>
+  </div>
+</div>
+
+<!-- BLOG POSTS -->
+<section class="blog-section">
+  <div class="blog-section-inner">
+
+    <!-- FEATURED POST -->
+    <a href="/blog/why-every-student-needs-to-be-ai-first/" class="featured-post reveal">
+      <div class="featured-post-visual">
+        <div class="featured-visual-stat">
+          <div class="stat-big"><em>52%</em></div>
+          <p>of companies are eliminating entry-level positions due to AI. The data is in.</p>
+        </div>
+      </div>
+      <div class="featured-post-content">
+        <div class="featured-post-top">
+          <div class="post-meta">
+            <span class="post-tag">Career Readiness</span>
+            <span class="post-date">March 3, 2026</span>
+            <span class="post-read-time">· 10 min read</span>
+          </div>
+          <h2>Why Every High School and College Student Needs to Be AI-First Right Now</h2>
+          <p class="post-excerpt">Entry-level jobs are disappearing faster than any other segment of the workforce. The competition for the ones that remain has never been stiffer. Here's the data — and what students can do about it before the window closes.</p>
+        </div>
+        <div class="featured-post-bottom">
+          <div class="post-author">
+            <div class="post-author-avatar">A</div>
+            <div>
+              <div class="post-author-name">AI Native Student</div>
+              <div class="post-author-role">Editorial Team</div>
+            </div>
+          </div>
+          <span class="read-link">Read article →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- COMING SOON POSTS -->
+    <div class="posts-grid">
+
+      <div class="post-card coming-soon">
+        <div class="post-card-visual blue-bg">
+          <div class="post-card-visual-text">Portfolio</div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-meta">
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3>How to Build an AI Portfolio Before You Graduate</h3>
+          <p class="post-excerpt">A practical guide to creating work samples that demonstrate genuine AI fluency to employers and graduate programs.</p>
+          <div class="post-card-footer">
+            <span class="post-date" style="font-size:0.8rem; color:var(--light);">AI Skills</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card coming-soon">
+        <div class="post-card-visual blue-bg">
+          <div class="post-card-visual-text">Prompt Engineering</div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-meta">
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3>Prompt Engineering for Students: Beyond the Basics</h3>
+          <p class="post-excerpt">Moving past "write me an essay" to the kind of structured, iterative prompting that professionals actually use on the job.</p>
+          <div class="post-card-footer">
+            <span class="post-date" style="font-size:0.8rem; color:var(--light);">AI Skills</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card coming-soon">
+        <div class="post-card-visual blue-bg">
+          <div class="post-card-visual-text">College Apps</div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-meta">
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3>What Admissions Officers Are Actually Looking for in 2026</h3>
+          <p class="post-excerpt">How the college application landscape has shifted — and why AI literacy is becoming a meaningful differentiator in competitive admissions.</p>
+          <div class="post-card-footer">
+            <span class="post-date" style="font-size:0.8rem; color:var(--light);">College &amp; Admissions</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-strip">
+  <div class="newsletter-inner">
+    <div class="reveal">
+      <span class="section-label">Stay Ahead</span>
+      <h2>Get new articles in your inbox.</h2>
+      <p>We publish research-backed perspectives on AI, education, and career readiness. No noise — just signal.</p>
+    </div>
+    <div class="reveal">
+      <form class="newsletter-form" name="blog-newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="blog-newsletter">
+        <p style="display:none;"><input name="bot-field"></p>
+        <input type="email" name="email" class="newsletter-input" placeholder="your@email.com" required>
+        <button type="submit" class="newsletter-btn">Subscribe →</button>
+      </form>
+      <p class="newsletter-fine">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">AI <span>Native</span> Student</a>
+        <p class="footer-tagline">Be fluent in the future.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Programs</h5>
+          <ul>
+            <li><a href="/#offerings">Online Courses</a></li>
+            <li><a href="/#offerings">Group Cohorts</a></li>
+            <li><a href="/#offerings">1-on-1 Coaching</a></li>
+            <li><a href="/#offerings">For High School</a></li>
+            <li><a href="/#offerings">For College</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="/#curriculum">Curriculum</a></li>
+            <li><a href="/#testimonials">Student Stories</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="/#why">About Us</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#apply">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AI Native Student · ainativestudent.com</p>
+      <p style="color:rgba(255,255,255,0.2); font-size:0.78rem;">The future belongs to the fluent.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => revealObserver.observe(el));
+
+  // Nav shadow on scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+  });
+</script>
+</body>
+</html>
