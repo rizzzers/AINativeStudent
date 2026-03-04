@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Parents Can Do Right Now to Prepare Their Kids for the AI Job Market | AI Native Student</title>
+<meta name="description" content="The career paths you navigated no longer exist in the same form. Here is the practical guide to technical and emotional skills that will actually matter.">
+<meta property="og:title" content="What Parents Can Do Right Now to Prepare Their Kids for the Biggest Shift in the Job Market">
+<meta property="og:description" content="The career paths you navigated no longer exist in the same form. The ones your kids will navigate don't exist yet at all.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --off-white: #F8F6F2;
+    --ink: #0D0D0D;
+    --mid: #5A5A5A;
+    --light: #ADADAD;
+    --accent: #0057FF;
+    --accent-warm: #FF4D00;
+    --accent-green: #00C28B;
+    --surface: #F0EDE8;
+    --card: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(248,246,242,0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: padding 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); font-weight: 500; }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent) !important; transform: scale(1.03); }
+
+  /* ─── ARTICLE HERO ─── */
+  .article-hero {
+    padding: 140px 24px 72px;
+    background: var(--off-white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .article-hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+
+  .article-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 0.82rem;
+    color: var(--light);
+  }
+
+  .article-breadcrumb a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+  .article-breadcrumb a:hover { opacity: 0.7; }
+  .article-breadcrumb span { color: var(--light); }
+
+  .article-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-warm);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .article-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .article-deck {
+    font-size: 1.2rem;
+    color: var(--mid);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: -0.01em;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-top: 28px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .article-author { display: flex; align-items: center; gap: 12px; }
+
+  .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .author-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+  .author-title { font-size: 0.78rem; color: var(--light); }
+
+  .meta-divider { width: 1px; height: 28px; background: rgba(0,0,0,0.1); }
+  .meta-detail { font-size: 0.82rem; color: var(--light); }
+
+  .meta-tag {
+    display: inline-block;
+    background: rgba(255,77,0,0.08);
+    color: var(--accent-warm);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* ─── ARTICLE BODY ─── */
+  .article-body { padding: 72px 24px 100px; }
+  .article-content { max-width: 720px; margin: 0 auto; }
+
+  .article-content p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+
+  .article-content p:first-child { font-size: 1.18rem; font-weight: 400; }
+  .article-content strong { font-weight: 500; color: var(--ink); }
+
+  .article-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 64px 0 24px;
+    padding-top: 8px;
+  }
+
+  .article-section-rule {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin: 56px 0;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    margin: 48px 0;
+    padding: 36px 44px;
+    background: var(--ink);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pull-quote::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-warm), var(--accent));
+  }
+
+  .pull-quote-stat {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: white;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .pull-quote-stat em { color: var(--accent-warm); font-style: normal; }
+
+  .pull-quote p {
+    font-size: 0.95rem !important;
+    color: rgba(255,255,255,0.6) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
+    font-weight: 300 !important;
+  }
+
+  /* Stats grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 32px 0;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 28px 24px;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-top: 3px solid var(--accent-warm);
+  }
+
+  .stat-card .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-card .stat-num em { color: var(--accent-warm); font-style: normal; }
+
+  .stat-card .stat-label {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* Skills list */
+  .skills-list {
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .skill-item {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px 28px;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-left: 3px solid var(--accent);
+    transition: transform 0.2s;
+  }
+
+  .skill-item.warm { border-left-color: var(--accent-warm); }
+  .skill-item.green { border-left-color: var(--accent-green); }
+
+  .skill-item:hover { transform: translateX(4px); }
+
+  .skill-item .skill-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .skill-item.warm .skill-label { color: var(--accent-warm); }
+  .skill-item.green .skill-label { color: var(--accent-green); }
+
+  .skill-item h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .skill-item p {
+    font-size: 0.92rem !important;
+    color: var(--mid) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+    font-weight: 300 !important;
+  }
+
+  /* Sources */
+  .article-sources {
+    margin-top: 72px;
+    padding: 32px 36px;
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .article-sources h3 {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: var(--light) !important;
+    font-weight: 500 !important;
+    margin: 0 0 14px !important;
+    font-family: 'DM Sans', sans-serif !important;
+  }
+
+  .article-sources p {
+    font-size: 0.82rem !important;
+    color: var(--light) !important;
+    line-height: 1.75 !important;
+    font-weight: 300 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ─── ARTICLE CTA ─── */
+  .article-cta { background: var(--ink); color: white; padding: 80px 24px; }
+  .article-cta-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+
+  .article-cta .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-warm);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .article-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .article-cta p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(0,87,255,0.3);
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,87,255,0.4); }
+
+  .btn-ghost-white {
+    border: 1.5px solid rgba(255,255,255,0.25);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-ghost-white:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.07); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: white;
+    padding: 64px 24px 40px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-inner { max-width: 1180px; margin: 0 auto; }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand .nav-logo { color: white; font-size: 1.4rem; }
+  .footer-tagline { font-size: 0.88rem; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 300; }
+  .footer-cols { display: flex; gap: 64px; flex-wrap: wrap; }
+
+  .footer-col h5 {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: white; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+
+  /* ─── FLOATING BAR ─── */
+  .floating-apply {
+    position: fixed;
+    bottom: 28px; left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    z-index: 200;
+    background: rgba(13,13,13,0.92);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
+    opacity: 0;
+    white-space: nowrap;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  }
+
+  .floating-apply.visible { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+  .floating-apply a {
+    background: var(--accent);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.88rem;
+    transition: background 0.2s;
+  }
+
+  .floating-apply a:hover { background: #0049e0; }
+
+  .floating-apply-close {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0;
+    margin-left: 4px;
+    transition: color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .floating-apply-close:hover { color: white; }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero { padding: 120px 24px 56px; }
+    .pull-quote { padding: 28px 28px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .meta-divider { display: none; }
+    .footer-cols { gap: 32px; }
+    .footer-top { flex-direction: column; }
+    .floating-apply { white-space: normal; max-width: calc(100vw - 48px); text-align: center; flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="/" class="nav-logo">AI <span>Native</span> Student</a>
+  <ul class="nav-links">
+    <li><a href="/#why">Why Now</a></li>
+    <li><a href="/#offerings">Programs</a></li>
+    <li><a href="/#curriculum">Curriculum</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#apply" class="nav-cta">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- ARTICLE HERO -->
+<header class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-breadcrumb">
+      <a href="/blog/">Blog</a>
+      <span>→</span>
+      <span>For Parents</span>
+    </div>
+    <span class="article-eyebrow">For Parents · March 2026</span>
+    <h1>What Parents Can Do Right Now to Prepare Their Kids for the Biggest Shift in the Job Market</h1>
+    <p class="article-deck">The career paths you navigated no longer exist in the same form. The ones your kids will navigate don't exist yet at all.</p>
+    <div class="article-meta">
+      <div class="article-author">
+        <div class="author-avatar">A</div>
+        <div>
+          <div class="author-name">AI Native Student</div>
+          <div class="author-title">Editorial Team</div>
+        </div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-detail">March 4, 2026</div>
+      <div class="meta-divider"></div>
+      <div class="meta-detail">9 min read</div>
+      <div class="meta-divider"></div>
+      <span class="meta-tag">For Parents</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body">
+  <div class="article-content">
+
+    <p>A Penn Foster survey of more than 500 parents of high school students, published in early 2026, found that 30% of parents are already less confident in the traditional college-to-career path than they were five years ago, and 89% now believe their child can build long-term success without a four-year degree. At the same time, nearly half of those parents are actively encouraging their kids to build technical and digital skills, while only a fraction have updated how they think about the emotional and psychological skills that will determine whether those technical skills ever get deployed effectively.</p>
+
+    <p>Both sides of that equation matter. And most parents are only working on one of them.</p>
+
+    <p>This piece is a practical guide to both: what technical skills a child genuinely needs to develop, what emotional skills will determine whether they can function and lead in a world defined by AI, and how to think about building both in ways that are honest, specific, and grounded in what the labor market is actually signaling right now.</p>
+
+    <hr class="article-section-rule">
+
+    <h2>The Honest Picture of What Your Child Is Entering</h2>
+
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <div class="stat-num"><em>92M</em></div>
+        <div class="stat-label">Jobs projected to be displaced by AI globally, per the World Economic Forum Future of Jobs Report 2025.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><em>170M</em></div>
+        <div class="stat-label">New jobs projected to be created. The net figure sounds reassuring. The transition is not.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><em>89%</em></div>
+        <div class="stat-label">Of parents now believe their child can build long-term success without a four-year degree, per Penn Foster 2026.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">30–<em>40%</em></div>
+        <div class="stat-label">Of white-collar jobs in North America rely heavily on repetitive or rule-based tasks, exactly what AI automates.</div>
+      </div>
+    </div>
+
+    <p>Anthropic CEO Dario Amodei stated publicly in 2025 that AI could eliminate half of all entry-level white-collar jobs within five years. Amazon CEO Andy Jassy said in June 2025 that AI will "reduce our total corporate workforce as we get efficiency gains." These are not fringe opinions from technologists trying to generate attention. They are assessments from people who run the organizations that will be making hiring decisions when your child graduates.</p>
+
+    <p>None of this means your child is entering a hopeless situation. It means the standard script, study hard, get the degree, apply to the big companies, climb the ladder from entry level, no longer describes the path reliably. What it gets replaced with is a path that requires more intentional skill building, more emotional resilience, and a fundamentally different relationship with uncertainty than previous generations needed.</p>
+
+    <p>The good news is that parents have more influence over both of those things than any school, curriculum, or program.</p>
+
+    <hr class="article-section-rule">
+
+    <h2>The Technical Skills That Actually Matter</h2>
+
+    <p>When parents think about technical preparation, the instinct is often to enroll a kid in a coding class or a robotics program and consider the job done. That is better than nothing. It is not sufficient, and it is not the right frame. The technical skills that will matter most in the 2030s workforce are not defined by a specific programming language or tool. They are defined by a way of thinking about problems through technology.</p>
+
+    <div class="skills-list reveal">
+      <div class="skill-item">
+        <span class="skill-label">Technical Skill 1</span>
+        <h4>AI Literacy as a First-Class Skill</h4>
+        <p>LinkedIn's 2025 data on in-demand skills for U.S. workers lists AI literacy as the top skill. This does not mean your child needs to become a machine learning engineer. It means they need to understand what AI systems can and cannot do, how to work with them to produce outcomes, and how to evaluate AI outputs critically. A student who has built something with AI has a fundamentally different relationship with the technology than one who has used it to write homework.</p>
+      </div>
+      <div class="skill-item">
+        <span class="skill-label">Technical Skill 2</span>
+        <h4>Data Literacy</h4>
+        <p>Not statistical expertise. The ability to look at a dataset, understand what it is telling you, identify what is missing, and make an argument grounded in evidence. This skill is relevant in every field, from business to healthcare to journalism to policy, and it can be developed early through projects that start with a question and use data to answer it.</p>
+      </div>
+      <div class="skill-item">
+        <span class="skill-label">Technical Skill 3</span>
+        <h4>Building and Shipping</h4>
+        <p>There is a specific kind of technical confidence that comes only from completing a project: defining a problem, finding or building the tools to address it, and putting the output into the world. Students who have shipped things, even imperfect things, know how to manage ambiguity and work through technical problems without clear answers. Students who have only studied technical topics in structured curricula often freeze when they encounter real-world problems.</p>
+      </div>
+      <div class="skill-item">
+        <span class="skill-label">Technical Skill 4</span>
+        <h4>Critical Evaluation of AI</h4>
+        <p>The World Economic Forum and Brookings both identify "cognitive resilience," the ability to think critically about information sources and AI outputs, as a defining skill for the AI era. A child who is taught to ask "how was this generated, and what are its limitations?" every time they encounter an AI output is developing a professional habit that most adults in the workforce do not yet have.</p>
+      </div>
+    </div>
+
+    <hr class="article-section-rule">
+
+    <h2>The Emotional Skills That Will Determine Everything Else</h2>
+
+    <p>Here is the truth that most career preparation advice undersells: a student can have strong technical skills and still fail to thrive in the AI-transformed workforce if they do not have the psychological capacity to function in conditions of uncertainty, setback, and change.</p>
+
+    <div class="pull-quote reveal">
+      <div class="pull-quote-stat"><em>36%</em> more productive</div>
+      <p>A Gallup 2025 report found that teams with high adaptability are 36% more productive and 32% more engaged than their less adaptable counterparts. LinkedIn's 2025 in-demand skills list places adaptability third overall, behind only AI literacy and conflict mitigation.</p>
+    </div>
+
+    <p>Cengage Group found that 59% of employers say the rise of AI has prompted them to prioritize different skills, with human-centered capabilities including critical thinking, creativity, and emotional intelligence now ranking alongside technical fluency. These are not soft skills in the dismissive sense of that phrase. They are foundational capabilities that determine whether technical skills ever get deployed effectively. And they are built at home, far more than they are built in any classroom.</p>
+
+    <div class="skills-list reveal">
+      <div class="skill-item warm">
+        <span class="skill-label">Emotional Skill 1</span>
+        <h4>Resilience</h4>
+        <p>The Brookings Institution published a 2025 blueprint arguing that resilience, not specific job training, is the foundational preparation for workforce uncertainty. Resilience is the capacity to absorb a setback, process what it means, update your understanding, and continue. It is built by allowing children to experience failure in low-stakes environments and practice recovery. Parents who rescue children from every frustration are not protecting them. They are depriving them of the exact training they need.</p>
+      </div>
+      <div class="skill-item warm">
+        <span class="skill-label">Emotional Skill 2</span>
+        <h4>Adaptability</h4>
+        <p>The child who learns to pivot well is more valuable in the AI economy than the child who has mastered any specific skill set. Researchers Kashdan and Rottenberg describe "psychological flexibility," the ability to adapt to changing demands while staying true to core values, as the key variable. Parents can develop this by normalizing career pivots, openly discussing times when they had to change direction, and framing nonlinear life moments as evidence of capability rather than failure.</p>
+      </div>
+      <div class="skill-item warm">
+        <span class="skill-label">Emotional Skill 3</span>
+        <h4>Grit and Perseverance</h4>
+        <p>Angela Duckworth's research on grit, the combination of passion and sustained persistence toward long-term goals, identifies it as one of the strongest predictors of achievement across domains. In the AI context, grit shows up as staying with a hard problem, iterating on a project that is not working, and pushing through the frustration of a tool that does not do what you expected. Parents build it by praising effort, process, and persistence rather than outcomes and performance.</p>
+      </div>
+      <div class="skill-item warm">
+        <span class="skill-label">Emotional Skill 4</span>
+        <h4>Optimism as a Strategy</h4>
+        <p>There is a passive version of optimism: it will probably work out. There is an agentic version: I do not know exactly how this will work out, but I believe I have the capacity to navigate it. The second is what psychologists call an internal locus of control. It is teachable. Parents build it by connecting effort to outcome explicitly and by reframing setbacks as information rather than verdict.</p>
+      </div>
+      <div class="skill-item warm">
+        <span class="skill-label">Emotional Skill 5</span>
+        <h4>Comfort with Uncertainty</h4>
+        <p>The students who will thrive in the 2030s workforce are the ones who can make good decisions with incomplete information, move forward without certainty, and tolerate ambiguity without shutting down. This is not a natural state for most people. It is built through repeated exposure to situations where the path forward is unclear and the student has to figure it out anyway.</p>
+      </div>
+    </div>
+
+    <hr class="article-section-rule">
+
+    <h2>The AI-Native Mindset: What It Actually Means to Raise One</h2>
+
+    <p>The most important reframe for parents is the one Psychology Today explicitly warns against: treating your child as "a future worker to be optimized" rather than a full human being whose inner resources will ultimately determine their capacity to navigate whatever comes.</p>
+
+    <p>An AI-native child is not one who has the most AI tools. It is one who has developed a genuine relationship with building and problem-solving that includes AI as a core element, who approaches hard problems with curiosity rather than avoidance, and who has the emotional infrastructure to persist through difficulty and recover from failure.</p>
+
+    <p>UNICEF's guidance on parenting in the AI age makes a point that many parents find liberating: adults and children are often learning at a similar pace right now. The most effective parenting posture is not expert to student, but co-learner to co-learner. Explore AI tools together. Work on a project alongside your child. Let them teach you how something works. That dynamic builds exactly the collaborative, curious, iterative relationship with technology that the workforce is looking for.</p>
+
+    <div class="pull-quote reveal">
+      <div class="pull-quote-stat">9 out of <em>10</em> jobs</div>
+      <p>The World Economic Forum projects that by 2026, nine out of ten jobs will require some combination of digital fluency, social influence, and creative problem-solving. The students who possess all three are the ones who grew up in environments where curiosity was rewarded, persistence was modeled, and failure was normalized.</p>
+    </div>
+
+    <hr class="article-section-rule">
+
+    <h2>Practical Starting Points for Parents</h2>
+
+    <p>These are not programs to enroll in. They are habits and conversations to start now, regardless of your technical background.</p>
+
+    <div class="skills-list reveal">
+      <div class="skill-item green">
+        <span class="skill-label">Start Here</span>
+        <h4>Talk Openly About Work and Change</h4>
+        <p>Describe your own career as something that has evolved, including the moments where it did not go as expected. Children who hear parents narrate their own pivots and recoveries develop a more accurate mental model of how careers actually work.</p>
+      </div>
+      <div class="skill-item green">
+        <span class="skill-label">And Here</span>
+        <h4>Let Them Fail at Low-Stakes Things</h4>
+        <p>The frustration of a project that does not work, a competition that ends in loss, a skill that takes longer than expected, is not something to eliminate. It is the training ground for resilience. Your job is not to prevent the difficulty but to help them process it and continue.</p>
+      </div>
+      <div class="skill-item green">
+        <span class="skill-label">And Here</span>
+        <h4>Encourage Building Over Consuming</h4>
+        <p>A child who spends time watching videos about coding is consuming. A child who is making something, even something simple, is building. The habit of finishing things and putting them into the world is more valuable than any specific technical credential.</p>
+      </div>
+      <div class="skill-item green">
+        <span class="skill-label">And Here</span>
+        <h4>Ask the Questions That Develop Purpose</h4>
+        <p>What kind of problems do you want to help solve? What impact do you want to have? What excites you to learn more about? These are the questions that help a young person develop a durable sense of direction that survives the disruptions that will inevitably come.</p>
+      </div>
+      <div class="skill-item green">
+        <span class="skill-label">And Here</span>
+        <h4>Model the Mindset You Want to Develop</h4>
+        <p>Carol Dweck's research on growth mindset is clear that children develop their orientation toward effort and challenge largely by watching the adults around them. If you approach new technology with curiosity and willingness to fail in front of your child, they are more likely to do the same.</p>
+      </div>
+    </div>
+
+    <hr class="article-section-rule">
+
+    <h2>The Bottom Line for Parents</h2>
+
+    <p>The biggest shift in the job market your child will face is not just technological. It is psychological. The technical skills matter, and they are more accessible than ever. But the students who will genuinely thrive in the AI economy are the ones who can persist through difficulty, adapt when the environment changes, stay curious when the path ahead is unclear, and maintain the belief that their effort connects to their outcomes.</p>
+
+    <p>Those qualities are built at home. They are built through the patterns of behavior parents model, the challenges they allow their children to work through, and the conversations they have about what success actually means in a world that is changing faster than any single skill set can keep up with.</p>
+
+    <p><strong>You do not need to be an AI expert to prepare your child for an AI-native world. You need to help them become the kind of person who runs toward hard problems rather than away from them. That has always been the job of a parent. The stakes are just clearer now.</strong></p>
+
+    <div class="article-sources reveal">
+      <h3>Sources</h3>
+      <p>Penn Foster Parents of Gen Z Survey (December 2025); World Economic Forum Future of Jobs Report 2025; Brookings Institution "Blueprint for Developing Economic Opportunity for All Youth" (2025); Brookings "To Prepare Young People for the AI Workplace, Focus on the Fundamentals" (October 2025); Gallup State of the Workplace 2025; LinkedIn 2025 In-Demand Skills Data; Cengage Group Employability Report 2025; Psychology Today "Guiding Teens Through AI-Driven Uncertainty" (June 2025); Psychology Today "How to Prepare Your Kids for the Age of AI" (August 2025); UNICEF "Parenting in the Age of AI"; HR Source Skills of the Future Report (2025); Careerminds Workforce Resilience Report (January 2026).</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- ARTICLE CTA -->
+<section class="article-cta">
+  <div class="article-cta-inner">
+    <span class="section-label">For Parents</span>
+    <h2>Give your student the edge that actually transfers.</h2>
+    <p>AI Native Student builds the technical and professional AI skills that colleges and employers are looking for, with 1-on-1 coaching tailored to your student's goals.</p>
+    <div class="cta-actions">
+      <a href="/#apply" class="btn-primary">Apply Now →</a>
+      <a href="/#curriculum" class="btn-ghost-white">See the Curriculum</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">AI <span>Native</span> Student</a>
+        <p class="footer-tagline">Be fluent in the future.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Programs</h5>
+          <ul>
+            <li><a href="/#offerings">Online Courses</a></li>
+            <li><a href="/#offerings">Group Cohorts</a></li>
+            <li><a href="/#offerings">1-on-1 Coaching</a></li>
+            <li><a href="/#offerings">For High School</a></li>
+            <li><a href="/#offerings">For College</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="/#curriculum">Curriculum</a></li>
+            <li><a href="/#testimonials">Student Stories</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="/#why">About Us</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#apply">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AI Native Student · ainativestudent.com</p>
+      <p style="color:rgba(255,255,255,0.2); font-size:0.78rem;">The future belongs to the fluent.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING APPLY BAR -->
+<div class="floating-apply" id="floating-apply">
+  <span>Open for high school &amp; college students</span>
+  <a href="/#apply">Apply Now</a>
+  <button class="floating-apply-close" id="floating-apply-close" aria-label="Dismiss">&#x2715;</button>
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => revealObserver.observe(el));
+
+  const floatingBar = document.getElementById('floating-apply');
+  let floatingDismissed = false;
+  window.addEventListener('scroll', () => {
+    if (floatingDismissed) return;
+    floatingBar.classList.toggle('visible', window.scrollY > 500);
+  });
+  document.getElementById('floating-apply-close').addEventListener('click', () => {
+    floatingDismissed = true;
+    floatingBar.classList.remove('visible');
+  });
+
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+  });
+</script>
+</body>
+</html>
