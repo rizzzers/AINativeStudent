@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build an AI Portfolio Before You Graduate | AI Native Student</title>
+<meta name="description" content="A diploma no longer closes the deal. What you built does. A practical guide to building an AI portfolio that gets you hired.">
+<meta property="og:title" content="How to Build an AI Portfolio Before You Graduate">
+<meta property="og:description" content="A diploma no longer closes the deal. What you built does. A practical guide to building an AI portfolio that gets you hired.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --off-white: #F8F6F2;
+    --ink: #0D0D0D;
+    --mid: #5A5A5A;
+    --light: #ADADAD;
+    --accent: #0057FF;
+    --accent-warm: #FF4D00;
+    --accent-green: #00C28B;
+    --surface: #F0EDE8;
+    --card: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(248,246,242,0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: padding 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); font-weight: 500; }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent) !important; transform: scale(1.03); }
+
+  /* ─── ARTICLE HERO ─── */
+  .article-hero {
+    padding: 140px 24px 72px;
+    background: var(--off-white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .article-hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+
+  .article-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 0.82rem;
+    color: var(--light);
+  }
+
+  .article-breadcrumb a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .article-breadcrumb a:hover { opacity: 0.7; }
+  .article-breadcrumb span { color: var(--light); }
+
+  .article-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .article-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .article-deck {
+    font-size: 1.2rem;
+    color: var(--mid);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: -0.01em;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-top: 28px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .article-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .author-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+  .author-title { font-size: 0.78rem; color: var(--light); }
+
+  .meta-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(0,0,0,0.1);
+  }
+
+  .meta-detail { font-size: 0.82rem; color: var(--light); }
+
+  .meta-tag {
+    display: inline-block;
+    background: rgba(0,87,255,0.08);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* ─── ARTICLE BODY ─── */
+  .article-body { padding: 72px 24px 100px; }
+
+  .article-content { max-width: 720px; margin: 0 auto; }
+
+  .article-content p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+
+  .article-content p:first-child {
+    font-size: 1.18rem;
+    font-weight: 400;
+  }
+
+  .article-content strong { font-weight: 500; color: var(--ink); }
+
+  .article-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 64px 0 24px;
+    padding-top: 8px;
+  }
+
+  .article-content h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 44px 0 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .article-section-rule {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin: 56px 0;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    margin: 48px 0;
+    padding: 36px 44px;
+    background: var(--ink);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pull-quote::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-green));
+  }
+
+  .pull-quote-stat {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: white;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .pull-quote-stat em { color: var(--accent-green); font-style: normal; }
+
+  .pull-quote p {
+    font-size: 0.95rem !important;
+    color: rgba(255,255,255,0.6) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
+    font-weight: 300 !important;
+  }
+
+  /* Field-specific list */
+  .field-list {
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .field-item {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px 28px;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-left: 3px solid var(--accent);
+    transition: transform 0.2s;
+  }
+
+  .field-item:hover { transform: translateX(4px); }
+
+  .field-item .field-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .field-item p {
+    font-size: 0.95rem !important;
+    color: var(--mid) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+    font-weight: 300 !important;
+  }
+
+  /* What to leave out list */
+  .leave-out-list {
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .leave-out-item {
+    padding: 20px 24px;
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .leave-out-item .leave-lead {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .leave-out-item p {
+    font-size: 0.9rem !important;
+    color: var(--mid) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+    font-weight: 300 !important;
+  }
+
+  /* Sources */
+  .article-sources {
+    margin-top: 72px;
+    padding: 32px 36px;
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .article-sources h3 {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: var(--light) !important;
+    font-weight: 500 !important;
+    margin: 0 0 14px !important;
+    font-family: 'DM Sans', sans-serif !important;
+  }
+
+  .article-sources p {
+    font-size: 0.82rem !important;
+    color: var(--light) !important;
+    line-height: 1.75 !important;
+    font-weight: 300 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ─── ARTICLE CTA ─── */
+  .article-cta {
+    background: var(--ink);
+    color: white;
+    padding: 80px 24px;
+  }
+
+  .article-cta-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .article-cta .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .article-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .article-cta p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(0,87,255,0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,87,255,0.4);
+  }
+
+  .btn-ghost-white {
+    border: 1.5px solid rgba(255,255,255,0.25);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-ghost-white:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.07); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: white;
+    padding: 64px 24px 40px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-inner { max-width: 1180px; margin: 0 auto; }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand .nav-logo { color: white; font-size: 1.4rem; }
+  .footer-tagline { font-size: 0.88rem; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 300; }
+
+  .footer-cols { display: flex; gap: 64px; flex-wrap: wrap; }
+
+  .footer-col h5 {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: white; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+
+  /* ─── FLOATING BAR ─── */
+  .floating-apply {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    z-index: 200;
+    background: rgba(13,13,13,0.92);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 100px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
+    opacity: 0;
+    white-space: nowrap;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  }
+
+  .floating-apply.visible { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+  .floating-apply a {
+    background: var(--accent);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.88rem;
+    transition: background 0.2s;
+  }
+
+  .floating-apply a:hover { background: #0049e0; }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero { padding: 120px 24px 56px; }
+    .pull-quote { padding: 28px 28px; }
+    .meta-divider { display: none; }
+    .footer-cols { gap: 32px; }
+    .footer-top { flex-direction: column; }
+    .floating-apply { white-space: normal; max-width: calc(100vw - 48px); text-align: center; flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="/" class="nav-logo">AI <span>Native</span> Student</a>
+  <ul class="nav-links">
+    <li><a href="/#why">Why Now</a></li>
+    <li><a href="/#offerings">Programs</a></li>
+    <li><a href="/#curriculum">Curriculum</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#apply" class="nav-cta">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- ARTICLE HERO -->
+<header class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-breadcrumb">
+      <a href="/blog/">Blog</a>
+      <span>→</span>
+      <span>AI Skills</span>
+    </div>
+    <span class="article-eyebrow">AI Skills · March 2026</span>
+    <h1>How to Build an AI Portfolio Before You Graduate</h1>
+    <p class="article-deck">A diploma no longer closes the deal. What you built does.</p>
+    <div class="article-meta">
+      <div class="article-author">
+        <div class="author-avatar">A</div>
+        <div>
+          <div class="author-name">AI Native Student</div>
+          <div class="author-title">Editorial Team</div>
+        </div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-detail">March 4, 2026</div>
+      <div class="meta-divider"></div>
+      <div class="meta-detail">7 min read</div>
+      <div class="meta-divider"></div>
+      <span class="meta-tag">AI Skills</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body">
+  <div class="article-content">
+
+    <p>Here is a number worth sitting with: just 30% of 2025 college graduates secured a full-time job in their field, down from 41% the year before, according to a graduate employability report by Cengage Group. Meanwhile, a survey of 84 C-suite executives found that AI is eliminating entry-level positions at 52% of companies. The bottom rung of the career ladder is being pulled out from under students faster than universities are updating their curricula.</p>
+
+    <p>The students who are getting hired in this environment share one thing in common. They are not just degree holders. They are builders. They show up to interviews with documented, deployed, real-world evidence that they can work with AI to solve actual problems. They have a portfolio, and it is specific, relevant, and impossible to fake.</p>
+
+    <p>This is a guide for building that portfolio before you graduate, including what to put in it, what to leave out, and how to approach it in ways that most students have not yet figured out.</p>
+
+    <hr class="article-section-rule">
+
+    <h2>Why a Portfolio Now Matters More Than a Degree</h2>
+
+    <div class="pull-quote reveal">
+      <div class="pull-quote-stat"><em>5%</em></div>
+      <p>Only 5% of companies still consider a traditional college degree essential for new hires, per a 2025 employer survey. The National Association of Colleges and Employers found that nearly two-thirds now use skills-based hiring practices.</p>
+    </div>
+
+    <p>What that means in practice: employers are evaluating what you can do, not just what credential you hold.</p>
+
+    <p>In a Fortune analysis of the collapsing entry-level job market, a computer science graduate with a 3.98 GPA spent his first year out of college applying to more than 2,500 jobs. He received 10 interviews. The credential was not the problem. The lack of demonstrated, applied, visible work was.</p>
+
+    <p>A Harvard University study tracking 62 million workers across 285,000 firms found that AI is "eroding the bottom rungs of career ladders" by automating the routine cognitive tasks that junior employees used to handle. What remains is a smaller pool of roles that require judgment, adaptability, and the ability to work with and through AI tools to produce results faster than a team of five people could have managed five years ago.</p>
+
+    <p>An AI portfolio is the most direct answer to that standard. It is proof that you have already crossed the line from "aware of AI" to "using AI to produce real outcomes."</p>
+
+    <hr class="article-section-rule">
+
+    <h2>What Your Portfolio Should Actually Contain</h2>
+
+    <p>The most common mistake students make when building a portfolio is thinking about it as a homework assignment. They build a clean demo, document it neatly, and ship it to GitHub. That is not a portfolio. That is a tutorial you completed.</p>
+
+    <p>A portfolio that gets attention does three things: it shows that you identified a real problem, built something that addresses it, and can articulate the outcome in terms a hiring manager cares about.</p>
+
+    <h3>Field-Relevant Projects That Solve Real Problems</h3>
+
+    <p>Every major field has AI applications that are genuinely useful right now. The most compelling portfolio projects are the ones that live at the intersection of your domain and AI, not just one or the other.</p>
+
+    <p>A finance student who builds a model that predicts loan default risk using real public data, documents the methodology, and frames the outcome in terms of cost savings is showing something an employer in banking or fintech can immediately connect to their work. A journalism student who builds a tool that scans local government records and flags anomalies for further reporting is doing something no generic Python tutorial covers. A healthcare administration student who creates a system to classify patient feedback by urgency using an LLM and connects it to a triage workflow has solved a problem that hospital administrators think about every day.</p>
+
+    <p>The specificity is the point. Generic projects like basic chatbots, MNIST digit classifiers, and movie recommendation engines built from Kaggle tutorials are everywhere. They demonstrate that you followed instructions. They do not demonstrate that you can think through a domain problem and apply AI to it intelligently.</p>
+
+    <p>Choose a problem that would exist even if you were not a student. Then use AI to solve it.</p>
+
+    <h3>Documentation That Shows How You Think</h3>
+
+    <p>Recruiters at top companies consistently say the same thing: they are not just hiring people who can build AI systems, they are hiring people who can think through problems clearly and communicate solutions. Your documentation is the evidence of that.</p>
+
+    <p>Every project in your portfolio should include a clear problem statement written in plain language, an explanation of the decisions you made along the way (and why), the metrics you used to evaluate whether it worked, and an honest account of what failed and what you learned from it. Failure documentation, done well, shows more maturity than a project where everything worked perfectly on the first try.</p>
+
+    <p>As one portfolio advisor put it: "Show your thought process about system architecture, prompt design, and model selection. Employers want to see how you think through problems." The write-up is not an afterthought. For many hiring managers, it is the thing they read first.</p>
+
+    <h3>Deployed Work, Not Just Notebooks</h3>
+
+    <p>A Jupyter notebook that runs on your laptop is not a portfolio project. It is a draft. The difference between a student who built something and a student who shipped something is significant in the minds of people who hire engineers, analysts, and product people.</p>
+
+    <p>Deploy your projects. Put them on the web, even if it is a simple Streamlit app on Hugging Face Spaces or a GitHub Pages site. Make it so someone who has never seen your code can use the thing you built and form an opinion about it. That step alone separates the majority of student portfolios from the ones that get callbacks.</p>
+
+    <hr class="article-section-rule">
+
+    <h2>What to Leave Out</h2>
+
+    <p>The portfolio mistakes that hurt students are often more consistent than the things that help them.</p>
+
+    <div class="leave-out-list reveal">
+      <div class="leave-out-item">
+        <span class="leave-lead">Leave out tutorial projects.</span>
+        <p>If you can find the project on a "top 50 AI project ideas" list, it is not differentiating. MNIST digit classifiers, basic sentiment analysis on public Twitter data, and Titanic survival prediction are fine for learning but not for showcasing. Every recruiter has seen hundreds of them.</p>
+      </div>
+      <div class="leave-out-item">
+        <span class="leave-lead">Leave out projects with no documented outcome.</span>
+        <p>If you built something but cannot describe what it did, how well it worked, and why that matters, it is not ready for a portfolio. An undocumented project tells a reviewer you either did not finish or do not understand what you built well enough to explain it.</p>
+      </div>
+      <div class="leave-out-item">
+        <span class="leave-lead">Leave out borrowed results.</span>
+        <p>If your model's performance metrics came from copying a tutorial's output rather than running your own experiments, experienced reviewers will notice. The numbers will be too clean, the comparisons too tidy, and the narrative too smooth. Be honest about what you actually achieved.</p>
+      </div>
+      <div class="leave-out-item">
+        <span class="leave-lead">Leave out anything that cannot survive a conversation.</span>
+        <p>Every project you put in front of an employer is implicitly an invitation to be asked about it in detail. If you cannot explain why you chose a particular architecture, what tradeoffs you considered, or what you would change if you built it again, you should not have it in your portfolio yet.</p>
+      </div>
+    </div>
+
+    <hr class="article-section-rule">
+
+    <h2>How to Think About This as an AI-Native Student</h2>
+
+    <p>Most portfolio advice is written for students who are applying AI to their field. AI-native thinking is something different. It is not about using AI as a tool layered on top of a conventional approach. It is about asking a fundamentally different question at the start: given that AI exists, what becomes possible that was not possible before?</p>
+
+    <p>That reframe opens up a different category of projects entirely.</p>
+
+    <h3>Take on Problems That Were Previously Too Large to Tackle</h3>
+
+    <p>Before AI, a single student could not meaningfully analyze 10,000 qualitative responses, monitor changes across hundreds of government websites, or build a functional prototype of a complex multi-step workflow. Now they can, with the right tooling and a weekend of focused work.</p>
+
+    <p>The most interesting portfolio projects are the ones where the first line of reasoning is: "This problem has gone unsolved because it was too expensive, too slow, or required too many people. AI changes that." A public health student who scrapes and synthesizes local health department press releases from 50 cities to surface emerging disease patterns is not doing what a traditional public health student does. They are doing something new.</p>
+
+    <h3>Build Systems, Not One-Off Models</h3>
+
+    <p>The era of portfolio projects that consist of a single model trained on a single dataset is ending. What employers increasingly want to see is evidence of systems thinking: the ability to design a workflow where data comes in, gets processed, gets evaluated, and produces an output that is actually useful in the real world.</p>
+
+    <p>A multi-step system, even a simple one, is more impressive than a sophisticated isolated model. Build the pipeline. Connect the pieces. Show that you understand how AI fits into a larger workflow rather than existing in isolation.</p>
+
+    <h3>Document the Failures as Publicly as the Wins</h3>
+
+    <p>AI-native thinking includes an honest relationship with the limitations of the tools. Students who build portfolios that only show what worked are presenting a version of AI work that experienced practitioners do not recognize. The models that behave unexpectedly, the prompts that produce garbage outputs, the data quality issues that required three rounds of cleaning: these are the actual texture of AI work.</p>
+
+    <p>Documenting them honestly, and showing how you responded, is not a weakness in a portfolio. It is a differentiator. It tells a hiring manager that you have actually shipped something real, not just trained a model on a clean dataset in a controlled environment.</p>
+
+    <h3>Build in Public</h3>
+
+    <div class="pull-quote reveal">
+      <div class="pull-quote-stat"><em>50%</em> decline</div>
+      <p>Big Tech hiring for new graduates fell 50% between 2019 and 2024, per SignalFire. In a market that compressed that sharply, visibility matters. A project ten people have seen is more valuable than a better project nobody knows exists.</p>
+    </div>
+
+    <p>The students who are navigating this job market successfully are building in public. They are writing LinkedIn posts about what they are building, sharing projects before they are finished, asking for feedback from practitioners in their field, and treating the process of building as itself a public signal of capability.</p>
+
+    <hr class="article-section-rule">
+
+    <h2>Field-Specific Portfolio Ideas Worth Considering</h2>
+
+    <p>For students who are not sure where to start, here are starting points organized by field. These are not meant to be copied. They are meant to show what domain-specific AI work looks like when it takes a problem seriously.</p>
+
+    <div class="field-list reveal">
+      <div class="field-item">
+        <span class="field-label">Business and Marketing</span>
+        <p>Build a system that ingests a company's customer reviews from multiple platforms, clusters them by theme, and produces a weekly summary report in plain language. Frame the outcome in terms of analyst hours saved or decision quality improved.</p>
+      </div>
+      <div class="field-item">
+        <span class="field-label">Healthcare and Public Health</span>
+        <p>Train a text classification model on publicly available clinical notes to surface patterns in how certain conditions are described across demographics. Document the data source, the methodology, and the ethical considerations explicitly.</p>
+      </div>
+      <div class="field-item">
+        <span class="field-label">Journalism and Communications</span>
+        <p>Build a tool that monitors local government meeting agendas and automatically flags agenda items related to specific topic areas, with links to source documents. The problem is real and the solution is immediately useful to anyone who covers local government.</p>
+      </div>
+      <div class="field-item">
+        <span class="field-label">Education</span>
+        <p>Build a system that takes a student's written work samples and generates a detailed developmental feedback report using an LLM, structured around specific competencies. Test it with real examples and document where it fails.</p>
+      </div>
+      <div class="field-item">
+        <span class="field-label">Legal Studies</span>
+        <p>Build a research assistant that takes a case description, retrieves relevant precedents from a public legal database, and summarizes them with citations. The audience for this is clearly defined, and the problem is one every paralegal and junior associate understands.</p>
+      </div>
+      <div class="field-item">
+        <span class="field-label">Environmental Science</span>
+        <p>Build a tool that scrapes publicly available air quality or water quality monitoring data, identifies anomalies, and generates plain-language alerts. Deploy it as a dashboard.</p>
+      </div>
+    </div>
+
+    <p>In every case, the framing is the same: a real problem, a documented approach, a deployed output, and honest evaluation of what worked and what did not.</p>
+
+    <hr class="article-section-rule">
+
+    <h2>The Portfolio as a Competitive Strategy</h2>
+
+    <p>The students who are navigating this job market successfully are not treating the portfolio as an assignment to complete before graduation. They are treating it as an ongoing, cumulative signal of how they think and what they can build.</p>
+
+    <p>Start now. Build something in your field that uses AI to solve a problem that would otherwise take a team. Document it like you are explaining it to a senior person at the company you want to work for. Deploy it so it can be used by someone who has never heard of you. Write about it publicly so the people who do the hiring can find it before you send a resume.</p>
+
+    <p>Joseph Fuller, a professor at Harvard Business School, put it plainly in a widely cited interview on the state of graduate hiring: AI has "rendered moot certain types of skills that were once good currency in the labor market." The skills that replaced them are exactly the ones a well-built AI portfolio demonstrates. Not theoretical knowledge of AI, but the demonstrated ability to identify a problem, apply AI to it, evaluate the result, and ship something that works.</p>
+
+    <p><strong>That is what the market is paying for now. Build accordingly.</strong></p>
+
+    <div class="article-sources reveal">
+      <h3>Sources</h3>
+      <p>Cengage Group Graduate Employability Report (2025); Spark Admissions C-Suite Survey (April 2025); National Association of Colleges and Employers Job Outlook Reports (2025, 2026); Harvard Business School / Joseph Fuller entry-level hiring research (2025); SignalFire New Graduate Hiring Study (2024); Fortune / CNBC entry-level job market coverage (2025); IntuitionLabs AI Impact on Graduate Jobs Analysis (2025); Inside Higher Ed Lightcast AI Skills Report (2025); TalentSprint AI Portfolio Guide (2025); ProjectPro AI Portfolio Framework (2025).</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- ARTICLE CTA -->
+<section class="article-cta">
+  <div class="article-cta-inner">
+    <span class="section-label">Ready to Build</span>
+    <h2>Get the coaching to make it real.</h2>
+    <p>AI Native Student gives high school and college students the 1-on-1 coaching and curriculum to build a portfolio that actually gets attention, not just a diploma that gets filed away.</p>
+    <div class="cta-actions">
+      <a href="/#apply" class="btn-primary">Apply Now →</a>
+      <a href="/#offerings" class="btn-ghost-white">See Programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">AI <span>Native</span> Student</a>
+        <p class="footer-tagline">Be fluent in the future.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Programs</h5>
+          <ul>
+            <li><a href="/#offerings">Online Courses</a></li>
+            <li><a href="/#offerings">Group Cohorts</a></li>
+            <li><a href="/#offerings">1-on-1 Coaching</a></li>
+            <li><a href="/#offerings">For High School</a></li>
+            <li><a href="/#offerings">For College</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="/#curriculum">Curriculum</a></li>
+            <li><a href="/#testimonials">Student Stories</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="/#why">About Us</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#apply">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AI Native Student · ainativestudent.com</p>
+      <p style="color:rgba(255,255,255,0.2); font-size:0.78rem;">The future belongs to the fluent.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING APPLY BAR -->
+<div class="floating-apply" id="floating-apply">
+  <span>Open for high school &amp; college students</span>
+  <a href="/#apply">Apply Now</a>
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => revealObserver.observe(el));
+
+  const floatingBar = document.getElementById('floating-apply');
+  window.addEventListener('scroll', () => {
+    floatingBar.classList.toggle('visible', window.scrollY > 500);
+  });
+
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+  });
+</script>
+</body>
+</html>
