@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | AI Native Student — Our Framework & Methodology</title>
+<meta name="description" content="AI Native Student pairs students with world-class computer scientists to build real AI fluency through individualized plans, curiosity-driven discovery, and advanced techniques from the tip of the spear.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --off-white: #F8F6F2;
+    --ink: #0D0D0D;
+    --mid: #5A5A5A;
+    --light: #ADADAD;
+    --accent: #0057FF;
+    --accent-warm: #FF4D00;
+    --accent-green: #00C28B;
+    --surface: #F0EDE8;
+    --card: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(248,246,242,0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: padding 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); font-weight: 500; }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent) !important; transform: scale(1.03); }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--ink);
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding-top: 64px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(0,194,139,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-text {
+    padding: 5rem 4rem 5rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent-green);
+    flex-shrink: 0;
+  }
+
+  .hero-headline {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 1.8rem;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.35s forwards;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--accent-green);
+  }
+
+  .hero-body {
+    font-size: 1.08rem;
+    color: rgba(255,255,255,0.6);
+    max-width: 500px;
+    line-height: 1.75;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.5s forwards;
+  }
+
+  .hero-visual {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-grid-cell {
+    background: rgba(13,13,13,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    transition: background 0.3s;
+  }
+
+  .hero-grid-cell:hover { background: rgba(0,194,139,0.05); }
+
+  .stat-big {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 4vw, 4rem);
+    color: var(--accent-green);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.4;
+    max-width: 130px;
+    font-weight: 300;
+  }
+
+  /* ─── SHARED SECTION ─── */
+  .section-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .section-eyebrow.green { color: var(--accent-green); }
+
+  /* ─── WHY WE EXIST ─── */
+  .intro-section {
+    background: var(--off-white);
+    padding: 100px 24px;
+  }
+
+  .intro-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .intro-left h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3vw, 2.9rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-top: 8px;
+  }
+
+  .intro-left h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .intro-right p {
+    font-size: 1.05rem;
+    color: var(--mid);
+    margin-bottom: 1.4rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .callout-box {
+    background: var(--ink);
+    color: var(--white);
+    padding: 2rem 2.2rem;
+    border-left: 3px solid var(--accent-green);
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .callout-box p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .callout-box strong { color: var(--accent-green); font-weight: 500; }
+
+  /* ─── FRAMEWORK ─── */
+  .framework-section {
+    background: var(--ink);
+    padding: 100px 24px;
+    color: var(--white);
+  }
+
+  .framework-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .framework-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 1rem;
+    max-width: 600px;
+  }
+
+  .framework-section .sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.55);
+    max-width: 580px;
+    margin-bottom: 4rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .framework-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.07);
+  }
+
+  .step {
+    background: var(--ink);
+    padding: 2.5rem 2rem;
+    transition: background 0.25s;
+  }
+
+  .step:hover { background: rgba(0,194,139,0.05); }
+
+  .step-num {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--accent-green);
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .step-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .step h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .step p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: var(--accent-green);
+    padding: 56px 24px;
+  }
+
+  .stats-bar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .stats-bar-item { text-align: center; }
+
+  .stats-bar-item .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.6rem;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.03em;
+  }
+
+  .stats-bar-item .desc {
+    font-size: 0.82rem;
+    color: rgba(13,13,13,0.65);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  .stats-bar-item .source {
+    font-size: 0.65rem;
+    color: rgba(13,13,13,0.4);
+    margin-top: 0.3rem;
+    font-weight: 300;
+  }
+
+  /* ─── INSTRUCTORS ─── */
+  .instructors-section {
+    background: var(--off-white);
+    padding: 100px 24px;
+  }
+
+  .instructors-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .instructors-left h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    margin-top: 8px;
+  }
+
+  .instructors-left h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .instructors-left p {
+    font-size: 1.05rem;
+    color: var(--mid);
+    margin-bottom: 1.4rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .instructor-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .instructor-card {
+    background: var(--card);
+    border: 1px solid var(--surface);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .instructor-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .instructor-card .ic-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .instructor-card h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+
+  .instructor-card p {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  /* ─── PHILOSOPHY ─── */
+  .philosophy-section {
+    background: var(--ink);
+    padding: 100px 24px;
+    color: var(--white);
+  }
+
+  .philosophy-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .philosophy-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    letter-spacing: -0.03em;
+    color: var(--white);
+    max-width: 700px;
+    margin-bottom: 1rem;
+  }
+
+  .philosophy-section h2 em {
+    font-style: italic;
+    color: var(--accent-green);
+  }
+
+  .philosophy-section .sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.52);
+    max-width: 560px;
+    margin-bottom: 4rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .philosophy-card {
+    border-top: 2px solid rgba(0,194,139,0.25);
+    padding-top: 1.8rem;
+  }
+
+  .philosophy-card .pc-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    display: block;
+  }
+
+  .philosophy-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.45rem;
+    color: var(--white);
+    margin-bottom: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .philosophy-card p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.48);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ─── PROOF STRIP ─── */
+  .proof-strip {
+    background: var(--surface);
+    padding: 100px 24px;
+  }
+
+  .proof-strip-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .proof-strip h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .proof-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .proof-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .proof-check {
+    width: 22px;
+    height: 22px;
+    background: var(--accent-green);
+    flex-shrink: 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    margin-top: 2px;
+    color: white;
+    font-weight: 700;
+  }
+
+  .proof-item p {
+    font-size: 0.9rem;
+    color: var(--mid);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  /* ─── SOURCES ─── */
+  .sources-section {
+    background: var(--off-white);
+    padding: 48px 24px;
+    border-top: 1px solid var(--surface);
+  }
+
+  .sources-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .sources-section h4 {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .sources-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem 2rem;
+    list-style: none;
+  }
+
+  .sources-list li {
+    font-size: 0.76rem;
+    color: var(--light);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: white;
+    padding: 64px 24px 40px;
+  }
+
+  .footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand .nav-logo { color: white; font-size: 1.4rem; }
+  .footer-tagline { font-size: 0.88rem; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 300; }
+
+  .footer-cols {
+    display: flex;
+    gap: 64px;
+    flex-wrap: wrap;
+  }
+
+  .footer-col h5 {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: white; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+
+  /* ─── FLOATING BAR ─── */
+  .floating-apply {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    z-index: 200;
+    background: rgba(13,13,13,0.92);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
+    opacity: 0;
+    white-space: nowrap;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  }
+
+  .floating-apply.visible {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  .floating-apply-close {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0;
+    margin-left: 4px;
+    transition: color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .floating-apply-close:hover { color: white; }
+
+  .floating-apply a {
+    background: var(--accent);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.88rem;
+    transition: background 0.2s;
+  }
+
+  .floating-apply a:hover { background: #0049e0; }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── EXIT INTENT POPUP ─── */
+  .roadmap-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(13,13,13,0.6);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .roadmap-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .roadmap-modal {
+    background: var(--white);
+    border-radius: 20px;
+    max-width: 520px;
+    width: 100%;
+    padding: 48px 44px;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  }
+
+  .roadmap-overlay.open .roadmap-modal { transform: translateY(0); }
+
+  .roadmap-modal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-green));
+  }
+
+  .roadmap-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--light);
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .roadmap-close:hover { color: var(--ink); }
+
+  .roadmap-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .roadmap-modal h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .roadmap-modal .roadmap-sub {
+    font-size: 0.98rem;
+    color: var(--mid);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  .roadmap-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .roadmap-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 300;
+    background: var(--off-white);
+    color: var(--ink);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .roadmap-input:focus { border-color: var(--accent); }
+  .roadmap-input::placeholder { color: var(--light); }
+
+  .roadmap-btn {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 15px 24px;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .roadmap-btn:hover { background: #0049e0; transform: translateY(-1px); }
+
+  .roadmap-fine {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--light);
+    margin-top: 4px;
+  }
+
+  .roadmap-success {
+    text-align: center;
+    padding: 16px 0 8px;
+    display: none;
+  }
+
+  .roadmap-success .success-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .roadmap-success p {
+    font-size: 0.98rem;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-text { padding: 4rem 2.5rem; }
+    .hero-visual { display: none; }
+    .intro-inner, .instructors-inner { grid-template-columns: 1fr; gap: 48px; }
+    .framework-steps { grid-template-columns: 1fr 1fr; }
+    .stats-bar-inner { grid-template-columns: 1fr 1fr; }
+    .philosophy-grid { grid-template-columns: 1fr 1fr; }
+    .proof-strip-inner { grid-template-columns: 1fr; gap: 40px; }
+    .sources-list { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; position: relative; flex-wrap: wrap; }
+    .nav-hamburger { display: flex; }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: rgba(248,246,242,0.97);
+      backdrop-filter: blur(18px);
+      padding: 8px 24px 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li { border-bottom: 1px solid var(--surface); }
+    .nav-links li:last-child { border-bottom: none; }
+    .nav-links a { display: block; padding: 14px 0; color: var(--ink); font-size: 1rem; font-weight: 400; }
+    .nav-links .nav-cta {
+      margin-top: 8px;
+      display: block;
+      text-align: center;
+      padding: 12px 22px;
+      background: var(--ink);
+      color: var(--white) !important;
+      border-radius: 100px;
+    }
+
+    .hero-text { padding: 3rem 1.5rem; }
+    .intro-section, .instructors-section, .framework-section,
+    .philosophy-section, .proof-strip, .sources-section { padding: 60px 20px; }
+    .stats-bar { padding: 48px 20px; }
+
+    .framework-steps { grid-template-columns: 1fr; }
+    .stats-bar-inner { grid-template-columns: 1fr 1fr; }
+    .philosophy-grid { grid-template-columns: 1fr; }
+    .instructor-card-grid { grid-template-columns: 1fr; }
+    .proof-items { grid-template-columns: 1fr; }
+    .sources-list { grid-template-columns: 1fr; }
+
+    .floating-apply {
+      max-width: calc(100vw - 48px);
+      white-space: normal;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .footer-cols { gap: 32px; }
+    .footer-top { flex-direction: column; }
+  }
+
+  @media (max-width: 600px) {
+    .roadmap-modal { padding: 36px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="/" class="nav-logo">AI <span>Native</span> Student</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/#why">Why Now</a></li>
+    <li><a href="/#offerings">Programs</a></li>
+    <li><a href="/#curriculum">Curriculum</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/#testimonials">Stories</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about/" class="active">About</a></li>
+    <li><a href="/#apply" class="nav-cta">Apply Now</a></li>
+  </ul>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">About AI Native Student</div>
+    <h1 class="hero-headline">
+      Built for students who want to lead, <em>not just keep up.</em>
+    </h1>
+    <p class="hero-body">
+      We pair students with working computer scientists at the top of their field and build individualized learning plans that start where each student is — and move toward the frontier. No generic curriculum. No one-size-fits-all roadmap. Just a methodology designed around the way genuine mastery actually develops.
+    </p>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-grid">
+      <div class="hero-grid-cell">
+        <div class="stat-big">30%</div>
+        <div class="stat-label">improvement in student outcomes with personalized learning (McKinsey)</div>
+      </div>
+      <div class="hero-grid-cell">
+        <div class="stat-big">170M</div>
+        <div class="stat-label">new AI-era jobs projected by 2030 (World Economic Forum)</div>
+      </div>
+      <div class="hero-grid-cell">
+        <div class="stat-big">54%</div>
+        <div class="stat-label">of students show higher engagement with AI-integrated learning</div>
+      </div>
+      <div class="hero-grid-cell">
+        <div class="stat-big">#1</div>
+        <div class="stat-label">AI literacy ranked top in-demand skill for U.S. workers (LinkedIn 2025)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY WE EXIST ─── -->
+<section class="intro-section">
+  <div class="intro-inner">
+    <div class="intro-left reveal">
+      <span class="section-eyebrow">Why We Exist</span>
+      <h2>The world changed. Most education <em>did not.</em></h2>
+    </div>
+    <div class="intro-right reveal">
+      <p>
+        The World Economic Forum's Future of Jobs Report 2025 projects that AI will create 170 million new roles while displacing 92 million existing ones. The students who end up on the right side of that shift will not be the ones who studied hardest in a system built for a different era. They will be the ones who learned to think like builders, move with curiosity, and treat ambiguity as a starting point rather than a dead end.
+      </p>
+      <p>
+        That kind of student does not emerge from a standard curriculum. It takes a different approach: one that is deeply individualized, taught by people who are actually doing the work at a high level, and designed around the student's specific interests, learning style, and pace. That is what we built.
+      </p>
+      <p>
+        AI Native Student was created because the most important competitive advantage a young person can build right now is not a credential — it is a genuine, working relationship with AI as a tool for solving real problems in the real world.
+      </p>
+      <div class="callout-box">
+        <p><strong>71% of teachers</strong> and <strong>65% of students</strong> view AI assistants as essential for learning and workforce preparation (World Economic Forum, 2025). Yet most schools have no structured plan for building the underlying skills. We fill that gap.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FRAMEWORK ─── -->
+<section class="framework-section">
+  <div class="framework-inner">
+    <span class="section-eyebrow green reveal">Our Methodology</span>
+    <h2 class="reveal">The AI Native Student Framework</h2>
+    <p class="sub reveal">Four connected phases that move every student from wherever they are to where the frontier actually is.</p>
+
+    <div class="framework-steps">
+      <div class="step reveal">
+        <div class="step-num">01 / Baseline</div>
+        <div class="step-icon">🔍</div>
+        <h3>Individual Diagnostic</h3>
+        <p>Every engagement starts with a real conversation — not a placement test. We learn how a student thinks, what they are curious about, where they get stuck, and what motivates them. That diagnostic becomes the foundation of a plan built entirely around them.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02 / Foundation</div>
+        <div class="step-icon">⚡</div>
+        <h3>Mastery of First Principles</h3>
+        <p>Before advanced technique comes genuine understanding. We cover the fundamentals of how AI systems work — not as abstract theory but through hands-on building. Students who understand the foundations are students who can adapt when the tools change, and they always do.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03 / Application</div>
+        <div class="step-icon">🔨</div>
+        <h3>Build Real Things</h3>
+        <p>The shift from knowing to doing is where most programs fall apart. We move students into real projects connected to domains they actually care about. A student who has built something, shipped it, and had to debug it has a different relationship with the technology than one who has only studied it.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04 / Frontier</div>
+        <div class="step-icon">🎯</div>
+        <h3>Advanced Techniques from the Tip of the Spear</h3>
+        <p>Once foundations and practical application are in place, we move students into what is actually happening at the frontier — current research directions, production-level prompting architectures, multi-agent workflows, and the practices professionals at the top of the field use daily.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS BAR ─── -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stats-bar-item reveal">
+      <div class="num">30%</div>
+      <div class="desc">better academic performance with AI-personalized learning</div>
+      <div class="source">McKinsey Global Institute</div>
+    </div>
+    <div class="stats-bar-item reveal">
+      <div class="num">88%</div>
+      <div class="desc">of students agree AI is important to their learning journey</div>
+      <div class="source">Matsh.co / Multi-Study Review 2024</div>
+    </div>
+    <div class="stats-bar-item reveal">
+      <div class="num">275%</div>
+      <div class="desc">improvement in student autonomy in AI-integrated learning trials</div>
+      <div class="source">DemandSage / AI Education Review</div>
+    </div>
+    <div class="stats-bar-item reveal">
+      <div class="num">9 / 10</div>
+      <div class="desc">jobs by 2026 will require digital fluency and creative problem-solving</div>
+      <div class="source">World Economic Forum 2025</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── INSTRUCTORS ─── -->
+<section class="instructors-section">
+  <div class="instructors-inner">
+    <div class="instructors-left reveal">
+      <span class="section-eyebrow">Who Teaches</span>
+      <h2>Computer scientists who are <em>actively doing the work.</em></h2>
+      <p>
+        The most common failure mode in technical education is the gap between what gets taught and what is actually happening in the field. By the time curriculum is written, vetted, and deployed, the frontier has moved.
+      </p>
+      <p>
+        We close that gap by bringing in instructors who are not teaching from a textbook written two years ago. Our teachers and tutors are practicing computer scientists — people who are shipping code, running models, publishing research, and working inside the organizations where these tools are being built and deployed. They teach from direct, current experience.
+      </p>
+      <p>
+        That matters more than credentials. A student who is learning from someone who solved a real problem with a real AI system last week is getting a fundamentally different education than one learning from a static syllabus. The questions that come up are different. The examples are real. The context is current.
+      </p>
+    </div>
+    <div class="reveal">
+      <div class="instructor-card-grid">
+        <div class="instructor-card">
+          <div class="ic-icon">🧠</div>
+          <h4>Active Practitioners</h4>
+          <p>Instructors who are working in the field now — not retired from it. Current research, current tools, current context.</p>
+        </div>
+        <div class="instructor-card">
+          <div class="ic-icon">🎓</div>
+          <h4>Deep Domain Expertise</h4>
+          <p>Computer science backgrounds spanning machine learning, NLP, systems engineering, and applied AI product development.</p>
+        </div>
+        <div class="instructor-card">
+          <div class="ic-icon">🔭</div>
+          <h4>Frontier Awareness</h4>
+          <p>Instructors who attend conferences, read current papers, and use production-level tools. Students learn what is actually happening, not what happened.</p>
+        </div>
+        <div class="instructor-card">
+          <div class="ic-icon">🤝</div>
+          <h4>One-to-One Relationships</h4>
+          <p>Every student works directly with their instructor — no TAs, no asynchronous queues. Questions get answered by the person who knows the answer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PHILOSOPHY ─── -->
+<section class="philosophy-section">
+  <div class="philosophy-inner">
+    <span class="section-eyebrow green reveal">Our Core Beliefs</span>
+    <h2 class="reveal">Curiosity is not a nice-to-have. It is <em>the engine.</em></h2>
+    <p class="sub reveal">Three principles that shape every student interaction — from first session to frontier-level work.</p>
+
+    <div class="philosophy-grid">
+      <div class="philosophy-card reveal">
+        <span class="pc-label">Principle 01</span>
+        <h3>Discovery Before Instruction</h3>
+        <p>We do not begin by telling students what AI is. We begin by helping them figure out something they actually want to know. Curiosity-led learning creates neural pathways that instruction-led learning does not. A student who arrives at an insight through their own exploration retains it differently — and applies it more readily — than one who received it passively. Psychology Today's 2025 research on teen learning confirms that students who develop a sense of personal agency through guided discovery are more resilient and more adaptable than those trained on performance outcomes alone.</p>
+      </div>
+      <div class="philosophy-card reveal">
+        <span class="pc-label">Principle 02</span>
+        <h3>Encouragement as a Structural Tool</h3>
+        <p>Angela Duckworth's research on grit identifies sustained effort toward long-term goals as the strongest predictor of achievement across domains. Encouragement — specific, earned, connected to process rather than outcome — is what keeps students in the productive struggle long enough to develop real capability. We train our instructors to recognize and name the moments where a student pushes through difficulty, because those moments are where the real learning happens. Praise the attempt. Reward the persistence. Build the confidence that comes only from having solved hard things.</p>
+      </div>
+      <div class="philosophy-card reveal">
+        <span class="pc-label">Principle 03</span>
+        <h3>Novel Approaches to Big Problems</h3>
+        <p>An AI-native student is not one who knows the most tools. It is one who sees a complex, ambiguous problem and instinctively reaches for a toolkit that includes AI — and knows how to direct that toolkit with judgment and creativity. We expose students to hard, open-ended problems in domains they care about, and we teach them to approach those problems the way experienced practitioners do: by breaking them down, identifying where AI adds leverage, and iterating toward something that actually works. The Brookings Institution's 2025 workforce research calls this "preparing young people for uncertainty itself." That is the goal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROOF STRIP ─── -->
+<section class="proof-strip">
+  <div class="proof-strip-inner">
+    <div class="reveal">
+      <span class="section-eyebrow">What This Produces</span>
+      <h2>Students who are ready for a world that has not stabilized yet.</h2>
+    </div>
+    <div class="proof-items reveal">
+      <div class="proof-item">
+        <div class="proof-check">✓</div>
+        <p>Real AI literacy — not prompt typing, but understanding of how systems work and how to direct them toward outcomes</p>
+      </div>
+      <div class="proof-item">
+        <div class="proof-check">✓</div>
+        <p>A portfolio of completed work in domains relevant to college and career goals</p>
+      </div>
+      <div class="proof-item">
+        <div class="proof-check">✓</div>
+        <p>The emotional infrastructure — grit, adaptability, optimism — to function in conditions of rapid change</p>
+      </div>
+      <div class="proof-item">
+        <div class="proof-check">✓</div>
+        <p>Confidence that comes from having built real things and solved real problems alongside practitioners</p>
+      </div>
+      <div class="proof-item">
+        <div class="proof-check">✓</div>
+        <p>Exposure to advanced techniques from instructors who are actively using them in production environments</p>
+      </div>
+      <div class="proof-item">
+        <div class="proof-check">✓</div>
+        <p>A learning identity grounded in curiosity — the one skill that compounds faster than any other in the AI era</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOURCES ─── -->
+<section class="sources-section">
+  <div class="sources-inner">
+    <h4>Sources &amp; Research</h4>
+    <ul class="sources-list">
+      <li>World Economic Forum, Future of Jobs Report 2025</li>
+      <li>McKinsey Global Institute, Personalized Learning Meta-Analysis</li>
+      <li>LinkedIn 2025 In-Demand Skills Report (U.S.)</li>
+      <li>Engageli / Active Learning Impact Study 2025</li>
+      <li>Brookings Institution, "Blueprint for Youth Economic Opportunity" 2025</li>
+      <li>Brookings, "To Prepare Young People for the AI Workplace" Oct 2025</li>
+      <li>Psychology Today, "Guiding Teens Through AI-Driven Uncertainty" June 2025</li>
+      <li>Psychology Today, "How to Prepare Your Kids for the Age of AI" Aug 2025</li>
+      <li>Matsh.co, Personalized Learning Outcomes Statistics Review 2024</li>
+      <li>DemandSage, AI in Education Statistics Compilation 2025</li>
+      <li>Duckworth, A. (2016). Grit: The Power of Passion and Perseverance</li>
+      <li>MDPI Systematic Review, AI Impact on Personalized Learning (March 2025)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">AI <span>Native</span> Student</a>
+        <p class="footer-tagline">Be fluent in the future.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Programs</h5>
+          <ul>
+            <li><a href="/#offerings">Online Courses</a></li>
+            <li><a href="/#offerings">Group Cohorts</a></li>
+            <li><a href="/#offerings">1-on-1 Coaching</a></li>
+            <li><a href="/#offerings">For High School</a></li>
+            <li><a href="/#offerings">For College</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="/#curriculum">Curriculum</a></li>
+            <li><a href="/about/">Instructors</a></li>
+            <li><a href="/#testimonials">Student Stories</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#apply">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AI Native Student · ainativestudent.com</p>
+      <p style="color:rgba(255,255,255,0.2); font-size:0.78rem;">The future belongs to the fluent.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING APPLY BAR -->
+<div class="floating-apply" id="floating-apply">
+  <span>Open for high school &amp; college students</span>
+  <a href="/#apply">Apply Now</a>
+  <button class="floating-apply-close" id="floating-apply-close" aria-label="Dismiss">&#x2715;</button>
+</div>
+
+<!-- EXIT INTENT POPUP -->
+<div class="roadmap-overlay" id="roadmap-overlay" role="dialog" aria-modal="true" aria-label="Free AI Roadmap">
+  <div class="roadmap-modal">
+    <button class="roadmap-close" id="roadmap-close" aria-label="Close">&#x2715;</button>
+    <span class="roadmap-eyebrow">Free Resource</span>
+    <h2>Most Students Are Using AI Wrong</h2>
+    <p class="roadmap-sub">Get the free roadmap that shows exactly how to build AI skills that actually matter to colleges and employers in 2026.</p>
+    <form class="roadmap-form" name="roadmap-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="roadmap-form">
+      <input type="hidden" name="form-name" value="roadmap-signup">
+      <p style="display:none;"><input name="bot-field"></p>
+      <input type="email" name="email" class="roadmap-input" placeholder="your@email.com" required>
+      <button type="submit" class="roadmap-btn">Get the Free Roadmap →</button>
+    </form>
+    <p class="roadmap-fine">Instant delivery. No spam, ever.</p>
+    <div class="roadmap-success" id="roadmap-success">
+      <span class="success-icon">✓</span>
+      <p>You're in. Check your inbox for the roadmap.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${(Array.from(reveals).indexOf(entry.target) % 3) * 0.1}s`;
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => revealObserver.observe(el));
+
+  // Floating bar
+  const floatingBar = document.getElementById('floating-apply');
+  let floatingDismissed = false;
+  window.addEventListener('scroll', () => {
+    if (floatingDismissed) return;
+    if (window.scrollY > 500) {
+      floatingBar.classList.add('visible');
+    } else {
+      floatingBar.classList.remove('visible');
+    }
+  });
+  document.getElementById('floating-apply-close').addEventListener('click', () => {
+    floatingDismissed = true;
+    floatingBar.classList.remove('visible');
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('main-nav').contains(e.target)) {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    }
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Nav shadow on scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+  });
+
+  // Exit intent popup
+  (function() {
+    if (sessionStorage.getItem('roadmapShown')) return;
+    const overlay = document.getElementById('roadmap-overlay');
+    const form = document.getElementById('roadmap-form');
+    const successEl = document.getElementById('roadmap-success');
+
+    function showRoadmap() {
+      if (sessionStorage.getItem('roadmapShown')) return;
+      sessionStorage.setItem('roadmapShown', '1');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRoadmap() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY < 10) showRoadmap();
+    });
+
+    const mobileTimer = setTimeout(() => {
+      if (!sessionStorage.getItem('roadmapShown')) showRoadmap();
+    }, 30000);
+
+    document.getElementById('roadmap-close').addEventListener('click', closeRoadmap);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeRoadmap(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeRoadmap(); });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.roadmap-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const data = new FormData(form);
+        await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
+        form.style.display = 'none';
+        form.previousElementSibling.style.display = 'none';
+        successEl.style.display = 'block';
+        clearTimeout(mobileTimer);
+      } catch(err) {
+        btn.textContent = 'Get the Free Roadmap →';
+        btn.disabled = false;
+      }
+    });
+  })();
+</script>
+</body>
+</html>
