@@ -639,6 +639,156 @@
     .footer-cols { gap: 32px; }
     .footer-top { flex-direction: column; }
   }
+
+  /* ─── EXIT INTENT POPUP ─── */
+  .roadmap-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(13,13,13,0.6);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .roadmap-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .roadmap-modal {
+    background: var(--white);
+    border-radius: 20px;
+    max-width: 520px;
+    width: 100%;
+    padding: 48px 44px;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  }
+
+  .roadmap-overlay.open .roadmap-modal { transform: translateY(0); }
+
+  .roadmap-modal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-green));
+  }
+
+  .roadmap-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--light);
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .roadmap-close:hover { color: var(--ink); }
+
+  .roadmap-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .roadmap-modal h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .roadmap-modal .roadmap-sub {
+    font-size: 0.98rem;
+    color: var(--mid);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  .roadmap-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .roadmap-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 300;
+    background: var(--off-white);
+    color: var(--ink);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .roadmap-input:focus { border-color: var(--accent); }
+  .roadmap-input::placeholder { color: var(--light); }
+
+  .roadmap-btn {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 15px 24px;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .roadmap-btn:hover { background: #0049e0; transform: translateY(-1px); }
+
+  .roadmap-fine {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--light);
+    margin-top: 4px;
+  }
+
+  .roadmap-success {
+    text-align: center;
+    padding: 16px 0 8px;
+    display: none;
+  }
+
+  .roadmap-success .success-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .roadmap-success p { font-size: 0.98rem; color: var(--mid); line-height: 1.6; }
+
+  @media (max-width: 600px) {
+    .roadmap-modal { padding: 36px 28px; }
+  }
 </style>
 </head>
 <body>
@@ -854,6 +1004,77 @@
   window.addEventListener('scroll', () => {
     nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
   });
+
+  // Exit intent popup
+  (function() {
+    if (sessionStorage.getItem('roadmapShown')) return;
+    const overlay = document.getElementById('roadmap-overlay');
+    const form = document.getElementById('roadmap-form');
+    const successEl = document.getElementById('roadmap-success');
+
+    function showRoadmap() {
+      if (sessionStorage.getItem('roadmapShown')) return;
+      sessionStorage.setItem('roadmapShown', '1');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRoadmap() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY < 10) showRoadmap();
+    });
+
+    const mobileTimer = setTimeout(() => {
+      if (!sessionStorage.getItem('roadmapShown')) showRoadmap();
+    }, 30000);
+
+    document.getElementById('roadmap-close').addEventListener('click', closeRoadmap);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeRoadmap(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeRoadmap(); });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.roadmap-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const data = new FormData(form);
+        await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
+        form.style.display = 'none';
+        form.previousElementSibling.style.display = 'none';
+        successEl.style.display = 'block';
+        clearTimeout(mobileTimer);
+      } catch(err) {
+        btn.textContent = 'Get the Free Roadmap →';
+        btn.disabled = false;
+      }
+    });
+  })();
 </script>
+
+<!-- EXIT INTENT POPUP -->
+<div class="roadmap-overlay" id="roadmap-overlay" role="dialog" aria-modal="true" aria-label="Free AI Roadmap">
+  <div class="roadmap-modal">
+    <button class="roadmap-close" id="roadmap-close" aria-label="Close">&#x2715;</button>
+    <span class="roadmap-eyebrow">Free Resource</span>
+    <h2>Most Students Are Using AI Wrong</h2>
+    <p class="roadmap-sub">Get the free roadmap that shows exactly how to build AI skills that actually matter to colleges and employers in 2026.</p>
+    <form class="roadmap-form" name="roadmap-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="roadmap-form">
+      <input type="hidden" name="form-name" value="roadmap-signup">
+      <p style="display:none;"><input name="bot-field"></p>
+      <input type="email" name="email" class="roadmap-input" placeholder="your@email.com" required>
+      <button type="submit" class="roadmap-btn">Get the Free Roadmap →</button>
+    </form>
+    <p class="roadmap-fine">Instant delivery. No spam, ever.</p>
+    <div class="roadmap-success" id="roadmap-success">
+      <span class="success-icon">✓</span>
+      <p>You're in. Check your inbox for the roadmap.</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
