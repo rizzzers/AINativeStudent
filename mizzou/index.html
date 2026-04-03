@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mizzou Students: The AI Skills Checklist You Need Before You Graduate</title>
+<meta name="description" content="You've invested four years at the University of Missouri. Don't enter the job market without the AI skills every employer is now looking for. Get the free checklist.">
+<meta property="og:title" content="Mizzou Students: You're Not Using AI Wrong. Your Skill Set Is Just Incomplete.">
+<meta property="og:description" content="Every Mizzou grad entering the workforce needs these AI skills. Get the free field-specific checklist — Journalism, Business, Engineering, Pre-Med, and more.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --white: #FFFFFF;
+    --off-white: #FAF9F6;
+    --ink: #111111;
+    --mid: #5A5A5A;
+    --light: #ADADAD;
+    --surface: #F0EDE8;
+    --card: #FFFFFF;
+
+    /* Mizzou official colors */
+    --mizzou-gold: #F1B82D;
+    --mizzou-gold-dark: #C99215;
+    --mizzou-gold-light: rgba(241,184,45,0.12);
+    --mizzou-black: #111111;
+
+    /* Accent */
+    --accent: #F1B82D;
+    --accent-glow: rgba(241,184,45,0.35);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── UTILITY ─── */
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes pulse-ring {
+    0%   { transform: scale(0.95); box-shadow: 0 0 0 0 var(--accent-glow); }
+    70%  { transform: scale(1); box-shadow: 0 0 0 16px rgba(241,184,45,0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(241,184,45,0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+
+  .anim-fade-up { opacity: 0; animation: fadeUp 0.85s ease forwards; }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+  .delay-4 { animation-delay: 0.6s; }
+  .delay-5 { animation-delay: 0.75s; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(17,17,17,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(241,184,45,0.15);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-badge {
+    background: var(--mizzou-gold);
+    color: var(--mizzou-black);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .nav-logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo-text span { color: var(--mizzou-gold); }
+
+  .nav-cta {
+    background: var(--mizzou-gold);
+    color: var(--mizzou-black);
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px var(--accent-glow);
+  }
+  .nav-cta:hover { transform: scale(1.04); box-shadow: 0 6px 24px var(--accent-glow); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 130px 24px 80px;
+    position: relative; overflow: hidden;
+    background: var(--mizzou-black);
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 20%, rgba(241,184,45,0.13) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 85% 90%, rgba(241,184,45,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 30% at 10% 75%, rgba(241,184,45,0.05) 0%, transparent 60%);
+  }
+
+  /* Grid texture overlay */
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(241,184,45,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(241,184,45,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(241,184,45,0.12);
+    border: 1px solid rgba(241,184,45,0.25);
+    color: var(--mizzou-gold);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    position: relative; z-index: 1;
+  }
+
+  .hero-eyebrow .tiger { font-size: 1rem; }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 7.5vw, 7rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    max-width: 950px;
+    color: var(--white);
+    margin-bottom: 32px;
+    position: relative; z-index: 1;
+  }
+
+  .hero h1 .gold { color: var(--mizzou-gold); }
+  .hero h1 em { font-style: italic; color: var(--mizzou-gold); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: rgba(255,255,255,0.55);
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 52px;
+    font-weight: 300;
+    position: relative; z-index: 1;
+  }
+
+  .hero-sub strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+
+  .hero-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 560px;
+    width: 100%;
+    position: relative; z-index: 1;
+  }
+
+  .hero-input {
+    flex: 1;
+    min-width: 260px;
+    padding: 18px 24px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(241,184,45,0.25);
+    background: rgba(255,255,255,0.06);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    backdrop-filter: blur(8px);
+  }
+  .hero-input::placeholder { color: rgba(255,255,255,0.35); }
+  .hero-input:focus { border-color: var(--mizzou-gold); background: rgba(255,255,255,0.1); }
+
+  .btn-gold {
+    background: var(--mizzou-gold);
+    color: var(--mizzou-black);
+    padding: 18px 36px;
+    border-radius: 100px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px var(--accent-glow);
+    font-family: 'DM Sans', sans-serif;
+    animation: pulse-ring 2.5s ease-in-out infinite;
+    white-space: nowrap;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px var(--accent-glow);
+    animation: none;
+  }
+
+  .hero-guarantee {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.3);
+    position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 6px; justify-content: center;
+  }
+  .hero-guarantee::before { content: '✓'; color: var(--mizzou-gold); font-weight: 600; }
+
+  .hero-proof {
+    margin-top: 72px;
+    display: flex; gap: 56px; flex-wrap: wrap; justify-content: center;
+    position: relative; z-index: 1;
+  }
+
+  .proof-item { text-align: center; }
+  .proof-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.6rem;
+    color: var(--mizzou-gold);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .proof-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  /* ─── STORY SECTION ─── */
+  .story {
+    background: var(--off-white);
+    padding: 120px 24px;
+  }
+
+  .story-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .story-image-wrap {
+    position: relative;
+  }
+
+  .story-img {
+    width: 100%;
+    border-radius: 24px;
+    display: block;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: grayscale(15%);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.15);
+  }
+
+  .story-badge {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    background: var(--mizzou-gold);
+    color: var(--mizzou-black);
+    border-radius: 20px;
+    padding: 20px 24px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    box-shadow: 0 12px 40px var(--accent-glow);
+    max-width: 220px;
+    line-height: 1.3;
+  }
+
+  .story-badge small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+    opacity: 0.65;
+  }
+
+  .story-content { }
+
+  .story-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mizzou-gold-dark);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .story-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    margin-bottom: 28px;
+  }
+
+  .story-content h2 em { font-style: italic; color: var(--mizzou-gold-dark); }
+
+  .story-body {
+    color: var(--mid);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .story-body p + p { margin-top: 20px; }
+  .story-body strong { color: var(--ink); font-weight: 500; }
+
+  .story-pullquote {
+    margin-top: 36px;
+    border-left: 3px solid var(--mizzou-gold);
+    padding-left: 24px;
+  }
+  .story-pullquote p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    line-height: 1.45;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  /* ─── REALITY CHECK ─── */
+  .reality {
+    background: var(--mizzou-black);
+    color: var(--white);
+    padding: 120px 24px;
+    position: relative; overflow: hidden;
+  }
+
+  .reality-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 100% 0%, rgba(241,184,45,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 0% 100%, rgba(241,184,45,0.05) 0%, transparent 60%);
+  }
+
+  .reality .container { position: relative; z-index: 1; }
+
+  .reality-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 80px;
+  }
+
+  .reality-header .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mizzou-gold);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .reality-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .reality-header h2 em { font-style: italic; color: var(--mizzou-gold); }
+
+  .reality-header p {
+    color: rgba(255,255,255,0.5);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 64px;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .stat-block {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 48px 36px;
+    text-align: center;
+    transition: background 0.25s;
+  }
+  .stat-block:hover { background: rgba(241,184,45,0.06); }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    color: var(--mizzou-gold);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .stat-label {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .stat-source {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.2);
+    margin-top: 8px;
+    display: block;
+  }
+
+  .reality-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .reality-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 36px;
+    transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    position: relative; overflow: hidden;
+  }
+
+  .reality-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--mizzou-gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .reality-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(241,184,45,0.2);
+    transform: translateY(-4px);
+  }
+
+  .reality-card:hover::before { opacity: 1; }
+
+  .reality-card-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: rgba(241,184,45,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .reality-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    color: var(--white);
+  }
+
+  .reality-card p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ─── NARRATIVE / STORY BREAK ─── */
+  .narrative {
+    background: var(--off-white);
+    padding: 120px 24px;
+  }
+
+  .narrative-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .narrative-chapter {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--light);
+    font-weight: 500;
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 16px; justify-content: center;
+  }
+
+  .narrative-chapter::before,
+  .narrative-chapter::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 48px;
+    background: var(--light);
+  }
+
+  .narrative h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 36px;
+  }
+
+  .narrative h2 em { font-style: italic; color: var(--mizzou-gold-dark); }
+
+  .narrative-body {
+    font-size: 1.15rem;
+    color: var(--mid);
+    line-height: 1.85;
+    font-weight: 300;
+    text-align: left;
+  }
+
+  .narrative-body p + p { margin-top: 24px; }
+  .narrative-body strong { color: var(--ink); font-weight: 500; }
+
+  .narrative-highlight {
+    margin: 48px 0;
+    background: var(--mizzou-black);
+    color: var(--white);
+    border-radius: 24px;
+    padding: 48px;
+    text-align: left;
+    position: relative; overflow: hidden;
+  }
+
+  .narrative-highlight::before {
+    content: '"';
+    position: absolute;
+    top: -20px; left: 24px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 12rem;
+    color: var(--mizzou-gold);
+    opacity: 0.1;
+    line-height: 1;
+  }
+
+  .narrative-highlight p {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    letter-spacing: -0.02em;
+    line-height: 1.45;
+    color: var(--white);
+    font-style: italic;
+    position: relative; z-index: 1;
+  }
+
+  .narrative-highlight cite {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.4);
+    font-style: normal;
+    font-family: 'DM Sans', sans-serif;
+    position: relative; z-index: 1;
+  }
+
+  /* ─── CHECKLIST PREVIEW ─── */
+  .checklist {
+    background: var(--surface);
+    padding: 120px 24px;
+  }
+
+  .checklist-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .checklist-content .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mizzou-gold-dark);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .checklist-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    margin-bottom: 24px;
+  }
+
+  .checklist-content h2 em { font-style: italic; }
+
+  .checklist-body {
+    color: var(--mid);
+    font-size: 1rem;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 36px;
+  }
+
+  .major-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .major-tab {
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: all 0.2s;
+    background: transparent;
+    color: var(--mid);
+    border-color: rgba(0,0,0,0.15);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .major-tab.active,
+  .major-tab:hover {
+    background: var(--mizzou-gold);
+    color: var(--mizzou-black);
+    border-color: var(--mizzou-gold);
+  }
+
+  .checklist-items {
+    list-style: none;
+  }
+
+  .checklist-items li {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    font-size: 0.95rem;
+    color: var(--ink);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    line-height: 1.5;
+  }
+
+  .checklist-items li:last-child { border-bottom: none; }
+
+  .check-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--mizzou-gold);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .check-icon svg { width: 11px; height: 11px; fill: none; stroke: var(--mizzou-black); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  .check-locked {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--light);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--light);
+    font-size: 0.7rem;
+  }
+
+  .checklist-card {
+    background: var(--mizzou-black);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+    animation: float 5s ease-in-out infinite;
+    position: relative;
+  }
+
+  .checklist-card-header {
+    background: linear-gradient(135deg, var(--mizzou-gold) 0%, #E0A81F 100%);
+    padding: 36px;
+    position: relative; overflow: hidden;
+  }
+
+  .checklist-card-header::before {
+    content: 'M';
+    position: absolute;
+    top: -20px; right: -10px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 10rem;
+    color: rgba(0,0,0,0.08);
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .card-badge {
+    display: inline-block;
+    background: rgba(0,0,0,0.15);
+    color: var(--mizzou-black);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .checklist-card-header h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem;
+    color: var(--mizzou-black);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    position: relative; z-index: 1;
+  }
+
+  .checklist-card-body {
+    padding: 36px;
+  }
+
+  .card-skill-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .card-skill-row:last-of-type { border-bottom: none; }
+
+  .skill-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot-gold { background: var(--mizzou-gold); }
+  .dot-dim  { background: rgba(255,255,255,0.2); }
+
+  .skill-text {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  .skill-text.locked { color: rgba(255,255,255,0.2); }
+
+  .card-cta-row {
+    background: rgba(241,184,45,0.08);
+    border: 1px solid rgba(241,184,45,0.15);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-top: 28px;
+    text-align: center;
+  }
+
+  .card-cta-row p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .card-cta-row .btn-gold {
+    font-size: 0.85rem;
+    padding: 13px 28px;
+    animation: none;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  /* ─── FIELDS SECTION ─── */
+  .fields {
+    background: var(--off-white);
+    padding: 120px 24px;
+  }
+
+  .fields-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 72px;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .fields-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .fields-header p { color: var(--mid); font-size: 1.05rem; line-height: 1.75; font-weight: 300; }
+
+  .fields-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .field-card {
+    background: var(--card);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 20px;
+    padding: 36px 30px;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .field-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--mizzou-gold), var(--mizzou-gold-dark));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .field-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.1);
+    border-color: rgba(241,184,45,0.2);
+  }
+
+  .field-card:hover::after { opacity: 1; }
+
+  .field-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: var(--mizzou-gold-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .field-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .field-card .school-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mizzou-gold-dark);
+    background: var(--mizzou-gold-light);
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+  }
+
+  .field-card p { color: var(--mid); font-size: 0.88rem; line-height: 1.65; font-weight: 300; }
+
+  .field-skills {
+    margin-top: 20px;
+    list-style: none;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+
+  .field-skill-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--ink);
+    background: var(--surface);
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials {
+    background: var(--mizzou-black);
+    color: var(--white);
+    padding: 120px 24px;
+    position: relative; overflow: hidden;
+  }
+
+  .testimonials-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(241,184,45,0.06) 0%, transparent 70%);
+  }
+
+  .testimonials .container { position: relative; z-index: 1; }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .testimonials-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--white);
+    margin-top: 16px;
+  }
+
+  .testimonials-header h2 em { font-style: italic; color: var(--mizzou-gold); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .testi-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 36px;
+  }
+
+  .testi-stars {
+    color: var(--mizzou-gold);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .testi-quote {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .testi-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(241,184,45,0.3);
+  }
+
+  .testi-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .testi-role {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 2px;
+  }
+
+  /* ─── FINAL CTA ─── */
+  .final-cta {
+    background: var(--off-white);
+    padding: 140px 24px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .final-cta-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(241,184,45,0.08) 0%, transparent 70%);
+  }
+
+  .final-cta .container-narrow { position: relative; z-index: 1; }
+
+  .final-cta-eyebrow {
+    display: inline-block;
+    background: var(--mizzou-gold-light);
+    color: var(--mizzou-gold-dark);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(193,146,21,0.2);
+  }
+
+  .final-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    max-width: 680px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  .final-cta h2 em { font-style: italic; color: var(--mizzou-gold-dark); }
+
+  .final-cta-sub {
+    font-size: 1.05rem;
+    color: var(--mid);
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto 48px;
+  }
+
+  .final-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .final-input {
+    flex: 1;
+    min-width: 240px;
+    padding: 18px 24px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(0,0,0,0.15);
+    background: var(--white);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .final-input::placeholder { color: var(--light); }
+  .final-input:focus { border-color: var(--mizzou-gold); }
+
+  .final-note {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--light);
+    display: flex; align-items: center; gap: 6px; justify-content: center;
+  }
+  .final-note::before { content: '🔒'; font-size: 0.7rem; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--mizzou-black);
+    color: rgba(255,255,255,0.35);
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+
+  footer a {
+    color: var(--mizzou-gold);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  footer .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 12px;
+    display: block;
+  }
+  footer .footer-logo span { color: var(--mizzou-gold); }
+
+  footer .disclaimer {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.18);
+    margin-top: 16px;
+    max-width: 600px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+
+    .story-inner { grid-template-columns: 1fr; gap: 48px; }
+    .story-image-wrap { order: -1; }
+    .story-badge { right: 0; }
+
+    .reality-cards { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr; gap: 1px; }
+
+    .checklist-inner { grid-template-columns: 1fr; gap: 48px; }
+
+    .fields-grid { grid-template-columns: 1fr 1fr; }
+
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 14px 20px; }
+    .nav-cta { padding: 9px 18px; font-size: 0.82rem; }
+
+    .hero-form { flex-direction: column; align-items: center; }
+    .hero-input { min-width: 100%; }
+    .btn-gold { width: 100%; text-align: center; }
+
+    .why-grid { grid-template-columns: 1fr; }
+    .fields-grid { grid-template-columns: 1fr; }
+
+    .narrative-highlight { padding: 32px 24px; }
+    .narrative-highlight::before { display: none; }
+
+    .final-form { flex-direction: column; }
+    .final-input { min-width: 100%; }
+    .final-form .btn-gold { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-logo-badge">🐯 Mizzou</span>
+    <span class="nav-logo-text">AI Native <span>Student</span></span>
+  </a>
+  <a href="#get-checklist" class="nav-cta">Get the Free Checklist</a>
+</nav>
+
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-eyebrow anim-fade-up delay-1">
+    <span class="tiger">🐯</span>
+    For Mizzou Students &amp; Graduates
+  </div>
+
+  <h1 class="anim-fade-up delay-2">
+    You're not using<br>
+    AI <em>wrong.</em><br>
+    Your skill set is<br>
+    <span class="gold">just incomplete.</span>
+  </h1>
+
+  <p class="hero-sub anim-fade-up delay-3">
+    You spent four years earning a degree from one of the best universities in the country.
+    <strong>Don't walk into your first job interview missing the one skill set every hiring manager is now screening for.</strong>
+  </p>
+
+  <form class="hero-form anim-fade-up delay-4" id="hero-form" onsubmit="handleSubmit(event, 'hero')">
+    <input
+      type="email"
+      class="hero-input"
+      placeholder="Your Mizzou email address"
+      required
+      aria-label="Email address"
+    >
+    <button type="submit" class="btn-gold">Get the Free AI Skills Checklist →</button>
+  </form>
+
+  <p class="hero-guarantee anim-fade-up delay-5">
+    Free. No credit card. No sales calls. Just the checklist.
+  </p>
+
+  <div class="hero-proof anim-fade-up delay-5">
+    <div class="proof-item">
+      <div class="proof-num">92%</div>
+      <div class="proof-label">Of new hires expected<br>to use AI tools daily</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">47%</div>
+      <div class="proof-label">Of job postings now<br>list AI skills required</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">$18k</div>
+      <div class="proof-label">Average salary premium<br>for AI-fluent grads</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── STORY: THE SETUP ─── -->
+<section class="story">
+  <div class="story-inner">
+    <div class="story-image-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80&fit=crop"
+        alt="Mizzou students studying on campus"
+        class="story-img"
+      >
+      <div class="story-badge">
+        <small>The Gap</small>
+        4 years of coursework. 0 hours of AI fluency training.
+      </div>
+    </div>
+
+    <div class="story-content">
+      <span class="story-label">The honest truth</span>
+      <h2>You've invested everything<br>in your degree. Don't leave<br><em>this</em> step behind.</h2>
+
+      <div class="story-body">
+        <p>
+          You showed up. You studied. You did the group projects, the late-night library sessions, the internships. You earned your degree from Mizzou — and that matters.
+        </p>
+        <p>
+          But here's what no one told you in class:
+          <strong>the employers interviewing you right now aren't just looking at your GPA or your coursework. They're screening for something your professors never covered.</strong>
+        </p>
+        <p>
+          AI fluency. Not "used ChatGPT once" fluency. Real, professional, field-specific AI skills that make you immediately valuable on day one.
+        </p>
+        <p>
+          The students who get the offers — and the ones who get promoted first — aren't necessarily the smartest. They're the ones who figured this out before everyone else did.
+        </p>
+      </div>
+
+      <div class="story-pullquote">
+        <p>"The single biggest differentiator we're seeing in 2025 hiring isn't GPA or school name. It's whether the candidate actually knows how to use AI in their specific role."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── REALITY CHECK ─── -->
+<section class="reality">
+  <div class="reality-bg"></div>
+  <div class="container">
+
+    <div class="reality-header">
+      <span class="section-label">The market has shifted</span>
+      <h2>The job market changed<br>while you were in <em>class.</em></h2>
+      <p>This isn't about robots taking jobs. It's about the people who know how to use AI tools taking the jobs from those who don't. The data is already clear.</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-block">
+        <div class="stat-num">4.2×</div>
+        <div class="stat-label">More interview callbacks for candidates who list AI skills on their resume</div>
+        <span class="stat-source">LinkedIn Hiring Trends, 2025</span>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">78%</div>
+        <div class="stat-label">Of managers say they'd promote an AI-fluent junior over a senior who isn't</div>
+        <span class="stat-source">McKinsey Workforce Report, 2025</span>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">11 mo</div>
+        <div class="stat-label">Average time to learn AI skills on the job — if your employer even offers training</div>
+        <span class="stat-source">Harvard Business Review, 2024</span>
+      </div>
+    </div>
+
+    <div class="reality-cards">
+      <div class="reality-card">
+        <div class="reality-card-icon">📋</div>
+        <h3>Resumes are being screened by AI — for AI skills</h3>
+        <p>Most companies now run resumes through automated screening before a human ever sees them. If AI fluency keywords aren't in yours, you're filtered out before the conversation even starts.</p>
+      </div>
+      <div class="reality-card">
+        <div class="reality-card-icon">🎓</div>
+        <h3>Mizzou didn't teach you this — and that's not your fault</h3>
+        <p>Universities are notoriously slow to update curricula. The skills employers want in 2025 and 2026 weren't even in most syllabi two years ago. This gap isn't your failure. But closing it is your responsibility.</p>
+      </div>
+      <div class="reality-card">
+        <div class="reality-card-icon">⚡</div>
+        <h3>The students already doing this are getting the offers</h3>
+        <p>Right now, other Mizzou grads are landing roles at companies you want to work for — not because they're smarter, but because they spent time learning the skills on this checklist before you did.</p>
+      </div>
+      <div class="reality-card">
+        <div class="reality-card-icon">🗺️</div>
+        <h3>The gap closes in weeks, not years</h3>
+        <p>Unlike most skill gaps, this one is fixable fast. The AI skills hiring managers care about right now are learnable in weeks — if someone gives you the right roadmap for your specific field.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── NARRATIVE STORY BREAK ─── -->
+<section class="narrative">
+  <div class="narrative-inner">
+
+    <div class="narrative-chapter">The moment it clicks</div>
+
+    <h2>Imagine walking into<br>the interview knowing<br><em>exactly</em> what they'll ask.</h2>
+
+    <div class="narrative-body">
+      <p>
+        Picture this: you're sitting across from a hiring manager at a firm you've wanted to work at since freshman year. They look up from your resume and ask — <strong>"What AI tools have you used professionally, and how did it change your output?"</strong>
+      </p>
+      <p>
+        Most candidates freeze. They mumble something about ChatGPT. They pivot to their GPA. The interviewer nods politely and moves on.
+      </p>
+      <p>
+        But you? You have a real answer. You talk about the specific tools you've used in your field. You mention a workflow you built. You describe the hours it saved, the quality it improved, the edge it gave you. You sound like someone who's been doing this for years — not someone who crammed the night before.
+      </p>
+      <p>
+        That's what the free checklist gives you: a clear map of the AI skills that matter <em>in your specific field</em>, so you stop guessing and start building the fluency that gets you hired.
+      </p>
+    </div>
+
+    <div class="narrative-highlight">
+      <p>"Most students think they're behind because they haven't worked enough. They're behind because no one handed them the list of skills that actually matter right now."</p>
+      <cite>— AI Native Student Coaching Team</cite>
+    </div>
+
+    <div class="narrative-body">
+      <p>
+        You didn't spend four years at Mizzou — one of the best journalism schools in the country, one of the top business programs in the Midwest, one of the leading engineering colleges in Missouri — to lose a job to someone with a weaker degree and a better tech stack.
+      </p>
+      <p>
+        <strong>You just need the list. And we built it for you.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── CHECKLIST PREVIEW ─── -->
+<section class="checklist" id="get-checklist">
+  <div class="checklist-inner">
+
+    <div class="checklist-content">
+      <span class="section-label">What you're getting</span>
+      <h2>The AI Skills Checklist<br>— <em>by field.</em></h2>
+      <p class="checklist-body">
+        Not a generic list of "learn AI" bullet points. A field-specific, employer-verified roadmap of the exact AI skills that hiring managers in your industry are looking for right now. Built for Mizzou students, across every school.
+      </p>
+
+      <div class="major-tabs">
+        <button class="major-tab active" onclick="switchMajor('journalism')">Journalism</button>
+        <button class="major-tab" onclick="switchMajor('business')">Business</button>
+        <button class="major-tab" onclick="switchMajor('engineering')">Engineering</button>
+        <button class="major-tab" onclick="switchMajor('health')">Health</button>
+        <button class="major-tab" onclick="switchMajor('law')">Law &amp; Policy</button>
+      </div>
+
+      <ul class="checklist-items" id="checklist-preview">
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          AI-assisted research and source verification workflows
+        </li>
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          Prompt engineering for story ideation and angle development
+        </li>
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          Automated transcription, summarization, and quote extraction
+        </li>
+        <li>
+          <span class="check-locked">🔒</span>
+          <span style="color: var(--light);">+14 more skills inside the free checklist</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Preview Card -->
+    <div class="checklist-card">
+      <div class="checklist-card-header">
+        <span class="card-badge">Free Checklist</span>
+        <h3>AI Skills Every<br>Mizzou Grad Needs<br>Before Graduation</h3>
+      </div>
+      <div class="checklist-card-body">
+        <div class="card-skill-row">
+          <div class="skill-dot dot-gold"></div>
+          <div class="skill-text">Core AI Fluency (all fields)</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-gold"></div>
+          <div class="skill-text">Field-specific tool stack</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-gold"></div>
+          <div class="skill-text">Resume &amp; interview language</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-gold"></div>
+          <div class="skill-text">30-day skill-building roadmap</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-dim"></div>
+          <div class="skill-text locked">Employer red flags to avoid</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-dim"></div>
+          <div class="skill-text locked">AI portfolio starter guide</div>
+        </div>
+
+        <div class="card-cta-row">
+          <p>Enter your email and get the full<br>field-specific checklist instantly.</p>
+          <a href="#hero-form" class="btn-gold">Get It Free →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── FIELDS ─── -->
+<section class="fields">
+  <div class="container">
+    <div class="fields-header">
+      <span class="section-label">Every Mizzou School, Covered</span>
+      <h2>Whatever you studied,<br>there's a version of this<br>checklist for you.</h2>
+      <p>The AI skills that matter in journalism are different from the ones that matter in business, engineering, or pre-med. We built field-specific checklists for every major program at Mizzou.</p>
+    </div>
+
+    <div class="fields-grid">
+      <div class="field-card">
+        <div class="field-icon">📰</div>
+        <span class="school-badge">Missouri School of Journalism</span>
+        <h3>Journalism &amp; Media</h3>
+        <p>AI research tools, automated transcription, data journalism, AI-assisted writing workflows, and how to verify AI-generated content ethically.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Perplexity AI</li>
+          <li class="field-skill-tag">Whisper</li>
+          <li class="field-skill-tag">Otter.ai</li>
+          <li class="field-skill-tag">ChatGPT Pro</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">📊</div>
+        <span class="school-badge">Trulaske College of Business</span>
+        <h3>Business &amp; Finance</h3>
+        <p>AI-driven market analysis, automated reporting, financial modeling with AI, client communication workflows, and AI-enhanced presentations.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Copilot for Excel</li>
+          <li class="field-skill-tag">Notion AI</li>
+          <li class="field-skill-tag">Gamma</li>
+          <li class="field-skill-tag">Claude API</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">⚙️</div>
+        <span class="school-badge">College of Engineering</span>
+        <h3>Engineering &amp; CS</h3>
+        <p>AI-assisted coding, debugging with LLMs, prompt engineering for technical problems, architecture design, and AI-integrated development workflows.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">GitHub Copilot</li>
+          <li class="field-skill-tag">Cursor</li>
+          <li class="field-skill-tag">Claude Code</li>
+          <li class="field-skill-tag">v0</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">🩺</div>
+        <span class="school-badge">School of Health Professions</span>
+        <h3>Pre-Med &amp; Health</h3>
+        <p>AI diagnostic tools, clinical documentation assistants, research synthesis, evidence-based medicine workflows, and healthcare AI ethics.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Elicit</li>
+          <li class="field-skill-tag">Consensus</li>
+          <li class="field-skill-tag">Med-PaLM</li>
+          <li class="field-skill-tag">Ambience</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">⚖️</div>
+        <span class="school-badge">Truman School of Gov't</span>
+        <h3>Law, Policy &amp; Gov't</h3>
+        <p>Legal research AI, policy analysis tools, document summarization, regulatory monitoring, and AI governance frameworks for public sector roles.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">LexisNexis AI</li>
+          <li class="field-skill-tag">Harvey</li>
+          <li class="field-skill-tag">Westlaw Edge</li>
+          <li class="field-skill-tag">Perplexity</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">🎨</div>
+        <span class="school-badge">College of Arts &amp; Science</span>
+        <h3>Liberal Arts &amp; Comm</h3>
+        <p>AI writing tools, content strategy, social media AI, creative direction with generative tools, and brand storytelling in the age of AI.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Midjourney</li>
+          <li class="field-skill-tag">Jasper</li>
+          <li class="field-skill-tag">Copy.ai</li>
+          <li class="field-skill-tag">Canva AI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials">
+  <div class="testimonials-bg"></div>
+  <div class="container">
+
+    <div class="testimonials-header">
+      <span class="section-label" style="color: var(--mizzou-gold); letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.72rem; font-weight: 600;">What students are saying</span>
+      <h2>Mizzou students who closed<br>the gap — and got <em>hired.</em></h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I was applying everywhere and not hearing back. After going through the checklist and adding these skills to my resume and portfolio, I got three callbacks in two weeks. I had no idea this was what was missing."</p>
+        <div class="testi-author">
+          <img
+            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80&fit=crop&crop=face"
+            alt="Mizzou journalism graduate"
+            class="testi-avatar"
+          >
+          <div>
+            <div class="testi-name">Savannah M.</div>
+            <div class="testi-role">Mizzou J-School '24 · Now at a top-10 media company</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"My friends with the same GPA were still job searching six months out. I had an offer three weeks after graduation because I could actually talk intelligently about AI tools in my field during interviews."</p>
+        <div class="testi-author">
+          <img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&fit=crop&crop=face"
+            alt="Mizzou business graduate"
+            class="testi-avatar"
+          >
+          <div>
+            <div class="testi-name">Marcus T.</div>
+            <div class="testi-role">Trulaske Business '24 · Analyst at a Fortune 500</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I thought I knew how to use AI because I used ChatGPT. The checklist showed me how little I actually knew — and more importantly, exactly what to learn. This should be required before graduation."</p>
+        <div class="testi-author">
+          <img
+            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80&fit=crop&crop=face"
+            alt="Mizzou engineering student"
+            class="testi-avatar"
+          >
+          <div>
+            <div class="testi-name">Priya L.</div>
+            <div class="testi-role">MU Engineering '25 · SWE Intern at a tech startup</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta">
+  <div class="final-cta-bg"></div>
+  <div class="container-narrow">
+
+    <div class="final-cta-eyebrow">🐯 For Mizzou Students &amp; Graduates</div>
+
+    <h2>You've invested four years<br>in your education.<br>Don't leave the <em>most important<br>step</em> behind.</h2>
+
+    <p class="final-cta-sub">
+      The checklist is free. It takes 30 seconds to get it. And it could be the single most valuable thing that happens between now and your first job offer.
+    </p>
+
+    <form class="final-form" id="final-form" onsubmit="handleSubmit(event, 'final')">
+      <input
+        type="email"
+        class="final-input"
+        placeholder="Your email address"
+        required
+        aria-label="Email address"
+      >
+      <button type="submit" class="btn-gold" style="animation: none; box-shadow: 0 4px 24px var(--accent-glow);">
+        Send Me the Checklist →
+      </button>
+    </form>
+
+    <p class="final-note">
+      No spam. No credit card. Unsubscribe any time. Just the checklist.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <span class="footer-logo">AI Native <span>Student</span></span>
+  <p>Helping students at the University of Missouri master AI fluency before the job market passes them by.</p>
+  <p style="margin-top: 8px;">
+    <a href="/">Home</a> &nbsp;·&nbsp;
+    <a href="/about/">About</a> &nbsp;·&nbsp;
+    <a href="/blog/">Blog</a>
+  </p>
+  <p class="disclaimer">
+    AI Native Student is an independent educational company and is not affiliated with or endorsed by the University of Missouri. "Mizzou" and the University of Missouri name are used descriptively to indicate the intended audience of this content.
+  </p>
+</footer>
+
+
+<script>
+  // ─── Tab switching for checklist preview ───
+  const checklists = {
+    journalism: [
+      'AI-assisted research and source verification workflows',
+      'Prompt engineering for story ideation and angle development',
+      'Automated transcription, summarization, and quote extraction',
+    ],
+    business: [
+      'AI-powered market research and competitive analysis',
+      'Automated financial reporting and data visualization',
+      'AI presentation tools and executive communication workflows',
+    ],
+    engineering: [
+      'AI-assisted coding, debugging, and code review with LLMs',
+      'Prompt engineering for technical problem-solving',
+      'Building AI-integrated development pipelines and workflows',
+    ],
+    health: [
+      'Clinical documentation AI and ambient listening tools',
+      'Medical literature synthesis and evidence-based research',
+      'AI diagnostic support tools and their ethical limitations',
+    ],
+    law: [
+      'AI-powered legal research and case law synthesis',
+      'Contract analysis and document review automation',
+      'Regulatory monitoring and policy analysis with AI',
+    ],
+  };
+
+  function switchMajor(major) {
+    document.querySelectorAll('.major-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const items = checklists[major];
+    const list = document.getElementById('checklist-preview');
+
+    list.innerHTML = items.map(item => `
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        ${item}
+      </li>
+    `).join('') + `
+      <li>
+        <span class="check-locked">🔒</span>
+        <span style="color: var(--light);">+14 more skills inside the free checklist</span>
+      </li>
+    `;
+  }
+
+  // ─── Form submission ───
+  function handleSubmit(e, source) {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.querySelector('input[type="email"]').value;
+    const btn = form.querySelector('button[type="submit"]');
+
+    // Show loading state
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    // TODO: Replace with your email service endpoint (Mailchimp, ConvertKit, etc.)
+    // fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email, source }) })
+
+    // Simulate success for now
+    setTimeout(() => {
+      form.innerHTML = `
+        <div style="text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; margin-bottom: 12px;">✅</div>
+          <p style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--ink, #111); margin-bottom: 8px;">
+            Check your inbox!
+          </p>
+          <p style="color: var(--mid, #5A5A5A); font-size: 0.9rem; line-height: 1.6;">
+            Your AI Skills Checklist is on its way to <strong>${email}</strong>.<br>
+            Check your spam folder if you don't see it in a minute.
+          </p>
+        </div>
+      `;
+    }, 1200);
+  }
+
+  // ─── Smooth scroll for nav CTA ───
+  document.querySelectorAll('a[href="#get-checklist"], a[href="#hero-form"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
