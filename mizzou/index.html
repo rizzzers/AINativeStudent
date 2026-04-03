@@ -1913,12 +1913,6 @@
 </section>
 
 
-<!-- Netlify form detection (hidden, required for build-time parsing) -->
-<form name="mizzou-checklist" data-netlify="true" hidden>
-  <input type="email" name="email">
-  <input type="hidden" name="source">
-</form>
-
 <!-- ─── FOOTER ─── -->
 <footer>
   <span class="footer-logo">AI Native <span>Student</span></span>
@@ -1984,16 +1978,15 @@
     `;
   }
 
-  // ─── Submit to Netlify Forms ───
+  // ─── Submit to Formspree ───
+  // Setup: formspree.io > New Form > use ryan@ryanestes.info > copy the ID > replace below
+  var FORMSPREE_ID = 'FORMSPREE_ID';
+
   function submitToNetlify(email, source) {
-    return fetch('/', {
+    return fetch('https://formspree.io/f/' + FORMSPREE_ID, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        'form-name': 'mizzou-checklist',
-        'email': email,
-        'source': source
-      }).toString()
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, source: source })
     });
   }
 
