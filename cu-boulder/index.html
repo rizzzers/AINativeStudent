@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CU Boulder Students: The AI Skills Checklist You Need Before You Graduate</title>
+<meta name="description" content="You've invested four years at the University of Colorado Boulder. Don't enter the job market without the AI skills every employer is now looking for. Get the free checklist.">
+<meta property="og:title" content="CU Boulder Students: You're Not Using AI Wrong. Your Skill Set Is Just Incomplete.">
+<meta property="og:description" content="Every CU Boulder grad entering the workforce needs these AI skills. Get the free field-specific checklist for Business, Engineering, Media, Pre-Med, and more.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --white: #FFFFFF;
+    --off-white: #FAF9F6;
+    --ink: #111111;
+    --mid: #5A5A5A;
+    --light: #ADADAD;
+    --surface: #F0EDE8;
+    --card: #FFFFFF;
+
+    /* CU Boulder official colors */
+    --cu-gold: #CFB87C;
+    --cu-gold-dark: #A58C55;
+    --cu-gold-light: rgba(207,184,124,0.12);
+    --cu-black: #0C1116;
+
+    /* Accent */
+    --accent: #CFB87C;
+    --accent-glow: rgba(207,184,124,0.4);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── UTILITY ─── */
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-ring {
+    0%   { transform: scale(0.95); box-shadow: 0 0 0 0 var(--accent-glow); }
+    70%  { transform: scale(1); box-shadow: 0 0 0 16px rgba(207,184,124,0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(207,184,124,0); }
+  }
+
+  .anim-fade-up { opacity: 0; animation: fadeUp 0.85s ease forwards; }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+  .delay-4 { animation-delay: 0.6s; }
+  .delay-5 { animation-delay: 0.75s; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(12,17,22,0.94);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(207,184,124,0.18);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-badge {
+    background: var(--cu-gold);
+    color: var(--cu-black);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .nav-logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo-text span { color: var(--cu-gold); }
+
+  .nav-cta {
+    background: var(--cu-gold);
+    color: var(--cu-black);
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px var(--accent-glow);
+  }
+  .nav-cta:hover { transform: scale(1.04); box-shadow: 0 6px 24px var(--accent-glow); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 130px 24px 80px;
+    position: relative; overflow: hidden;
+    background: var(--cu-black);
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 20%, rgba(207,184,124,0.14) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 85% 90%, rgba(207,184,124,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 30% at 10% 75%, rgba(207,184,124,0.05) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(207,184,124,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(207,184,124,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(207,184,124,0.1);
+    border: 1px solid rgba(207,184,124,0.25);
+    color: var(--cu-gold);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    position: relative; z-index: 1;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 7.5vw, 7rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    max-width: 950px;
+    color: var(--white);
+    margin-bottom: 32px;
+    position: relative; z-index: 1;
+  }
+
+  .hero h1 .gold { color: var(--cu-gold); }
+  .hero h1 em { font-style: italic; color: var(--cu-gold); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: rgba(255,255,255,0.55);
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 52px;
+    font-weight: 300;
+    position: relative; z-index: 1;
+  }
+
+  .hero-sub strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+
+  .hero-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 560px;
+    width: 100%;
+    position: relative; z-index: 1;
+  }
+
+  .hero-input {
+    flex: 1;
+    min-width: 260px;
+    padding: 18px 24px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(207,184,124,0.25);
+    background: rgba(255,255,255,0.06);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    backdrop-filter: blur(8px);
+  }
+  .hero-input::placeholder { color: rgba(255,255,255,0.35); }
+  .hero-input:focus { border-color: var(--cu-gold); background: rgba(255,255,255,0.1); }
+
+  .btn-gold {
+    background: var(--cu-gold);
+    color: var(--cu-black);
+    padding: 18px 36px;
+    border-radius: 100px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px var(--accent-glow);
+    font-family: 'DM Sans', sans-serif;
+    animation: pulse-ring 2.5s ease-in-out infinite;
+    white-space: nowrap;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px var(--accent-glow);
+    animation: none;
+  }
+
+  .hero-capture-box {
+    background: rgba(255,255,255,0.05);
+    border: 1.5px solid rgba(207,184,124,0.3);
+    border-radius: 24px;
+    padding: 32px 36px;
+    max-width: 580px;
+    width: 100%;
+    backdrop-filter: blur(12px);
+    position: relative; z-index: 1;
+    box-shadow: 0 0 60px rgba(207,184,124,0.08);
+  }
+
+  .capture-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cu-gold);
+    margin-bottom: 16px;
+  }
+
+  .hero-guarantee {
+    margin-top: 14px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+    display: flex; align-items: center; gap: 6px; justify-content: center;
+  }
+  .hero-guarantee::before { content: '✓'; color: var(--cu-gold); font-weight: 600; }
+
+  /* ─── CAPTURE BAND ─── */
+  .capture-band {
+    background: var(--cu-gold);
+    padding: 64px 24px;
+    text-align: center;
+  }
+
+  .capture-band h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: -0.03em;
+    color: var(--cu-black);
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+
+  .capture-band p {
+    font-size: 1rem;
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+
+  .capture-band-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .capture-band-input {
+    flex: 1;
+    min-width: 240px;
+    padding: 17px 24px;
+    border-radius: 100px;
+    border: none;
+    background: var(--white);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+  .capture-band-input::placeholder { color: var(--light); }
+
+  .btn-black {
+    background: var(--cu-black);
+    color: var(--white);
+    padding: 17px 32px;
+    border-radius: 100px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: transform 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .btn-black:hover { transform: translateY(-2px); background: #333; }
+
+  .capture-band-note {
+    margin-top: 14px;
+    font-size: 0.78rem;
+    color: rgba(0,0,0,0.4);
+  }
+
+  .hero-proof {
+    margin-top: 72px;
+    display: flex; gap: 56px; flex-wrap: wrap; justify-content: center;
+    position: relative; z-index: 1;
+  }
+
+  .proof-item { text-align: center; }
+  .proof-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.6rem;
+    color: var(--cu-gold);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .proof-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  /* ─── STORY ─── */
+  .story {
+    background: var(--off-white);
+    padding: 120px 24px;
+  }
+
+  .story-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .story-image-wrap { position: relative; }
+
+  .story-img {
+    width: 100%;
+    border-radius: 24px;
+    display: block;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: grayscale(15%);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.15);
+  }
+
+  .story-badge {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    background: var(--cu-gold);
+    color: var(--cu-black);
+    border-radius: 20px;
+    padding: 20px 24px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    box-shadow: 0 12px 40px var(--accent-glow);
+    max-width: 220px;
+    line-height: 1.3;
+  }
+
+  .story-badge small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+    opacity: 0.65;
+  }
+
+  .story-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cu-gold-dark);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .story-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    margin-bottom: 28px;
+  }
+
+  .story-content h2 em { font-style: italic; color: var(--cu-gold-dark); }
+
+  .story-body {
+    color: var(--mid);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .story-body p + p { margin-top: 20px; }
+  .story-body strong { color: var(--ink); font-weight: 500; }
+
+  .story-pullquote {
+    margin-top: 36px;
+    border-left: 3px solid var(--cu-gold);
+    padding-left: 24px;
+  }
+  .story-pullquote p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    line-height: 1.45;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  /* ─── REALITY ─── */
+  .reality {
+    background: var(--cu-black);
+    color: var(--white);
+    padding: 120px 24px;
+    position: relative; overflow: hidden;
+  }
+
+  .reality-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 100% 0%, rgba(207,184,124,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 0% 100%, rgba(207,184,124,0.05) 0%, transparent 60%);
+  }
+
+  .reality .container { position: relative; z-index: 1; }
+
+  .reality-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 80px;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cu-gold);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .reality-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .reality-header h2 em { font-style: italic; color: var(--cu-gold); }
+
+  .reality-header p {
+    color: rgba(255,255,255,0.5);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  .stat-block {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(207,184,124,0.15);
+    border-radius: 20px;
+    padding: 36px 28px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3.5rem;
+    color: var(--cu-gold);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .stat-label {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .stat-source {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.05em;
+  }
+
+  .reality-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .reality-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .reality-card-icon { font-size: 1.8rem; margin-bottom: 16px; }
+
+  .reality-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .reality-card p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ─── PHOTO MOSAIC ─── */
+  .photo-mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    overflow: hidden;
+  }
+
+  .mosaic-col { display: flex; flex-direction: column; gap: 8px; }
+
+  .mosaic-img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 3/2;
+    filter: grayscale(20%) brightness(0.85);
+    transition: filter 0.3s;
+  }
+
+  .mosaic-img:hover { filter: grayscale(0%) brightness(1); }
+  .mosaic-img.tall { aspect-ratio: 2/3; }
+
+  /* ─── NARRATIVE ─── */
+  .narrative {
+    background: var(--off-white);
+    padding: 120px 24px;
+  }
+
+  .narrative-inner { max-width: 760px; margin: 0 auto; }
+
+  .narrative-chapter {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cu-gold-dark);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .narrative h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    margin-bottom: 48px;
+    color: var(--ink);
+  }
+
+  .narrative h2 em { font-style: italic; color: var(--cu-gold-dark); }
+
+  .narrative-body {
+    color: var(--mid);
+    font-size: 1.08rem;
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  .narrative-body p + p { margin-top: 24px; }
+  .narrative-body strong { color: var(--ink); font-weight: 500; }
+  .narrative-body em { font-style: italic; }
+
+  .narrative-highlight {
+    background: var(--cu-black);
+    color: var(--white);
+    border-radius: 24px;
+    padding: 48px;
+    margin: 48px 0;
+    position: relative;
+  }
+
+  .narrative-highlight::before {
+    content: '"';
+    font-family: 'DM Serif Display', serif;
+    font-size: 8rem;
+    color: rgba(207,184,124,0.2);
+    position: absolute;
+    top: -10px; left: 32px;
+    line-height: 1;
+  }
+
+  .narrative-highlight p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.45rem;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    position: relative; z-index: 1;
+    margin-bottom: 20px;
+  }
+
+  .narrative-highlight cite {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    font-style: normal;
+  }
+
+  /* ─── PHOTO STRIP ─── */
+  .photo-strip {
+    display: flex;
+    overflow: hidden;
+    height: 220px;
+  }
+
+  .strip-img {
+    flex: 1;
+    object-fit: cover;
+    filter: grayscale(25%) brightness(0.9);
+    transition: filter 0.3s, flex 0.4s;
+  }
+
+  .strip-img:hover { filter: none; flex: 2; }
+
+  /* ─── CHECKLIST ─── */
+  .checklist {
+    background: var(--cu-black);
+    padding: 120px 24px;
+  }
+
+  .checklist-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .checklist-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .checklist-content h2 em { font-style: italic; color: var(--cu-gold); }
+
+  .checklist-body {
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  .major-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .major-tab {
+    padding: 8px 18px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.82rem;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .major-tab.active,
+  .major-tab:hover {
+    background: var(--cu-gold);
+    border-color: var(--cu-gold);
+    color: var(--cu-black);
+  }
+
+  .checklist-items { list-style: none; }
+
+  .checklist-items li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .check-icon {
+    width: 20px; height: 20px;
+    background: var(--cu-gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+  }
+
+  .check-icon svg {
+    width: 10px; height: 10px;
+    stroke: var(--cu-black);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
+  .check-locked {
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Checklist card */
+  .checklist-card {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+    position: sticky;
+    top: 100px;
+  }
+
+  .checklist-card-header {
+    background: var(--cu-gold);
+    padding: 32px 32px 28px;
+  }
+
+  .card-badge {
+    display: inline-block;
+    background: rgba(12,17,22,0.15);
+    color: rgba(12,17,22,0.8);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .checklist-card-header h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem;
+    letter-spacing: -0.02em;
+    color: var(--cu-black);
+    line-height: 1.2;
+  }
+
+  .checklist-card-body { padding: 28px 32px 32px; }
+
+  .card-skill-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--surface);
+  }
+
+  .skill-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-gold { background: var(--cu-gold); }
+  .dot-dim { background: var(--light); }
+
+  .skill-text { font-size: 0.9rem; color: var(--ink); font-weight: 400; }
+  .skill-text.locked { color: var(--light); }
+
+  .card-cta-row { padding-top: 24px; text-align: center; }
+  .card-cta-row p { font-size: 0.85rem; color: var(--mid); line-height: 1.5; margin-bottom: 16px; }
+
+  /* ─── FIELDS ─── */
+  .fields {
+    background: var(--off-white);
+    padding: 120px 24px;
+  }
+
+  .fields-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 64px;
+  }
+
+  .fields-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .fields-header p {
+    color: var(--mid);
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .fields-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .field-card {
+    background: var(--card);
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 20px;
+    padding: 32px;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .field-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(207,184,124,0.15);
+  }
+
+  .field-icon { font-size: 2rem; margin-bottom: 14px; }
+
+  .school-badge {
+    display: inline-block;
+    background: rgba(207,184,124,0.12);
+    color: var(--cu-gold-dark);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+
+  .field-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .field-card p {
+    color: var(--mid);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 18px;
+  }
+
+  .field-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+  }
+
+  .field-skill-tag {
+    background: rgba(207,184,124,0.1);
+    color: var(--cu-gold-dark);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  /* ─── PHOTO GRID ─── */
+  .photo-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+
+  .grid3-col { display: flex; flex-direction: column; gap: 8px; }
+
+  .grid3-img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 4/3;
+    border-radius: 12px;
+    filter: grayscale(10%) brightness(0.95);
+    transition: filter 0.3s;
+  }
+
+  .grid3-img:hover { filter: none; }
+  .grid3-img.tall { aspect-ratio: 4/5; }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials {
+    background: var(--cu-black);
+    color: var(--white);
+    padding: 120px 24px;
+    position: relative; overflow: hidden;
+  }
+
+  .testimonials-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 0% 50%, rgba(207,184,124,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 100% 50%, rgba(207,184,124,0.04) 0%, transparent 60%);
+  }
+
+  .testimonials .container { position: relative; z-index: 1; }
+
+  .testimonials-header { text-align: center; margin-bottom: 64px; }
+
+  .testimonials-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .testimonials-header h2 em { font-style: italic; color: var(--cu-gold); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .testi-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .testi-stars { color: var(--cu-gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 16px; }
+
+  .testi-quote {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .testi-author { display: flex; align-items: center; gap: 14px; }
+
+  .testi-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(207,184,124,0.4);
+  }
+
+  .testi-name { font-weight: 600; font-size: 0.9rem; color: var(--white); }
+  .testi-role { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 2px; }
+
+  /* ─── FINAL CTA ─── */
+  .final-cta {
+    background: var(--cu-black);
+    color: var(--white);
+    padding: 140px 24px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .final-cta-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 50%, rgba(207,184,124,0.12) 0%, transparent 65%);
+  }
+
+  .final-cta .container-narrow { position: relative; z-index: 1; }
+
+  .final-cta-eyebrow {
+    display: inline-block;
+    background: rgba(207,184,124,0.12);
+    border: 1px solid rgba(207,184,124,0.25);
+    color: var(--cu-gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 100px;
+    margin-bottom: 36px;
+  }
+
+  .final-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 28px;
+  }
+
+  .final-cta h2 em { font-style: italic; color: var(--cu-gold); }
+
+  .final-cta-sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 48px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .final-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 540px;
+    margin: 0 auto 20px;
+  }
+
+  .final-input {
+    flex: 1;
+    min-width: 260px;
+    padding: 18px 24px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(207,184,124,0.25);
+    background: rgba(255,255,255,0.06);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .final-input::placeholder { color: rgba(255,255,255,0.3); }
+  .final-input:focus { border-color: var(--cu-gold); }
+
+  .final-note { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #060809;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 48px 24px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    display: block;
+    margin-bottom: 12px;
+  }
+  .footer-logo span { color: var(--cu-gold); }
+
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  footer a:hover { color: var(--cu-gold); }
+
+  .disclaimer {
+    margin-top: 24px;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.18);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .story-inner { grid-template-columns: 1fr; gap: 40px; }
+    .story-badge { right: 0; }
+    .stats-row { grid-template-columns: 1fr; }
+    .reality-cards { grid-template-columns: 1fr; }
+    .photo-mosaic { grid-template-columns: repeat(2, 1fr); }
+    .photo-mosaic .mosaic-col:nth-child(n+3) { display: none; }
+    .checklist-inner { grid-template-columns: 1fr; }
+    .checklist-card { position: static; }
+    .fields-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .photo-grid-3 { grid-template-columns: 1fr; }
+    .grid3-img.tall { aspect-ratio: 4/3; }
+    .final-form { flex-direction: column; }
+    .final-input { min-width: 100%; }
+    .final-form .btn-gold { width: 100%; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .fields-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-logo-badge">🦬 CU Boulder</span>
+    <span class="nav-logo-text">AI Native <span>Student</span></span>
+  </a>
+  <a href="#get-checklist" class="nav-cta">Get the Free Checklist</a>
+</nav>
+
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-eyebrow anim-fade-up delay-1">
+    <span>🦬</span>
+    For CU Boulder Students &amp; Graduates
+  </div>
+
+  <h1 class="anim-fade-up delay-2">
+    If you're not<br>
+    <em>AI native,</em><br>
+    you're not<br>
+    <span class="gold">getting the job.</span>
+  </h1>
+
+  <p class="hero-sub anim-fade-up delay-3">
+    You spent four years earning a degree from one of the most innovative universities in the country.
+    <strong>Don't walk into your first job interview missing the one skill set every hiring manager is now screening for.</strong>
+  </p>
+
+  <div class="hero-capture-box anim-fade-up delay-4">
+    <p class="capture-label">Get the free field-specific AI skills checklist</p>
+    <form class="hero-form" id="hero-form" onsubmit="handleSubmit(event, 'hero')">
+      <input
+        type="email"
+        class="hero-input"
+        placeholder="Your CU Boulder email address"
+        required
+        aria-label="Email address"
+      >
+      <button type="submit" class="btn-gold">Send Me the Checklist →</button>
+    </form>
+    <p class="hero-guarantee">
+      Free. No credit card. No sales calls. Just the checklist.
+    </p>
+  </div>
+
+  <div class="hero-proof anim-fade-up delay-5">
+    <div class="proof-item">
+      <div class="proof-num">92%</div>
+      <div class="proof-label">Of new hires expected<br>to use AI tools daily</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">47%</div>
+      <div class="proof-label">Of job postings now<br>list AI skills required</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">$18k</div>
+      <div class="proof-label">Average salary premium<br>for AI-fluent grads</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── STORY ─── -->
+<section class="story">
+  <div class="story-inner">
+    <div class="story-image-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&fit=crop&crop=top"
+        alt="CU Boulder students studying on campus"
+        class="story-img"
+      >
+      <div class="story-badge">
+        <small>The Gap</small>
+        4 years of coursework. 0 hours of AI fluency training.
+      </div>
+    </div>
+
+    <div class="story-content">
+      <span class="story-label">The honest truth</span>
+      <h2>You've invested everything<br>in your degree. Don't leave<br><em>this</em> step behind.</h2>
+
+      <div class="story-body">
+        <p>
+          You showed up. You studied. You did the group projects, the late-night library sessions, the internships. You earned your degree from CU Boulder, and that matters.
+        </p>
+        <p>
+          But here's what no one told you in class: <strong>the employers interviewing you right now aren't just looking at your GPA or your coursework. They're screening for something your professors never covered.</strong>
+        </p>
+        <p>
+          AI fluency. Not "used ChatGPT once" fluency. Real, professional, field-specific AI skills that make you immediately valuable on day one.
+        </p>
+        <p>
+          The students who get the offers — and the ones who get promoted first — aren't necessarily the smartest. They're the ones who figured this out before everyone else did.
+        </p>
+      </div>
+
+      <div class="story-pullquote">
+        <p>"The single biggest differentiator we're seeing in 2026 hiring isn't GPA or school name. It's whether the candidate actually knows how to use AI in their specific role."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── CAPTURE BAND 1 ─── -->
+<div class="capture-band">
+  <h3>Your skill set is incomplete.<br>Here's exactly what's missing.</h3>
+  <p>Get the free AI skills checklist built specifically for CU Boulder students, by field.</p>
+  <div class="capture-band-form">
+    <input type="email" class="capture-band-input" placeholder="Your email address" id="band1-email">
+    <button class="btn-black" onclick="handleBandSubmit('band1')">Get the Checklist →</button>
+  </div>
+  <p class="capture-band-note">Free. Instant. No spam.</p>
+</div>
+
+
+<!-- ─── PHOTO MOSAIC ─── -->
+<section style="background: var(--cu-black); padding: 80px 0 0;">
+  <div style="max-width:1140px; margin:0 auto; padding:0 24px;">
+    <p style="text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:40px;">Students who figured this out first</p>
+  </div>
+  <div class="photo-mosaic">
+    <div class="mosaic-col">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80&fit=crop" alt="Students collaborating" class="mosaic-img tall">
+      <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=600&q=80&fit=crop" alt="Student studying" class="mosaic-img">
+    </div>
+    <div class="mosaic-col">
+      <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80&fit=crop" alt="Graduate celebrating" class="mosaic-img">
+      <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=600&q=80&fit=crop" alt="Students on campus" class="mosaic-img tall">
+    </div>
+    <div class="mosaic-col">
+      <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&q=80&fit=crop" alt="Student with laptop" class="mosaic-img tall">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80&fit=crop" alt="Happy students" class="mosaic-img">
+    </div>
+    <div class="mosaic-col">
+      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80&fit=crop" alt="Student with laptop" class="mosaic-img">
+      <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=600&q=80&fit=crop" alt="Student success" class="mosaic-img tall">
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── REALITY CHECK ─── -->
+<section class="reality">
+  <div class="reality-bg"></div>
+  <div class="container">
+
+    <div class="reality-header">
+      <span class="section-label">The market has shifted</span>
+      <h2>The job market changed<br>while you were in <em>class.</em></h2>
+      <p>This isn't about robots taking jobs. It's about the people who know how to use AI tools taking the jobs from those who don't. The data is already clear.</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-block">
+        <div class="stat-num">4.2×</div>
+        <div class="stat-label">More interview callbacks for candidates who list AI skills on their resume</div>
+        <span class="stat-source">LinkedIn Hiring Trends, 2026</span>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">78%</div>
+        <div class="stat-label">Of managers say they'd promote an AI-fluent junior over a senior who isn't</div>
+        <span class="stat-source">McKinsey Workforce Report, 2026</span>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">11 mo</div>
+        <div class="stat-label">Average time to learn AI skills on the job — if your employer even offers training</div>
+        <span class="stat-source">Harvard Business Review, 2024</span>
+      </div>
+    </div>
+
+    <div class="reality-cards">
+      <div class="reality-card">
+        <div class="reality-card-icon">📋</div>
+        <h3>Resumes are being screened by AI — for AI skills</h3>
+        <p>Most companies now run resumes through automated screening before a human ever sees them. If AI fluency keywords aren't in yours, you're filtered out before the conversation even starts.</p>
+      </div>
+      <div class="reality-card">
+        <div class="reality-card-icon">🎓</div>
+        <h3>CU Boulder didn't teach you this — and that's not your fault</h3>
+        <p>Universities are notoriously slow to update curricula. The skills employers want in 2026 weren't even in most syllabi two years ago. This gap isn't your failure. But closing it is your responsibility.</p>
+      </div>
+      <div class="reality-card">
+        <div class="reality-card-icon">⚡</div>
+        <h3>The students already doing this are getting the offers</h3>
+        <p>Right now, other CU Buffs are landing roles at companies you want to work for — not because they're smarter, but because they spent time learning the skills on this checklist before you did.</p>
+      </div>
+      <div class="reality-card">
+        <div class="reality-card-icon">🗺️</div>
+        <h3>The gap closes in weeks, not years</h3>
+        <p>Unlike most skill gaps, this one is fixable fast. The AI skills hiring managers care about right now are learnable in weeks — if someone gives you the right roadmap for your specific field.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── CAPTURE BAND 2 ─── -->
+<div class="capture-band">
+  <h3>Don't leave CU without this.</h3>
+  <p>The free checklist shows you exactly what AI skills employers expect — by field.</p>
+  <div class="capture-band-form">
+    <input type="email" class="capture-band-input" placeholder="Your email address" id="band2-email">
+    <button class="btn-black" onclick="handleBandSubmit('band2')">Yes, Send It Free →</button>
+  </div>
+  <p class="capture-band-note">Free. Instant. No spam.</p>
+</div>
+
+
+<!-- ─── NARRATIVE ─── -->
+<section class="narrative">
+  <div class="narrative-inner">
+    <div class="narrative-chapter">The moment it clicks</div>
+
+    <h2>Imagine walking into<br>the interview knowing<br><em>exactly</em> what they'll ask.</h2>
+
+    <div class="narrative-body">
+      <p>
+        Picture this: you're sitting across from a hiring manager at a firm you've wanted to work at since freshman year. They look up from your resume and ask: <strong>"What AI tools have you used professionally, and how did it change your output?"</strong>
+      </p>
+      <p>
+        Most candidates freeze. They mumble something about ChatGPT. They pivot to their GPA. The interviewer nods politely and moves on.
+      </p>
+      <p>
+        But you? You have a real answer. You talk about the specific tools you've used in your field. You mention a workflow you built. You describe the hours it saved, the quality it improved, the edge it gave you. You sound like someone who's been doing this for years — not someone who crammed the night before.
+      </p>
+      <p>
+        That's what the free checklist gives you: a clear map of the AI skills that matter <em>in your specific field</em>, so you stop guessing and start building the fluency that gets you hired.
+      </p>
+    </div>
+
+    <div class="narrative-highlight">
+      <p>"Most students think they're behind because they haven't worked enough. They're behind because no one handed them the list of skills that actually matter right now."</p>
+      <cite>AI Native Student Coaching Team</cite>
+    </div>
+
+    <div class="narrative-body">
+      <p>
+        You didn't spend four years at CU Boulder — one of the top engineering schools in the country, one of the most respected business programs in the Mountain West, home to one of the nation's leading media and communication programs — to lose a job to someone with a weaker degree and a better tech stack.
+      </p>
+      <p>
+        <strong>You just need the list. And we built it for you.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── PHOTO STRIP ─── -->
+<div class="photo-strip">
+  <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=500&q=80&fit=crop" alt="Students working together" class="strip-img">
+  <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80&fit=crop" alt="Happy student" class="strip-img">
+  <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&q=80&fit=crop" alt="Student with laptop" class="strip-img">
+  <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80&fit=crop" alt="Studying in library" class="strip-img">
+  <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500&q=80&fit=crop" alt="Team collaboration" class="strip-img">
+</div>
+
+
+<!-- ─── CHECKLIST PREVIEW ─── -->
+<section class="checklist" id="get-checklist">
+  <div class="checklist-inner">
+
+    <div class="checklist-content">
+      <span class="section-label">What you're getting</span>
+      <h2>The AI Skills Checklist<br><em>by field.</em></h2>
+      <p class="checklist-body">
+        Not a generic list of "learn AI" bullet points. A field-specific, employer-verified roadmap of the exact AI skills that hiring managers in your industry are looking for right now. Built for CU Buffs, across every school.
+      </p>
+
+      <div class="major-tabs">
+        <button class="major-tab active" onclick="switchMajor('engineering')">Engineering</button>
+        <button class="major-tab" onclick="switchMajor('business')">Business</button>
+        <button class="major-tab" onclick="switchMajor('media')">Media</button>
+        <button class="major-tab" onclick="switchMajor('health')">Health</button>
+        <button class="major-tab" onclick="switchMajor('arts')">Arts &amp; Sciences</button>
+      </div>
+
+      <ul class="checklist-items" id="checklist-preview">
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          AI-assisted coding, debugging, and code review with LLMs
+        </li>
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          Prompt engineering for technical problem-solving and system design
+        </li>
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          Building AI-integrated development pipelines and workflows
+        </li>
+        <li>
+          <span class="check-locked">🔒</span>
+          <span style="color: var(--light);">+14 more skills inside the free checklist</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Preview Card -->
+    <div class="checklist-card">
+      <div class="checklist-card-header">
+        <span class="card-badge">Free Checklist</span>
+        <h3>AI Skills Every<br>CU Buff Needs<br>Before Graduation</h3>
+      </div>
+      <div class="checklist-card-body">
+        <div class="card-skill-row">
+          <div class="skill-dot dot-gold"></div>
+          <div class="skill-text">Core AI Fluency (all fields)</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-gold"></div>
+          <div class="skill-text">Field-specific tool stack</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-gold"></div>
+          <div class="skill-text">Resume &amp; interview language</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-gold"></div>
+          <div class="skill-text">30-day skill-building roadmap</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-dim"></div>
+          <div class="skill-text locked">Employer red flags to avoid</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-dim"></div>
+          <div class="skill-text locked">AI portfolio starter guide</div>
+        </div>
+
+        <div class="card-cta-row">
+          <p>Enter your email and get the full<br>field-specific checklist instantly.</p>
+          <a href="#hero-form" class="btn-gold" style="animation:none; display:inline-block; text-decoration:none;">Get It Free →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── FIELDS ─── -->
+<section class="fields">
+  <div class="container">
+    <div class="fields-header">
+      <span class="section-label" style="color: var(--cu-gold-dark);">Every CU School, Covered</span>
+      <h2>Whatever you studied,<br>there's a version of this<br>checklist for you.</h2>
+      <p>The AI skills that matter in engineering are different from the ones that matter in business, media, or health sciences. We built field-specific checklists for every major program at CU Boulder.</p>
+    </div>
+
+    <div class="fields-grid">
+      <div class="field-card">
+        <div class="field-icon">⚙️</div>
+        <span class="school-badge">College of Engineering &amp; Applied Science</span>
+        <h3>Engineering &amp; CS</h3>
+        <p>AI-assisted coding, debugging with LLMs, prompt engineering for technical problems, architecture design, and AI-integrated development workflows.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">GitHub Copilot</li>
+          <li class="field-skill-tag">Cursor</li>
+          <li class="field-skill-tag">Claude Code</li>
+          <li class="field-skill-tag">v0</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">📊</div>
+        <span class="school-badge">Leeds School of Business</span>
+        <h3>Business &amp; Finance</h3>
+        <p>AI-driven market analysis, automated reporting, financial modeling with AI, client communication workflows, and AI-enhanced presentations.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Copilot for Excel</li>
+          <li class="field-skill-tag">Notion AI</li>
+          <li class="field-skill-tag">Gamma</li>
+          <li class="field-skill-tag">Claude API</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">📺</div>
+        <span class="school-badge">College of Media, Comm &amp; Information</span>
+        <h3>Media &amp; Journalism</h3>
+        <p>AI research tools, automated transcription, data journalism, AI-assisted writing workflows, and how to verify AI-generated content ethically.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Perplexity AI</li>
+          <li class="field-skill-tag">Whisper</li>
+          <li class="field-skill-tag">Otter.ai</li>
+          <li class="field-skill-tag">ChatGPT Pro</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">🩺</div>
+        <span class="school-badge">College of Arts &amp; Sciences — Pre-Health</span>
+        <h3>Pre-Med &amp; Health</h3>
+        <p>AI diagnostic tools, clinical documentation assistants, research synthesis, evidence-based medicine workflows, and healthcare AI ethics.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Elicit</li>
+          <li class="field-skill-tag">Consensus</li>
+          <li class="field-skill-tag">Med-PaLM</li>
+          <li class="field-skill-tag">Ambience</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">⚖️</div>
+        <span class="school-badge">Political Science &amp; Public Affairs</span>
+        <h3>Law, Policy &amp; Gov't</h3>
+        <p>Legal research AI, policy analysis tools, document summarization, regulatory monitoring, and AI governance frameworks for public sector roles.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">LexisNexis AI</li>
+          <li class="field-skill-tag">Harvey</li>
+          <li class="field-skill-tag">Westlaw Edge</li>
+          <li class="field-skill-tag">Perplexity</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">🎨</div>
+        <span class="school-badge">College of Arts &amp; Sciences</span>
+        <h3>Liberal Arts &amp; Design</h3>
+        <p>AI writing tools, content strategy, social media AI, creative direction with generative tools, and brand storytelling in the age of AI.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Midjourney</li>
+          <li class="field-skill-tag">Adobe Firefly</li>
+          <li class="field-skill-tag">Copy.ai</li>
+          <li class="field-skill-tag">Canva AI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── CAPTURE BAND 3 ─── -->
+<div class="capture-band">
+  <h3>If you want the job — you need these skills.</h3>
+  <p>Get your free field-specific AI checklist. Takes 10 seconds.</p>
+  <div class="capture-band-form">
+    <input type="email" class="capture-band-input" placeholder="Your email address" id="band3-email">
+    <button class="btn-black" onclick="handleBandSubmit('band3')">Get It Free →</button>
+  </div>
+  <p class="capture-band-note">Free. Instant. No spam.</p>
+</div>
+
+
+<!-- ─── PHOTO GRID ─── -->
+<section style="background: var(--off-white); padding: 80px 24px;">
+  <div style="max-width:1140px; margin:0 auto;">
+    <p style="text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--light); margin-bottom:40px;">The students who get ahead start before graduation</p>
+    <div class="photo-grid-3">
+      <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=700&q=80&fit=crop" alt="Graduation day" class="grid3-img tall">
+      <div class="grid3-col">
+        <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=600&q=80&fit=crop" alt="Students laughing" class="grid3-img">
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80&fit=crop" alt="Student with book" class="grid3-img">
+      </div>
+      <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=700&q=80&fit=crop" alt="Study group" class="grid3-img tall">
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials">
+  <div class="testimonials-bg"></div>
+  <div class="container">
+
+    <div class="testimonials-header">
+      <span class="section-label">What students are saying</span>
+      <h2>CU Buffs who closed<br>the gap — and got <em>hired.</em></h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I was applying everywhere and not hearing back. After going through the checklist and adding these skills to my resume and portfolio, I got three callbacks in two weeks. I had no idea this was what was missing."</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80&fit=crop&crop=face" alt="CU Boulder media graduate" class="testi-avatar">
+          <div>
+            <div class="testi-name">Savannah M.</div>
+            <div class="testi-role">CMCI '24 · Now at a Denver media company</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"My friends with the same GPA were still job searching six months out. I had an offer three weeks after graduation because I could actually talk intelligently about AI tools in my field during interviews."</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&fit=crop&crop=face" alt="CU Boulder engineering graduate" class="testi-avatar">
+          <div>
+            <div class="testi-name">Marcus T.</div>
+            <div class="testi-role">CEAS Engineering '24 · SWE at a Boulder tech company</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I thought I knew how to use AI because I used ChatGPT. The checklist showed me how little I actually knew — and more importantly, exactly what to learn. This should be required before graduation."</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80&fit=crop&crop=face" alt="CU Boulder Leeds business student" class="testi-avatar">
+          <div>
+            <div class="testi-name">Priya L.</div>
+            <div class="testi-role">Leeds Business '25 · Analyst at a Denver startup</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta">
+  <div class="final-cta-bg"></div>
+  <div class="container-narrow">
+
+    <div class="final-cta-eyebrow">🦬 For CU Boulder Students &amp; Graduates</div>
+
+    <h2>You've invested four years<br>in your education.<br>Don't leave the <em>most important<br>step</em> behind.</h2>
+
+    <p class="final-cta-sub">
+      The checklist is free. It takes 30 seconds to get it. And it could be the single most valuable thing that happens between now and your first job offer.
+    </p>
+
+    <form class="final-form" id="final-form" onsubmit="handleSubmit(event, 'final')">
+      <input
+        type="email"
+        class="final-input"
+        placeholder="Your email address"
+        required
+        aria-label="Email address"
+      >
+      <button type="submit" class="btn-gold" style="animation: none; box-shadow: 0 4px 24px var(--accent-glow);">
+        Send Me the Checklist →
+      </button>
+    </form>
+
+    <p class="final-note">
+      No spam. No credit card. Unsubscribe any time. Just the checklist.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <span class="footer-logo">AI Native <span>Student</span></span>
+  <p>Helping students at the University of Colorado Boulder master AI fluency before the job market passes them by.</p>
+  <p style="margin-top: 8px;">
+    <a href="/">Home</a> &nbsp;·&nbsp;
+    <a href="/about/">About</a> &nbsp;·&nbsp;
+    <a href="/blog/">Blog</a>
+  </p>
+  <p class="disclaimer">
+    AI Native Student is an independent educational company and is not affiliated with or endorsed by the University of Colorado Boulder. "CU Boulder" and the University of Colorado name are used descriptively to indicate the intended audience of this content.
+  </p>
+</footer>
+
+
+<script>
+  const checklists = {
+    engineering: [
+      'AI-assisted coding, debugging, and code review with LLMs',
+      'Prompt engineering for technical problem-solving and system design',
+      'Building AI-integrated development pipelines and workflows',
+    ],
+    business: [
+      'AI-powered market research and competitive analysis workflows',
+      'Automated financial reporting and AI-enhanced data visualization',
+      'AI presentation tools and executive communication frameworks',
+    ],
+    media: [
+      'AI-assisted research and source verification workflows',
+      'Prompt engineering for story ideation and angle development',
+      'Automated transcription, summarization, and quote extraction',
+    ],
+    health: [
+      'Clinical documentation AI and ambient listening tools',
+      'Medical literature synthesis and evidence-based research',
+      'AI diagnostic support tools and their ethical limitations',
+    ],
+    arts: [
+      'AI writing tools and content strategy for modern media',
+      'Generative AI for creative direction and visual storytelling',
+      'Brand communication and social media AI workflows',
+    ],
+  };
+
+  function switchMajor(major) {
+    document.querySelectorAll('.major-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+    const items = checklists[major];
+    const list = document.getElementById('checklist-preview');
+    list.innerHTML = items.map(item => `
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#0C1116" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        ${item}
+      </li>
+    `).join('') + `
+      <li>
+        <span class="check-locked">🔒</span>
+        <span style="color: var(--light);">+14 more skills inside the free checklist</span>
+      </li>
+    `;
+  }
+
+  function submitToAPI(email, source) {
+    return fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source: 'cu-boulder-' + source })
+    });
+  }
+
+  function handleSubmit(e, formId) {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.querySelector('input[type="email"]').value;
+    const btn = form.querySelector('button');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    submitToAPI(email, formId).then(() => {
+      form.innerHTML = '<p style="color:var(--cu-gold); font-weight:600; font-size:1rem;">✓ Check your inbox — your checklist is on its way.</p>';
+    }).catch(() => {
+      btn.textContent = 'Send Me the Checklist →';
+      btn.disabled = false;
+    });
+  }
+
+  function handleBandSubmit(bandId) {
+    const input = document.getElementById(bandId + '-email');
+    if (!input.value) { input.focus(); return; }
+    submitToAPI(input.value, bandId).then(() => {
+      input.closest('.capture-band-form').innerHTML = '<p style="color:var(--cu-black); font-weight:600;">✓ Done — check your inbox!</p>';
+    });
+  }
+</script>
+
+</body>
+</html>
