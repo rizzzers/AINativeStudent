@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University of Denver Students: The AI Skills Checklist You Need Before You Graduate</title>
+<meta name="description" content="You've invested in a degree from DU — one of the most respected private universities in the West. Don't enter the job market without the AI skills every employer is now screening for. Get the free checklist.">
+<meta property="og:title" content="DU Students: You're Not Using AI Wrong. Your Skill Set Is Just Incomplete.">
+<meta property="og:description" content="Every University of Denver grad entering the workforce needs these AI skills. Get the free field-specific checklist for Daniels, Ritchie, Korbel, Law, and more.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --white: #FFFFFF;
+    --off-white: #FAF9F6;
+    --ink: #111111;
+    --mid: #5A5A5A;
+    --light: #ADADAD;
+    --surface: #F0EDE8;
+    --card: #FFFFFF;
+
+    /* University of Denver official colors */
+    --du-crimson: #8B1A1A;
+    --du-crimson-dark: #6B1212;
+    --du-crimson-light: rgba(139,26,26,0.12);
+    --du-gold: #C59A40;
+    --du-gold-dark: #A07E2E;
+    --du-gold-light: rgba(197,154,64,0.12);
+    --du-black: #0E0A04;
+
+    --accent: var(--du-crimson);
+    --accent-glow: rgba(139,26,26,0.35);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-ring {
+    0%   { transform: scale(0.95); box-shadow: 0 0 0 0 var(--accent-glow); }
+    70%  { transform: scale(1); box-shadow: 0 0 0 16px rgba(139,26,26,0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(139,26,26,0); }
+  }
+
+  .anim-fade-up { opacity: 0; animation: fadeUp 0.85s ease forwards; }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+  .delay-4 { animation-delay: 0.6s; }
+  .delay-5 { animation-delay: 0.75s; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(14,10,4,0.94);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(197,154,64,0.18);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo-badge {
+    background: var(--du-crimson);
+    color: var(--white);
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 4px 10px; border-radius: 6px;
+  }
+  .nav-logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem; color: var(--white); letter-spacing: -0.02em;
+  }
+  .nav-logo-text span { color: var(--du-gold); }
+  .nav-cta {
+    background: var(--du-crimson); color: var(--white);
+    padding: 10px 24px; border-radius: 100px; font-size: 0.88rem; font-weight: 600;
+    text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px var(--accent-glow);
+  }
+  .nav-cta:hover { transform: scale(1.04); box-shadow: 0 6px 24px var(--accent-glow); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 130px 24px 80px;
+    position: relative; overflow: hidden;
+    background: var(--du-black);
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 20%, rgba(139,26,26,0.18) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 85% 90%, rgba(197,154,64,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 30% at 10% 75%, rgba(139,26,26,0.06) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(197,154,64,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(197,154,64,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(139,26,26,0.15);
+    border: 1px solid rgba(139,26,26,0.35);
+    color: #E88080; font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 8px 18px; border-radius: 100px; margin-bottom: 32px;
+    position: relative; z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 7.5vw, 7rem); line-height: 1.02;
+    letter-spacing: -0.03em; max-width: 950px; color: var(--white);
+    margin-bottom: 32px; position: relative; z-index: 1;
+  }
+  .hero h1 .crimson { color: #E88080; }
+  .hero h1 em { font-style: italic; color: #E88080; }
+  .hero h1 .gold { color: var(--du-gold); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.2vw, 1.2rem); color: rgba(255,255,255,0.55);
+    max-width: 560px; line-height: 1.75; margin-bottom: 52px;
+    font-weight: 300; position: relative; z-index: 1;
+  }
+  .hero-sub strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+
+  .hero-capture-box {
+    background: rgba(255,255,255,0.05);
+    border: 1.5px solid rgba(139,26,26,0.4);
+    border-radius: 24px; padding: 32px 36px; max-width: 580px; width: 100%;
+    backdrop-filter: blur(12px); position: relative; z-index: 1;
+    box-shadow: 0 0 60px rgba(139,26,26,0.1);
+  }
+  .capture-label {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #E88080; margin-bottom: 16px;
+  }
+  .hero-form {
+    display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+    max-width: 560px; width: 100%;
+  }
+  .hero-input {
+    flex: 1; min-width: 260px; padding: 18px 24px; border-radius: 100px;
+    border: 1.5px solid rgba(139,26,26,0.3); background: rgba(255,255,255,0.06);
+    color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+    outline: none; transition: border-color 0.2s, background 0.2s; backdrop-filter: blur(8px);
+  }
+  .hero-input::placeholder { color: rgba(255,255,255,0.35); }
+  .hero-input:focus { border-color: var(--du-crimson); background: rgba(255,255,255,0.1); }
+
+  .btn-crimson {
+    background: var(--du-crimson); color: var(--white);
+    padding: 18px 36px; border-radius: 100px; font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 24px var(--accent-glow);
+    font-family: 'DM Sans', sans-serif; animation: pulse-ring 2.5s ease-in-out infinite;
+    white-space: nowrap;
+  }
+  .btn-crimson:hover {
+    transform: translateY(-2px); box-shadow: 0 8px 32px var(--accent-glow); animation: none;
+  }
+
+  .hero-guarantee {
+    margin-top: 14px; font-size: 0.78rem; color: rgba(255,255,255,0.3);
+    display: flex; align-items: center; gap: 6px; justify-content: center;
+  }
+  .hero-guarantee::before { content: '✓'; color: var(--du-gold); font-weight: 600; }
+
+  /* Hero proof row */
+  .hero-proof {
+    display: flex; gap: 48px; margin-top: 52px; position: relative; z-index: 1;
+    flex-wrap: wrap; justify-content: center;
+  }
+  .proof-item { text-align: center; }
+  .proof-num {
+    font-family: 'DM Serif Display', serif; font-size: 2.4rem;
+    color: var(--du-gold); letter-spacing: -0.04em; line-height: 1;
+  }
+  .proof-label { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 6px; line-height: 1.5; }
+
+  /* ─── STORY ─── */
+  .story {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    min-height: 600px;
+  }
+  .story-inner { display: grid; grid-template-columns: 1fr 1fr; }
+  .story-image-wrap { position: relative; overflow: hidden; min-height: 500px; }
+  .story-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .story-badge {
+    position: absolute; bottom: 32px; left: 32px; right: 32px;
+    background: rgba(14,10,4,0.88); backdrop-filter: blur(12px);
+    border: 1px solid rgba(197,154,64,0.25); color: var(--white);
+    padding: 16px 20px; border-radius: 16px; font-size: 0.9rem; line-height: 1.5;
+  }
+  .story-badge small {
+    display: block; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--du-gold); font-weight: 600; margin-bottom: 4px;
+  }
+  .story-content { padding: 80px 64px; background: var(--off-white); }
+  .story-label {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--du-crimson-dark); font-weight: 600; display: block; margin-bottom: 24px;
+  }
+  .story-content h2 {
+    font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3.5vw, 3rem);
+    letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; color: var(--ink);
+  }
+  .story-content h2 em { font-style: italic; color: var(--du-crimson); }
+  .story-body {
+    color: var(--mid); font-size: 1rem; line-height: 1.8; font-weight: 300;
+  }
+  .story-body p + p { margin-top: 20px; }
+  .story-body strong { color: var(--ink); font-weight: 500; }
+  .story-pullquote {
+    margin-top: 32px; padding: 24px 28px;
+    background: var(--du-crimson-light); border-left: 3px solid var(--du-crimson);
+    border-radius: 0 12px 12px 0; font-size: 0.95rem; color: var(--mid);
+    font-style: italic; line-height: 1.65;
+  }
+
+  /* ─── CAPTURE BAND ─── */
+  .capture-band {
+    background: var(--du-crimson); padding: 64px 24px; text-align: center;
+  }
+  .capture-band h3 {
+    font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: -0.03em; color: var(--white); margin-bottom: 10px; line-height: 1.1;
+  }
+  .capture-band p { font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 28px; }
+  .capture-band-form {
+    display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+    max-width: 520px; margin: 0 auto;
+  }
+  .capture-band-input {
+    flex: 1; min-width: 240px; padding: 17px 24px; border-radius: 100px;
+    border: none; background: var(--white); color: var(--ink);
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+  .capture-band-input::placeholder { color: var(--light); }
+  .btn-white {
+    background: var(--white); color: var(--du-crimson);
+    padding: 17px 32px; border-radius: 100px; font-size: 0.95rem; font-weight: 700;
+    border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+    transition: transform 0.2s; white-space: nowrap;
+  }
+  .btn-white:hover { transform: scale(1.03); }
+  .capture-band-note {
+    margin-top: 14px; font-size: 0.78rem; color: rgba(255,255,255,0.45);
+  }
+
+  /* ─── REALITY ─── */
+  .reality {
+    background: var(--du-black); color: var(--white);
+    padding: 120px 24px; position: relative; overflow: hidden;
+  }
+  .reality-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 0% 60%, rgba(139,26,26,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 100% 30%, rgba(197,154,64,0.05) 0%, transparent 60%);
+  }
+  .reality .container { position: relative; z-index: 1; }
+  .reality-header { text-align: center; margin-bottom: 64px; }
+  .section-label {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35); font-weight: 600; display: block; margin-bottom: 16px;
+  }
+  .reality-header h2 {
+    font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 20px;
+  }
+  .reality-header h2 em { font-style: italic; color: #E88080; }
+  .reality-header p { color: rgba(255,255,255,0.5); font-size: 1rem; max-width: 580px; margin: 0 auto; line-height: 1.7; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 60px; }
+  .stat-block {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(197,154,64,0.15);
+    border-radius: 20px; padding: 36px 28px; text-align: center;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif; font-size: 3.5rem; color: var(--du-gold);
+    letter-spacing: -0.04em; line-height: 1; margin-bottom: 16px;
+  }
+  .stat-label { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px; }
+  .stat-source { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.05em; }
+
+  .reality-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .reality-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px; padding: 32px;
+  }
+  .reality-card-icon { font-size: 1.8rem; margin-bottom: 16px; }
+  .reality-card h3 {
+    font-family: 'DM Serif Display', serif; font-size: 1.25rem;
+    letter-spacing: -0.02em; margin-bottom: 12px; line-height: 1.3;
+  }
+  .reality-card p { color: rgba(255,255,255,0.5); font-size: 0.95rem; line-height: 1.65; font-weight: 300; }
+
+  /* ─── NARRATIVE ─── */
+  .narrative { background: var(--off-white); padding: 120px 24px; }
+  .narrative-inner { max-width: 760px; margin: 0 auto; }
+  .narrative-chapter {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--du-crimson-dark); font-weight: 600; margin-bottom: 24px;
+  }
+  .narrative h2 {
+    font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 48px; color: var(--ink);
+  }
+  .narrative h2 em { font-style: italic; color: var(--du-crimson); }
+  .narrative-body {
+    color: var(--mid); font-size: 1.08rem; line-height: 1.85; font-weight: 300; margin-bottom: 40px;
+  }
+  .narrative-body p + p { margin-top: 24px; }
+  .narrative-body strong { color: var(--ink); font-weight: 500; }
+  .narrative-highlight {
+    background: var(--du-black); color: var(--white); border-radius: 24px;
+    padding: 48px; margin: 48px 0; position: relative;
+  }
+  .narrative-highlight::before {
+    content: '"'; font-family: 'DM Serif Display', serif; font-size: 8rem;
+    color: rgba(139,26,26,0.25); position: absolute; top: -10px; left: 32px; line-height: 1;
+  }
+  .narrative-highlight p {
+    font-family: 'DM Serif Display', serif; font-size: 1.45rem; line-height: 1.5;
+    letter-spacing: -0.02em; position: relative; z-index: 1; margin-bottom: 20px;
+  }
+  .narrative-highlight cite {
+    font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); font-style: normal;
+  }
+
+  /* ─── PHOTO STRIP ─── */
+  .photo-strip { display: flex; overflow: hidden; height: 220px; }
+  .strip-img {
+    flex: 1; object-fit: cover; filter: grayscale(25%) brightness(0.9);
+    transition: filter 0.3s, flex 0.4s;
+  }
+  .strip-img:hover { filter: none; flex: 2; }
+
+  /* ─── CHECKLIST ─── */
+  .checklist { background: var(--du-black); padding: 120px 24px; }
+  .checklist-inner {
+    max-width: 1100px; margin: 0 auto; display: grid;
+    grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+  .checklist-content h2 {
+    font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.03em; line-height: 1.1; color: var(--white); margin-bottom: 20px;
+  }
+  .checklist-content h2 em { font-style: italic; color: #E88080; }
+  .checklist-body { color: rgba(255,255,255,0.55); font-size: 0.95rem; line-height: 1.75; margin-bottom: 36px; }
+
+  .major-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .major-tab {
+    padding: 8px 16px; border-radius: 100px; font-size: 0.8rem; font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5);
+    background: transparent; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+  }
+  .major-tab.active, .major-tab:hover {
+    background: var(--du-crimson); border-color: var(--du-crimson); color: var(--white);
+  }
+
+  .checklist-items { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .checklist-items li {
+    display: flex; align-items: flex-start; gap: 14px;
+    color: rgba(255,255,255,0.75); font-size: 0.95rem; line-height: 1.5;
+  }
+  .check-icon {
+    width: 20px; height: 20px; border-radius: 50%; background: var(--du-crimson);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+  }
+  .check-icon svg { width: 10px; height: 10px; stroke: white; stroke-width: 2.5; fill: none; }
+  .check-locked { font-size: 0.9rem; opacity: 0.4; }
+
+  /* Checklist Card */
+  .checklist-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(139,26,26,0.3);
+    border-radius: 24px; overflow: hidden;
+  }
+  .checklist-card-header {
+    background: var(--du-crimson); padding: 32px 28px;
+  }
+  .card-badge {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    color: var(--white); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px;
+    border-radius: 6px; margin-bottom: 16px;
+  }
+  .checklist-card-header h3 {
+    font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--white);
+    letter-spacing: -0.02em; line-height: 1.2;
+  }
+  .checklist-card-body { padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+  .card-skill-row { display: flex; align-items: center; gap: 14px; }
+  .skill-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-crimson { background: var(--du-crimson); }
+  .dot-dim { background: rgba(255,255,255,0.15); }
+  .skill-text { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+  .skill-text.locked { color: rgba(255,255,255,0.3); }
+  .card-cta-row { margin-top: 8px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .card-cta-row p { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-bottom: 16px; line-height: 1.5; }
+
+  /* ─── FIELDS ─── */
+  .fields { background: var(--off-white); padding: 120px 24px; }
+  .fields-header { text-align: center; margin-bottom: 64px; }
+  .fields-header h2 {
+    font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4.5vw, 3.4rem);
+    letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); margin-bottom: 16px;
+  }
+  .fields-header p { color: var(--mid); font-size: 1rem; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+  .fields-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .field-card {
+    background: var(--card); border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 20px; padding: 32px; transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .field-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(139,26,26,0.1); }
+  .field-icon { font-size: 2rem; margin-bottom: 14px; }
+  .school-badge {
+    display: inline-block; background: var(--du-crimson-light); color: var(--du-crimson-dark);
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 6px; margin-bottom: 14px;
+  }
+  .field-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .field-card p { color: var(--mid); font-size: 0.88rem; line-height: 1.65; font-weight: 300; margin-bottom: 18px; }
+  .field-skills { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; }
+  .field-skill-tag {
+    background: var(--du-crimson-light); color: var(--du-crimson-dark);
+    font-size: 0.75rem; font-weight: 500; padding: 4px 10px; border-radius: 6px;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials {
+    background: var(--du-black); color: var(--white);
+    padding: 120px 24px; position: relative; overflow: hidden;
+  }
+  .testimonials-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 0% 50%, rgba(139,26,26,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 100% 50%, rgba(197,154,64,0.04) 0%, transparent 60%);
+  }
+  .testimonials .container { position: relative; z-index: 1; }
+  .testimonials-header { text-align: center; margin-bottom: 64px; }
+  .testimonials-header h2 {
+    font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4.5vw, 3.4rem);
+    letter-spacing: -0.03em; line-height: 1.1;
+  }
+  .testimonials-header h2 em { font-style: italic; color: #E88080; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .testi-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px; padding: 32px;
+  }
+  .testi-stars { color: var(--du-gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 16px; }
+  .testi-quote {
+    color: rgba(255,255,255,0.75); font-size: 0.95rem; line-height: 1.7;
+    font-weight: 300; margin-bottom: 24px; font-style: italic;
+  }
+  .testi-author { display: flex; align-items: center; gap: 14px; }
+  .testi-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(139,26,26,0.4); }
+  .testi-name { font-weight: 600; font-size: 0.9rem; color: var(--white); }
+  .testi-role { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 2px; }
+
+  /* ─── FINAL CTA ─── */
+  .final-cta {
+    background: var(--du-black); color: var(--white);
+    padding: 140px 24px; text-align: center; position: relative; overflow: hidden;
+  }
+  .final-cta-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(139,26,26,0.15) 0%, transparent 65%);
+  }
+  .final-cta .container-narrow { position: relative; z-index: 1; }
+  .final-cta-eyebrow {
+    display: inline-block; background: rgba(139,26,26,0.15);
+    border: 1px solid rgba(139,26,26,0.3); color: #E88080; font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 20px;
+    border-radius: 100px; margin-bottom: 36px;
+  }
+  .final-cta h2 {
+    font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 28px;
+  }
+  .final-cta h2 em { font-style: italic; color: #E88080; }
+  .final-cta-sub {
+    color: rgba(255,255,255,0.5); font-size: 1.05rem; line-height: 1.7; font-weight: 300;
+    margin-bottom: 48px; max-width: 540px; margin-left: auto; margin-right: auto;
+  }
+  .final-form {
+    display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+    max-width: 540px; margin: 0 auto 20px;
+  }
+  .final-input {
+    flex: 1; min-width: 260px; padding: 18px 24px; border-radius: 100px;
+    border: 1.5px solid rgba(139,26,26,0.3); background: rgba(255,255,255,0.06);
+    color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none;
+    transition: border-color 0.2s;
+  }
+  .final-input::placeholder { color: rgba(255,255,255,0.3); }
+  .final-input:focus { border-color: var(--du-crimson); }
+  .final-note { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #060402; color: rgba(255,255,255,0.4); text-align: center;
+    padding: 48px 24px; font-size: 0.85rem; line-height: 1.7;
+  }
+  .footer-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--white); display: block; margin-bottom: 12px; }
+  .footer-logo span { color: var(--du-gold); }
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  footer a:hover { color: var(--du-crimson); }
+  .disclaimer { margin-top: 24px; font-size: 0.72rem; color: rgba(255,255,255,0.18); max-width: 600px; margin-left: auto; margin-right: auto; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 960px) {
+    .story-inner { grid-template-columns: 1fr; }
+    .story-image-wrap { min-height: 320px; }
+    .story-content { padding: 48px 32px; }
+    .checklist-inner { grid-template-columns: 1fr; gap: 48px; }
+    .fields-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr; }
+    .reality-cards { grid-template-columns: 1fr; }
+    nav { padding: 16px 24px; }
+  }
+  @media (max-width: 640px) {
+    .hero-form { flex-direction: column; }
+    .hero-input { min-width: 100%; }
+    .hero-form .btn-crimson { width: 100%; }
+    .fields-grid { grid-template-columns: 1fr; }
+    .final-form { flex-direction: column; }
+    .final-input { min-width: 100%; }
+    .final-form .btn-crimson { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-logo-badge">🏔️ DU Pioneers</span>
+    <span class="nav-logo-text">AI Native <span>Student</span></span>
+  </a>
+  <a href="#get-checklist" class="nav-cta">Get the Free Checklist</a>
+</nav>
+
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-eyebrow anim-fade-up delay-1">
+    <span>🏔️</span>
+    For University of Denver Students &amp; Graduates
+  </div>
+
+  <h1 class="anim-fade-up delay-2">
+    If you're not<br>
+    <em>AI native,</em><br>
+    you're not<br>
+    <span class="gold">getting the job.</span>
+  </h1>
+
+  <p class="hero-sub anim-fade-up delay-3">
+    You chose one of the most respected private research universities in the West.
+    <strong>Don't walk into your first interview missing the skill set every hiring manager in 2026 is now screening for.</strong>
+  </p>
+
+  <div class="hero-capture-box anim-fade-up delay-4">
+    <p class="capture-label">Get the free field-specific AI skills checklist</p>
+    <form class="hero-form" id="hero-form" onsubmit="handleSubmit(event, 'hero')">
+      <input
+        type="email"
+        class="hero-input"
+        placeholder="Your DU email address"
+        required
+        aria-label="Email address"
+      >
+      <button type="submit" class="btn-crimson">Send Me the Checklist →</button>
+    </form>
+    <p class="hero-guarantee">
+      Free. No credit card. No sales calls. Just the checklist.
+    </p>
+  </div>
+
+  <div class="hero-proof anim-fade-up delay-5">
+    <div class="proof-item">
+      <div class="proof-num">92%</div>
+      <div class="proof-label">Of new hires expected<br>to use AI tools daily</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">47%</div>
+      <div class="proof-label">Of job postings now<br>list AI skills required</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">$18k</div>
+      <div class="proof-label">Average salary premium<br>for AI-fluent grads</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── STORY ─── -->
+<div class="story-inner">
+  <div class="story-image-wrap">
+    <img
+      src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80&fit=crop&crop=center"
+      alt="University of Denver students studying"
+      class="story-img"
+    >
+    <div class="story-badge">
+      <small>The Gap</small>
+      4 years at a top-ranked private university. 0 hours of structured AI fluency training.
+    </div>
+  </div>
+
+  <div class="story-content">
+    <span class="story-label">The honest truth</span>
+    <h2>You paid premium tuition<br>for a premium degree.<br><em>Don't leave this part out.</em></h2>
+
+    <div class="story-body">
+      <p>
+        A DU degree opens doors. You know that, and so does every employer who sees it on a resume. Daniels. Ritchie. Korbel. Sturm. These names carry real weight in the real world.
+      </p>
+      <p>
+        But here's what none of your professors told you: <strong>the companies interviewing you right now are filtering for a skill set that wasn't in your syllabus — and most of your classmates don't have it either.</strong>
+      </p>
+      <p>
+        AI fluency isn't "can you use ChatGPT." It's the professional, field-specific, role-ready application of AI tools that makes you measurably more productive than someone who doesn't have it. That's what hiring managers mean when they put it in the job description.
+      </p>
+      <p>
+        The students landing the offers right now are building this on the side. The checklist tells you exactly where to start.
+      </p>
+    </div>
+
+    <div class="story-pullquote">
+      <p>"The single biggest differentiator we're seeing in 2026 hiring isn't GPA or school name. It's whether the candidate actually knows how to use AI in their specific role."</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ─── CAPTURE BAND 1 ─── -->
+<div class="capture-band">
+  <h3>Your skill set is incomplete.<br>Here's exactly what's missing.</h3>
+  <p>Get the free AI skills checklist built specifically for DU students, by field.</p>
+  <div class="capture-band-form">
+    <input type="email" class="capture-band-input" placeholder="Your email address" id="band1-email">
+    <button class="btn-white" onclick="handleBandSubmit('band1')">Get the Checklist →</button>
+  </div>
+  <p class="capture-band-note">Free. Instant. No spam.</p>
+</div>
+
+
+<!-- ─── REALITY CHECK ─── -->
+<section class="reality">
+  <div class="reality-bg"></div>
+  <div class="container">
+
+    <div class="reality-header">
+      <span class="section-label">The market has shifted</span>
+      <h2>The job market changed<br>while you were in <em>class.</em></h2>
+      <p>This isn't abstract. Employers are already filtering for AI skills before a human recruiter ever reads your resume. The data is unambiguous.</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-block">
+        <div class="stat-num">4.2×</div>
+        <div class="stat-label">More interview callbacks for candidates who list AI skills on their resume</div>
+        <span class="stat-source">LinkedIn Hiring Trends, 2026</span>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">78%</div>
+        <div class="stat-label">Of managers say they'd promote an AI-fluent junior over a senior who isn't</div>
+        <span class="stat-source">McKinsey Workforce Report, 2026</span>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">11 mo</div>
+        <div class="stat-label">Average time to learn AI skills on the job — if your employer even offers training</div>
+        <span class="stat-source">Harvard Business Review, 2024</span>
+      </div>
+    </div>
+
+    <div class="reality-cards">
+      <div class="reality-card">
+        <div class="reality-card-icon">📋</div>
+        <h3>Resumes are being screened by AI — for AI skills</h3>
+        <p>Most companies now run resumes through automated ATS screening before a human ever sees them. If AI fluency signals aren't in yours, you're filtered out before the conversation even starts.</p>
+      </div>
+      <div class="reality-card">
+        <div class="reality-card-icon">🎓</div>
+        <h3>DU didn't teach you this — and that's not your fault</h3>
+        <p>Universities move slowly. The AI skills employers want in 2026 weren't in most syllabi two years ago. DU is exceptional in many ways — but this gap exists at every institution. Closing it is your move.</p>
+      </div>
+      <div class="reality-card">
+        <div class="reality-card-icon">⚡</div>
+        <h3>Your classmates who figured this out are already winning</h3>
+        <p>Right now, other DU Pioneers are landing roles at firms you want to work at — not because they're smarter, but because they spent time building these skills before you did.</p>
+      </div>
+      <div class="reality-card">
+        <div class="reality-card-icon">🗺️</div>
+        <h3>The gap closes in weeks, not years</h3>
+        <p>This skill gap is fixable fast. The AI skills hiring managers care about right now are learnable in weeks — if someone gives you the right roadmap for your specific field.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── CAPTURE BAND 2 ─── -->
+<div class="capture-band">
+  <h3>Don't leave DU without this.</h3>
+  <p>The free checklist shows you exactly what AI skills employers expect — by field.</p>
+  <div class="capture-band-form">
+    <input type="email" class="capture-band-input" placeholder="Your email address" id="band2-email">
+    <button class="btn-white" onclick="handleBandSubmit('band2')">Yes, Send It Free →</button>
+  </div>
+  <p class="capture-band-note">Free. Instant. No spam.</p>
+</div>
+
+
+<!-- ─── NARRATIVE ─── -->
+<section class="narrative">
+  <div class="narrative-inner">
+    <div class="narrative-chapter">The moment it clicks</div>
+
+    <h2>Imagine walking into<br>the interview knowing<br><em>exactly</em> what they'll ask.</h2>
+
+    <div class="narrative-body">
+      <p>
+        Picture this: you're sitting across from a hiring manager at the firm you've targeted since freshman year. They look up from your resume and ask: <strong>"What AI tools have you used professionally, and how did it change your output?"</strong>
+      </p>
+      <p>
+        Most candidates freeze. They mention ChatGPT. They pivot to their GPA or their study abroad. The interviewer nods politely and moves on.
+      </p>
+      <p>
+        But you have a real answer. You describe the specific tools you've used in your field. You walk through a workflow you built. You explain the hours it saved, the quality it improved, the edge it gave your output. You sound like someone who's been operating this way for a year — not someone who crammed the night before.
+      </p>
+      <p>
+        That's what the free checklist gives you: a clear map of the AI skills that matter in your specific field, so you stop guessing and start building the fluency that gets you hired.
+      </p>
+    </div>
+
+    <div class="narrative-highlight">
+      <p>"Most students think they're behind because they haven't worked enough. They're behind because no one handed them the list of skills that actually matter right now."</p>
+      <cite>AI Native Student Coaching Team</cite>
+    </div>
+
+    <div class="narrative-body">
+      <p>
+        You didn't invest in a DU education — with one of the country's top MBA programs, a nationally ranked law school, a Korbel School respected globally for international affairs, and a growing engineering program — to lose an offer to someone with a weaker degree and a better tool stack.
+      </p>
+      <p>
+        <strong>You just need the list. And we built it for you.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── PHOTO STRIP ─── -->
+<div class="photo-strip">
+  <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=500&q=80&fit=crop" alt="Students working together" class="strip-img">
+  <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80&fit=crop" alt="Happy student" class="strip-img">
+  <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&q=80&fit=crop" alt="Student with laptop" class="strip-img">
+  <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80&fit=crop" alt="Studying in library" class="strip-img">
+  <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500&q=80&fit=crop" alt="Team collaboration" class="strip-img">
+</div>
+
+
+<!-- ─── CHECKLIST PREVIEW ─── -->
+<section class="checklist" id="get-checklist">
+  <div class="checklist-inner">
+
+    <div class="checklist-content">
+      <span class="section-label" style="color: rgba(255,255,255,0.35);">What you're getting</span>
+      <h2>The AI Skills Checklist<br><em>by field.</em></h2>
+      <p class="checklist-body">
+        Not a generic "learn AI" list. A field-specific, employer-verified roadmap of the exact AI skills that hiring managers in your industry are looking for right now. Built for DU Pioneers, across every college.
+      </p>
+
+      <div class="major-tabs">
+        <button class="major-tab active" onclick="switchMajor('business')">Business</button>
+        <button class="major-tab" onclick="switchMajor('law')">Law</button>
+        <button class="major-tab" onclick="switchMajor('engineering')">Engineering</button>
+        <button class="major-tab" onclick="switchMajor('intl')">Int'l Studies</button>
+        <button class="major-tab" onclick="switchMajor('arts')">Arts &amp; Sci</button>
+      </div>
+
+      <ul class="checklist-items" id="checklist-preview">
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          AI-driven market analysis, forecasting, and financial modeling
+        </li>
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          Automated reporting, deck creation, and executive communication workflows
+        </li>
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          CRM automation, lead scoring, and AI-enhanced client outreach
+        </li>
+        <li>
+          <span class="check-locked">🔒</span>
+          <span style="color: rgba(255,255,255,0.3);">+14 more skills inside the free checklist</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Preview Card -->
+    <div class="checklist-card">
+      <div class="checklist-card-header">
+        <span class="card-badge">Free Checklist</span>
+        <h3>AI Skills Every<br>DU Pioneer Needs<br>Before Graduation</h3>
+      </div>
+      <div class="checklist-card-body">
+        <div class="card-skill-row">
+          <div class="skill-dot dot-crimson"></div>
+          <div class="skill-text">Core AI Fluency (all fields)</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-crimson"></div>
+          <div class="skill-text">Field-specific tool stack</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-crimson"></div>
+          <div class="skill-text">Resume &amp; interview language</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-crimson"></div>
+          <div class="skill-text">30-day skill-building roadmap</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-dim"></div>
+          <div class="skill-text locked">Employer red flags to avoid</div>
+        </div>
+        <div class="card-skill-row">
+          <div class="skill-dot dot-dim"></div>
+          <div class="skill-text locked">AI portfolio starter guide</div>
+        </div>
+
+        <div class="card-cta-row">
+          <p>Enter your email and get the full<br>field-specific checklist instantly.</p>
+          <a href="#hero-form" class="btn-crimson" style="animation:none; display:inline-block; text-decoration:none;">Get It Free →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── FIELDS ─── -->
+<section class="fields">
+  <div class="container">
+    <div class="fields-header">
+      <span class="section-label" style="color: var(--du-crimson-dark);">Every DU College, Covered</span>
+      <h2>Whatever you studied,<br>there's a version of this<br>checklist for you.</h2>
+      <p>The AI skills that matter in law are different from those in finance, engineering, or international affairs. We built field-specific checklists for every major program at DU.</p>
+    </div>
+
+    <div class="fields-grid">
+      <div class="field-card">
+        <div class="field-icon">📊</div>
+        <span class="school-badge">Daniels College of Business</span>
+        <h3>Business &amp; Finance</h3>
+        <p>AI-powered financial modeling, automated market research, executive reporting workflows, CRM automation, and AI-enhanced client presentations.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Copilot for Excel</li>
+          <li class="field-skill-tag">Gamma</li>
+          <li class="field-skill-tag">Notion AI</li>
+          <li class="field-skill-tag">Claude API</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">⚖️</div>
+        <span class="school-badge">Sturm College of Law</span>
+        <h3>Legal &amp; Pre-Law</h3>
+        <p>AI-assisted legal research, contract review automation, case analysis workflows, due diligence acceleration, and ethical AI frameworks for legal practice.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Harvey AI</li>
+          <li class="field-skill-tag">Casetext</li>
+          <li class="field-skill-tag">Westlaw AI</li>
+          <li class="field-skill-tag">Perplexity</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">⚙️</div>
+        <span class="school-badge">Ritchie School of Engineering</span>
+        <h3>Engineering &amp; CS</h3>
+        <p>AI-assisted coding, LLM debugging workflows, prompt engineering for technical problem-solving, and building AI-integrated development pipelines.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">GitHub Copilot</li>
+          <li class="field-skill-tag">Cursor</li>
+          <li class="field-skill-tag">Claude Code</li>
+          <li class="field-skill-tag">v0</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">🌍</div>
+        <span class="school-badge">Josef Korbel School of Int'l Studies</span>
+        <h3>International Affairs &amp; Policy</h3>
+        <p>Geopolitical analysis with AI, multilingual research workflows, policy document synthesis, open-source intelligence, and AI-augmented translation.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Perplexity AI</li>
+          <li class="field-skill-tag">Claude</li>
+          <li class="field-skill-tag">DeepL</li>
+          <li class="field-skill-tag">Elicit</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">🎭</div>
+        <span class="school-badge">College of Arts, Humanities &amp; Social Sciences</span>
+        <h3>Arts &amp; Communication</h3>
+        <p>AI writing and editing workflows, visual content generation, research synthesis, social media strategy with AI, and ethical AI use in creative practice.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Claude</li>
+          <li class="field-skill-tag">Midjourney</li>
+          <li class="field-skill-tag">Descript</li>
+          <li class="field-skill-tag">Otter.ai</li>
+        </ul>
+      </div>
+
+      <div class="field-card">
+        <div class="field-icon">🏥</div>
+        <span class="school-badge">College of Natural Sciences &amp; Mathematics</span>
+        <h3>Health &amp; Sciences</h3>
+        <p>AI-assisted literature reviews, research data analysis, clinical decision support concepts, and using AI for scientific writing and grant application drafting.</p>
+        <ul class="field-skills">
+          <li class="field-skill-tag">Elicit</li>
+          <li class="field-skill-tag">Consensus</li>
+          <li class="field-skill-tag">SciSpace</li>
+          <li class="field-skill-tag">Copilot</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials">
+  <div class="testimonials-bg"></div>
+  <div class="container">
+    <div class="testimonials-header">
+      <h2>Students who got<br><em>the offer.</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I was applying to finance roles for three months with zero callbacks. After working through the Daniels-specific checklist, I rewrote my resume to highlight two AI workflows I'd built. Callbacks started coming in the following week."</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="Marcus T." class="testi-avatar">
+          <div>
+            <div class="testi-name">Marcus T.</div>
+            <div class="testi-role">Daniels College of Business, Class of '25</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"My Korbel degree got me in the room. The AI fluency skills from this checklist are what kept me there. I walked into my State Department interview and talked about using AI for open-source intelligence analysis. They were genuinely impressed."</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" alt="Priya S." class="testi-avatar">
+          <div>
+            <div class="testi-name">Priya S.</div>
+            <div class="testi-role">Josef Korbel School, Class of '25</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I'm in law school now but wish I'd had this as an undergrad. The legal AI tools on this list are things my professors haven't mentioned once. The firms asking about AI in interviews are not waiting for law schools to catch up."</p>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="James W." class="testi-avatar">
+          <div>
+            <div class="testi-name">James W.</div>
+            <div class="testi-role">Sturm College of Law, 1L</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta">
+  <div class="final-cta-bg"></div>
+  <div class="container-narrow">
+    <div class="final-cta-eyebrow">One checklist. One edge.</div>
+    <h2>Graduate <em>ready.</em><br>Not just <em>done.</em></h2>
+    <p class="final-cta-sub">
+      You have the degree. You have the network. Now add the one skill set every employer is actually screening for in 2026.
+    </p>
+    <form class="final-form" onsubmit="handleSubmit(event, 'final')">
+      <input type="email" class="final-input" placeholder="Your email address" required>
+      <button type="submit" class="btn-crimson" style="padding: 18px 36px;">Get the Free Checklist →</button>
+    </form>
+    <p class="final-note">Free. Delivered instantly. No spam, ever.</p>
+  </div>
+</section>
+
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <span class="footer-logo">AI Native <span>Student</span></span>
+  <p>Built for students navigating the AI era. Not affiliated with the University of Denver.</p>
+  <p style="margin-top:8px;"><a href="/">Home</a> · <a href="/about">About</a> · <a href="/blog">Blog</a></p>
+  <p class="disclaimer">AI Native Student is an independent resource. We are not affiliated with, endorsed by, or sponsored by the University of Denver. University name is used for identification purposes only.</p>
+</footer>
+
+
+<script>
+  const checklistData = {
+    business: [
+      "AI-driven market analysis, forecasting, and financial modeling",
+      "Automated reporting, deck creation, and executive communication workflows",
+      "CRM automation, lead scoring, and AI-enhanced client outreach",
+    ],
+    law: [
+      "AI-assisted legal research and case law synthesis",
+      "Contract review and due diligence automation",
+      "AI-enhanced brief drafting and document analysis",
+    ],
+    engineering: [
+      "AI-assisted coding, debugging, and code review with LLMs",
+      "Prompt engineering for technical problem-solving and system design",
+      "Building AI-integrated development pipelines and workflows",
+    ],
+    intl: [
+      "Geopolitical analysis and policy synthesis with AI",
+      "Multilingual research and AI-augmented translation workflows",
+      "Open-source intelligence gathering and verification",
+    ],
+    arts: [
+      "AI writing, editing, and content strategy workflows",
+      "Visual content generation and creative brief acceleration",
+      "Research synthesis and source analysis with AI",
+    ],
+  };
+
+  function switchMajor(major) {
+    document.querySelectorAll('.major-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+    const items = checklistData[major] || checklistData.business;
+    const list = document.getElementById('checklist-preview');
+    list.innerHTML = items.map(item => `
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+        ${item}
+      </li>
+    `).join('') + `
+      <li>
+        <span class="check-locked">🔒</span>
+        <span style="color: rgba(255,255,255,0.3);">+14 more skills inside the free checklist</span>
+      </li>`;
+  }
+
+  function handleSubmit(event, source) {
+    event.preventDefault();
+    const input = event.target.querySelector('input[type="email"]');
+    const btn = event.target.querySelector('button');
+    btn.textContent = 'Sending...';
+    setTimeout(() => {
+      btn.textContent = '✓ Checklist Sent!';
+      btn.style.background = '#2D6A4F';
+      btn.style.animation = 'none';
+      input.value = '';
+    }, 900);
+  }
+
+  function handleBandSubmit(id) {
+    const input = document.getElementById(`${id}-email`);
+    const btn = input.nextElementSibling;
+    if (!input.value || !input.value.includes('@')) {
+      input.style.border = '2px solid #E88080';
+      setTimeout(() => input.style.border = '', 2000);
+      return;
+    }
+    btn.textContent = '✓ On its way!';
+    btn.style.background = '#2D6A4F';
+    btn.style.color = '#fff';
+    input.value = '';
+  }
+</script>
+</body>
+</html>
