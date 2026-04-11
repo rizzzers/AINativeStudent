@@ -1089,17 +1089,30 @@
       </li>`;
   }
 
+  function submitToAPI(email, source) {
+    return fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source: 'du-' + source })
+    });
+  }
+
   function handleSubmit(event, source) {
     event.preventDefault();
-    const input = event.target.querySelector('input[type="email"]');
-    const btn = event.target.querySelector('button');
+    const form = event.target;
+    const input = form.querySelector('input[type="email"]');
+    const btn = form.querySelector('button');
+    const email = input.value;
     btn.textContent = 'Sending...';
-    setTimeout(() => {
-      btn.textContent = '✓ Checklist Sent!';
-      btn.style.background = '#2D6A4F';
-      btn.style.animation = 'none';
-      input.value = '';
-    }, 900);
+    btn.disabled = true;
+    submitToAPI(email, source).finally(() => {
+      form.innerHTML = `
+        <div style="text-align:center; padding:16px;">
+          <div style="font-size:1.8rem; margin-bottom:10px;">✅</div>
+          <p style="font-weight:600; color:var(--du-gold); margin-bottom:6px;">Check your inbox!</p>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.55);">Your checklist is on its way to <strong>${email}</strong>.</p>
+        </div>`;
+    });
   }
 
   function handleBandSubmit(id) {
@@ -1110,10 +1123,12 @@
       setTimeout(() => input.style.border = '', 2000);
       return;
     }
-    btn.textContent = '✓ On its way!';
-    btn.style.background = '#2D6A4F';
-    btn.style.color = '#fff';
-    input.value = '';
+    const email = input.value;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    submitToAPI(email, id).finally(() => {
+      input.closest('.capture-band-form').innerHTML = '<p style="font-weight:600; color:var(--du-gold);">✓ Done — check your inbox!</p>';
+    });
   }
 </script>
 </body>

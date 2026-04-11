@@ -19,9 +19,9 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         from: 'AI Native Student <onboarding@resend.dev>',
         to: 'ryan@ryanestes.info',
-        subject: `New Mizzou Checklist Signup: ${email}`,
+        subject: `New Checklist Signup: ${email}`,
         html: `
-          <h2>New Mizzou Checklist Signup</h2>
+          <h2>New Checklist Signup</h2>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Source:</strong> ${source || 'unknown'}</p>
           <p><strong>Time:</strong> ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })}</p>
