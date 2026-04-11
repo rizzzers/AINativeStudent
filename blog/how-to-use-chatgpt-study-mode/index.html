@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F87VEEJZ15"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F87VEEJZ15');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Use ChatGPT Study Mode: A Student Guide | AI Native Student</title>
+<meta name="description" content="Learn how to use ChatGPT Study Mode step by step. This guide shows you how to set it up, use it for homework and exams, and actually build understanding.">
+<meta property="og:title" content="How to Use ChatGPT Study Mode: A Student Guide">
+<meta property="og:description" content="Learn how to use ChatGPT Study Mode step by step. This guide shows you how to set it up, use it for homework and exams, and actually build understanding.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --off-white: #F8F6F2;
+    --ink: #0D0D0D;
+    --mid: #5A5A5A;
+    --light: #ADADAD;
+    --accent: #0057FF;
+    --accent-warm: #FF4D00;
+    --accent-green: #00C28B;
+    --surface: #F0EDE8;
+    --card: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(248,246,242,0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: padding 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); font-weight: 500; }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent) !important; transform: scale(1.03); }
+
+  /* ─── ARTICLE HERO ─── */
+  .article-hero {
+    padding: 140px 24px 72px;
+    background: var(--off-white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .article-hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+
+  .article-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 0.82rem;
+    color: var(--light);
+  }
+
+  .article-breadcrumb a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .article-breadcrumb a:hover { opacity: 0.7; }
+  .article-breadcrumb span { color: var(--light); }
+
+  .article-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .article-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .article-deck {
+    font-size: 1.2rem;
+    color: var(--mid);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: -0.01em;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-top: 28px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .article-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .author-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+  .author-title { font-size: 0.78rem; color: var(--light); }
+
+  .meta-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(0,0,0,0.1);
+  }
+
+  .meta-detail { font-size: 0.82rem; color: var(--light); }
+
+  .meta-tag {
+    display: inline-block;
+    background: rgba(0,87,255,0.08);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* ─── ARTICLE BODY ─── */
+  .article-body { padding: 72px 24px 100px; }
+
+  .article-content { max-width: 720px; margin: 0 auto; }
+
+  .article-content p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+
+  .article-content p:first-child {
+    font-size: 1.18rem;
+    font-weight: 400;
+  }
+
+  .article-content strong { font-weight: 500; color: var(--ink); }
+
+  .article-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 64px 0 24px;
+    padding-top: 8px;
+  }
+
+  .article-content h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 44px 0 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .article-section-rule {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin: 56px 0;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    margin: 28px 0;
+    padding: 24px 28px;
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-left: 3px solid var(--accent);
+  }
+
+  .prompt-box .prompt-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .prompt-box p {
+    font-size: 0.95rem !important;
+    color: var(--mid) !important;
+    line-height: 1.75 !important;
+    margin-bottom: 0 !important;
+    font-weight: 300 !important;
+    font-family: 'DM Mono', 'Courier New', monospace;
+  }
+
+  /* Tip box */
+  .tip-box {
+    margin: 28px 0;
+    padding: 20px 24px;
+    background: rgba(0,194,139,0.07);
+    border-radius: 12px;
+    border: 1px solid rgba(0,194,139,0.2);
+  }
+
+  .tip-box p {
+    font-size: 0.95rem !important;
+    color: var(--ink) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+    font-weight: 400 !important;
+  }
+
+  /* Step list */
+  .step-list {
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    counter-reset: step-counter;
+  }
+
+  .step-list li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    counter-increment: step-counter;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--ink);
+  }
+
+  .step-list li::before {
+    content: counter(step-counter);
+    min-width: 28px;
+    height: 28px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Tip cards */
+  .tip-cards {
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .tip-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px 24px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .tip-card .tip-num {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .tip-card p {
+    font-size: 0.95rem !important;
+    color: var(--mid) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+    font-weight: 300 !important;
+  }
+
+  /* Limitation list */
+  .limit-list {
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .limit-item {
+    padding: 20px 24px;
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .limit-item .limit-lead {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .limit-item p {
+    font-size: 0.9rem !important;
+    color: var(--mid) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+    font-weight: 300 !important;
+  }
+
+  /* FAQ */
+  .faq-list {
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 24px 0;
+  }
+
+  .faq-item:first-child { border-top: 1px solid rgba(0,0,0,0.08); }
+
+  .faq-item .faq-q {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .faq-item p {
+    font-size: 0.95rem !important;
+    color: var(--mid) !important;
+    line-height: 1.75 !important;
+    margin-bottom: 0 !important;
+    font-weight: 300 !important;
+  }
+
+  /* ─── ARTICLE CTA ─── */
+  .article-cta {
+    background: var(--ink);
+    color: white;
+    padding: 80px 24px;
+  }
+
+  .article-cta-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .article-cta .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .article-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .article-cta p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(0,87,255,0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,87,255,0.4);
+  }
+
+  .btn-ghost-white {
+    border: 1.5px solid rgba(255,255,255,0.25);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-ghost-white:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.07); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: white;
+    padding: 64px 24px 40px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-inner { max-width: 1180px; margin: 0 auto; }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand .nav-logo { color: white; font-size: 1.4rem; }
+  .footer-tagline { font-size: 0.88rem; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 300; }
+
+  .footer-cols { display: flex; gap: 64px; flex-wrap: wrap; }
+
+  .footer-col h5 {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: white; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero { padding: 120px 24px 56px; }
+    .meta-divider { display: none; }
+    .footer-cols { gap: 32px; }
+    .footer-top { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="/" class="nav-logo">AI <span>Native</span> Student</a>
+  <ul class="nav-links">
+    <li><a href="/#why">Why Now</a></li>
+    <li><a href="/#offerings">Programs</a></li>
+    <li><a href="/#curriculum">Curriculum</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/#apply" class="nav-cta">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- ARTICLE HERO -->
+<header class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-breadcrumb">
+      <a href="/blog/">Blog</a>
+      <span>→</span>
+      <span>How-To Guides</span>
+    </div>
+    <span class="article-eyebrow">How-To · April 2026</span>
+    <h1>How to Use ChatGPT Study Mode: A Student Guide</h1>
+    <p class="article-deck">Study Mode makes ChatGPT ask you questions instead of answering them. Here's how to use it to actually learn.</p>
+    <div class="article-meta">
+      <div class="article-author">
+        <div class="author-avatar">A</div>
+        <div>
+          <div class="author-name">AI Native Student</div>
+          <div class="author-title">Editorial Team</div>
+        </div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-detail">April 11, 2026</div>
+      <div class="meta-divider"></div>
+      <div class="meta-detail">9 min read</div>
+      <div class="meta-divider"></div>
+      <span class="meta-tag">ChatGPT</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body">
+  <div class="article-content">
+
+    <p>You've probably used ChatGPT to get a quick answer, clean up a paragraph, or generate an outline when you were running short on time. That works fine until your teacher hands back a test and you realize you never actually understood the material. ChatGPT Study Mode is designed to fix exactly that problem.</p>
+
+    <p>Study Mode is a feature built into ChatGPT that changes how the AI responds to you. Instead of handing you the answer, it guides you toward it with questions, hints, and step-by-step prompts calibrated to your level. As of 2026, it's free and available on iOS, Android, and the web — no paid subscription required.</p>
+
+    <p>This guide covers how to turn it on, how to set up a session that actually works, and how to use it for everything from homework to exam prep. There's also an honest section at the end about what it can't do, because no tool is perfect and you should know the limits before you lean on it.</p>
+
+    <hr class="article-section-rule">
+
+    <h2>What Is ChatGPT Study Mode?</h2>
+
+    <p>Study Mode is a setting inside ChatGPT that changes how the AI teaches. In regular ChatGPT, you ask a question and it answers it. In Study Mode, it asks you questions back.</p>
+
+    <p>The approach is based on Socratic learning — a method where you arrive at understanding by answering a series of guided questions rather than being told the answer directly. Instead of saying "the mitochondria produces ATP through oxidative phosphorylation," Study Mode might ask what you already know about how cells produce energy, then build on your answer from there.</p>
+
+    <p>This matters because reading the right answer doesn't help much with recall on tests. Research on learning consistently shows that retrieving information yourself — even when you get it wrong at first — builds stronger memory than passive reading. Study Mode is designed to put that into practice.</p>
+
+    <p>Here's a quick comparison:</p>
+
+    <p><strong>Regular ChatGPT:</strong><br>
+    You: "Explain the causes of World War I."<br>
+    ChatGPT: [three paragraphs of explanation]</p>
+
+    <p><strong>Study Mode:</strong><br>
+    You: "I need to understand the causes of World War I for my history exam."<br>
+    ChatGPT: "Good topic. Let's start with what you already know. What do you think was the main trigger event, and why do you think it led to a broader war rather than staying a local conflict?"</p>
+
+    <p>The second version makes you think before you read. That's the whole point.</p>
+
+    <div class="tip-box">
+      <p><strong>Try this now:</strong> Before your next Study Mode session, write down in one sentence what you already know about the topic. It takes 30 seconds and gives ChatGPT a useful starting point.</p>
+    </div>
+
+    <hr class="article-section-rule">
+
+    <h2>How to Turn On Study Mode</h2>
+
+    <p>Study Mode isn't on by default. Here's how to enable it:</p>
+
+    <h3>On web (chatgpt.com)</h3>
+
+    <ol class="step-list">
+      <li>Start a new chat.</li>
+      <li>Click the settings icon (two sliders) near the message box. On some interface versions it appears as a small gear or a "More" button.</li>
+      <li>Select "Study" from the options that appear.</li>
+      <li>Type your first message. The session will now run in Study Mode.</li>
+    </ol>
+
+    <h3>On iOS or Android</h3>
+
+    <ol class="step-list">
+      <li>Open the ChatGPT app and start a new chat.</li>
+      <li>Tap the icon next to the message field to open additional settings.</li>
+      <li>Toggle Study Mode on.</li>
+      <li>Ask your first question.</li>
+    </ol>
+
+    <p>The session stays in Study Mode until you turn it off or start a new chat. You can also just tell ChatGPT directly at the start of any message: "Use study mode for this conversation. Ask me questions instead of giving answers unless I specifically ask for one."</p>
+
+    <div class="prompt-box reveal">
+      <span class="prompt-label">Prompt to Copy</span>
+      <p>"I'm studying [topic] for a test on [date]. I'm at a beginner/intermediate level. Please use Study Mode: ask me questions, give hints before full explanations, and tell me when my reasoning is off."</p>
+    </div>
+
+    <hr class="article-section-rule">
+
+    <h2>Setting Up Your First Study Session</h2>
+
+    <p>The way you open a Study Mode session determines how useful it turns out to be. A vague first message produces vague guidance.</p>
+
+    <p>A good setup message tells ChatGPT three things:</p>
+    <ul style="margin: 0 0 28px; padding-left: 24px; display: flex; flex-direction: column; gap: 8px;">
+      <li style="font-size: 1.05rem; line-height: 1.75; font-weight: 300; color: var(--ink);">What you're studying and why (class name, topic, exam)</li>
+      <li style="font-size: 1.05rem; line-height: 1.75; font-weight: 300; color: var(--ink);">Your current level with the material</li>
+      <li style="font-size: 1.05rem; line-height: 1.75; font-weight: 300; color: var(--ink);">What kind of help you need (understanding a concept, working through problems, reviewing for a test)</li>
+    </ul>
+
+    <p>You can also attach materials. ChatGPT lets you paste in text, upload a photo of a textbook page, or paste your class notes directly. The more context it has, the more relevant its questions will be to your actual class.</p>
+
+    <div class="prompt-box reveal">
+      <span class="prompt-label">Prompt to Copy</span>
+      <p>"I'm in AP Chemistry and we're covering equilibrium and Le Chatelier's Principle. I read the chapter but I'm still fuzzy on why adding a product shifts the reaction backward. Use Study Mode: ask me questions to check my understanding, and give me hints rather than full explanations unless I ask."</p>
+    </div>
+
+    <p>After you send that, ChatGPT will open with a question rather than a lecture. Your job is to answer in your own words, even if you're not sure. Getting something partially wrong is actually useful, because Study Mode will catch the gap and redirect you without just handing you the answer.</p>
+
+    <hr class="article-section-rule">
+
+    <h2>Using Study Mode for Homework, Essays, and Exam Prep</h2>
+
+    <p>Study Mode works differently depending on what kind of work you're doing.</p>
+
+    <h3>Problem-based homework (math, science, economics)</h3>
+
+    <p>This is where Study Mode works best. Paste in the problem and tell ChatGPT you want to work through it without being given the answer.</p>
+
+    <div class="prompt-box reveal">
+      <span class="prompt-label">Prompt to Copy</span>
+      <p>"Here's a physics problem: [paste problem]. I want to figure it out myself. Ask me what formula I think applies, then walk me through each step only after I attempt it first."</p>
+    </div>
+
+    <p>ChatGPT will ask you to identify the relevant equation, check your setup, then check your arithmetic one step at a time. If you get stuck, you can say "I don't know, give me a hint" and it will nudge you forward without revealing the full solution.</p>
+
+    <h3>Essays and writing assignments</h3>
+
+    <p>Study Mode is useful here for developing your argument before you write it.</p>
+
+    <div class="prompt-box reveal">
+      <span class="prompt-label">Prompt to Copy</span>
+      <p>"I'm writing a persuasive essay arguing that social media platforms should be regulated. I have a thesis but I'm not sure my reasoning holds. Ask me questions to stress-test my argument before I start drafting."</p>
+    </div>
+
+    <p>This forces you to defend your position out loud before you write it, which catches weak points while there's still time to fix them.</p>
+
+    <h3>Exam prep</h3>
+
+    <p>This is probably the most valuable use. Give ChatGPT your topic list and ask it to quiz you.</p>
+
+    <div class="prompt-box reveal">
+      <span class="prompt-label">Prompt to Copy</span>
+      <p>"Here are my study topics for my biology midterm: cell division, DNA replication, protein synthesis, and CRISPR. Quiz me with short-answer questions, one at a time. Don't move on until I answer correctly or you explain why my answer was wrong."</p>
+    </div>
+
+    <p>Treating it like a low-stakes practice exam — where you have to actively retrieve and type out answers — is consistently more effective than re-reading your notes.</p>
+
+    <hr class="article-section-rule">
+
+    <h2>Six Tips to Get Way More Out of Study Mode</h2>
+
+    <div class="tip-cards reveal">
+      <div class="tip-card">
+        <span class="tip-num">Tip 1</span>
+        <p><strong>Tell it your deadline.</strong> Saying "my exam is tomorrow" changes the pacing compared to "my exam is in two weeks." ChatGPT will adjust how deeply it digs into each concept based on how much time you have.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-num">Tip 2</span>
+        <p><strong>Ask for difficulty adjustments.</strong> If the questions feel too easy, say so: "Make the questions harder and more specific." If they feel impossible, ask: "Back up and check my foundational understanding first." You can recalibrate at any point.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-num">Tip 3</span>
+        <p><strong>Use the Feynman technique.</strong> After working through a concept, ask ChatGPT to give you one idea to explain back in your own words, then ask it to evaluate your explanation. Explaining something from scratch reveals exactly where your understanding breaks down.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-num">Tip 4</span>
+        <p><strong>Don't skip the "why was I wrong" step.</strong> When you get something wrong, ask: "Why was my reasoning incorrect? What assumption did I make that doesn't hold?" Understanding the flaw in your thinking sticks better than just learning the right answer.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-num">Tip 5</span>
+        <p><strong>Combine it with your actual class notes.</strong> Paste a section of your lecture notes and ask Study Mode to generate questions based specifically on what your professor emphasized. This keeps your practice aligned with what will actually be on the test.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-num">Tip 6</span>
+        <p><strong>Keep sessions focused and short.</strong> Study Mode works best in 20 to 30-minute blocks on one topic at a time. Jumping between subjects in a single session tends to produce shallow coverage of everything.</p>
+      </div>
+    </div>
+
+    <hr class="article-section-rule">
+
+    <h2>What Study Mode Won't Do for You</h2>
+
+    <p>A few things worth knowing before you rely on it heavily.</p>
+
+    <div class="limit-list reveal">
+      <div class="limit-item">
+        <span class="limit-lead">It still makes factual errors.</span>
+        <p>Study Mode is better than regular ChatGPT at guiding learning, but it's not a textbook. If it tells you something that contradicts your notes or assigned reading, check the source. Don't assume it's correct just because it sounds confident.</p>
+      </div>
+      <div class="limit-item">
+        <span class="limit-lead">It won't replace actually doing the work.</span>
+        <p>Study Mode makes you think through problems, but there's no substitute for writing the essay yourself, completing the problem set, or finishing the lab. It's a practice tool, not a shortcut past the actual assignment.</p>
+      </div>
+      <div class="limit-item">
+        <span class="limit-lead">It doesn't know your specific teacher or syllabus.</span>
+        <p>You can paste in your notes or assignment description to help, but it has no way of knowing what your professor emphasized in class, what exam format they use, or what your rubric says. The more context you provide, the better it gets.</p>
+      </div>
+      <div class="limit-item">
+        <span class="limit-lead">It's not ideal for pure memorization.</span>
+        <p>For straight vocabulary, formulas, or definitions, a flashcard tool like Quizlet is faster and more targeted. Use Study Mode for understanding concepts and working through reasoning. Use dedicated flashcard tools for drilling isolated facts.</p>
+      </div>
+    </div>
+
+    <hr class="article-section-rule">
+
+    <h2>FAQ</h2>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <span class="faq-q">Is ChatGPT Study Mode free?</span>
+        <p>Yes. As of 2026, Study Mode is available on all ChatGPT plans including the free tier. You don't need a Plus or Pro subscription to use it on web, iOS, or Android.</p>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">Does Study Mode work on mobile?</span>
+        <p>Yes. It's available on both the iOS and Android apps. Look for the settings icon next to the message field and toggle Study Mode on before you start your session.</p>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">Can teachers tell if I used ChatGPT Study Mode?</span>
+        <p>Study Mode produces no detectable output on its own because you're writing your own answers during the session. The work your teacher sees is yours, not the AI's. That said, check your school's academic integrity policy about using AI for guidance, since policies vary by school and class.</p>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">What's the difference between regular ChatGPT and Study Mode?</span>
+        <p>Standard ChatGPT answers your questions directly. Study Mode uses guided questioning to help you arrive at the answer yourself. Think of it as the difference between reading the answer in a textbook and working through a problem with a tutor.</p>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">Does Study Mode work for math?</span>
+        <p>It works well for understanding math concepts and walking through problem-solving steps, but it can still make arithmetic or calculation errors. For verifying numerical answers, cross-check with Wolfram Alpha or your calculator. Use Study Mode for the reasoning process, not the final computation.</p>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">Can Study Mode remember information from past sessions?</span>
+        <p>ChatGPT can retain information across conversations if you have memory enabled in your settings. To check, go to Settings &gt; Personalization &gt; Memory. Even with memory turned off, you can paste context from a previous session into a new chat to pick up where you left off.</p>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">How long should a Study Mode session be?</span>
+        <p>20 to 30 minutes on one focused topic tends to work well. After that, comprehension typically drops and sessions get less productive. Take a real break, do something else for a bit, then come back for another round.</p>
+      </div>
+    </div>
+
+    <hr class="article-section-rule">
+
+    <h2>Conclusion</h2>
+
+    <p>ChatGPT Study Mode is one of the more useful AI features to show up for students in a while. Not because it's flashy, but because it's trying to make you think instead of thinking for you. The key is treating it like a practice partner rather than an answer machine.</p>
+
+    <p>Three things to take away: set up your sessions with real context so the questions are actually relevant to your class, use it for understanding and exam prep rather than memorization, and always verify factual claims against your notes or textbook.</p>
+
+    <p>If you want to try it today, pick a topic you have a test on in the next week. Paste in your notes and ask it to quiz you. You'll get a much clearer picture of what you actually know versus what you just think you know.</p>
+
+  </div>
+</main>
+
+<!-- ARTICLE CTA -->
+<section class="article-cta">
+  <div class="article-cta-inner">
+    <span class="section-label">Ready to Build</span>
+    <h2>Get the coaching to make it real.</h2>
+    <p>AI Native Student gives high school and college students the 1-on-1 coaching and curriculum to build AI skills that actually get you hired — not just checked off a list.</p>
+    <div class="cta-actions">
+      <a href="/#apply" class="btn-primary">Apply Now →</a>
+      <a href="/#offerings" class="btn-ghost-white">See Programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">AI <span>Native</span> Student</a>
+        <p class="footer-tagline">Be fluent in the future.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#curriculum">Curriculum</a></li>
+            <li><a href="/#offerings">Programs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/#apply">Apply</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AI Native Student. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
