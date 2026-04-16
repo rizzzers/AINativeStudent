@@ -1,0 +1,100 @@
+# AI Native Student
+> AI proficiency training platform for students teaching practical AI skills for academic success and workforce readiness. Our training focuses on ethical AI use, prompt engineering, and integrating AI tools into effective study workflows.
+
+Founded by Ryan Estes to bridge the gap between students' intuitive AI adoption and proper skill development. Focus on practical applications while emphasizing ethical use and academic integrity.
+
+Important notes:
+- Training emphasizes ethical AI use and academic integrity above all else
+- Content designed for students from high school through graduate level
+- Workforce preparation focus on AI skills needed for future careers
+- Parent and educator resources included for comprehensive support
+
+## Core Training Programs
+
+### AI Fundamentals for Students
+- [AI Basics & Literacy](/courses/ai-basics) - Understanding AI capabilities, limitations, and appropriate use cases for academic work
+- [Prompt Engineering Mastery](/courses/prompt-engineering) - Writing effective prompts for research, assignments, and learning enhancement
+- [Ethical AI Use Framework](/courses/ethical-ai-use) - Academic integrity standards, ethical guidelines, and responsible AI practices
+- [AI Tool Evaluation](/courses/tool-evaluation) - Comparing and selecting appropriate AI platforms for different academic tasks
+
+### Academic Application Skills
+- [Research & Information Gathering](/applications/research) - Using AI for literature reviews, source analysis, and research assistance
+- [Writing & Communication](/applications/writing) - AI-assisted writing while maintaining original voice and academic standards
+- [Study Methods & Learning](/applications/study-methods) - AI-powered study techniques, knowledge retention, and comprehension enhancement
+- [Project & Assignment Support](/applications/assignments) - Appropriate AI integration for academic projects and coursework
+
+### Advanced AI Integration
+- [Subject-Specific AI Applications](/courses/subject-specific) - AI tools and techniques for STEM, humanities, social sciences, and business
+- [Collaborative AI Workflows](/courses/collaborative-ai) - Using AI in group projects and team assignments ethically
+- [Creative Applications](/courses/creative-applications) - AI for creative projects, presentations, and multimedia assignments
+- [Data Analysis & Visualization](/courses/data-analysis) - AI tools for statistical analysis, data interpretation, and visualization
+
+## Workforce Preparation
+
+### Career Readiness
+- [AI Skills for Future Careers](/workforce-prep/career-skills) - Essential AI competencies employers expect from new graduates
+- [Industry-Specific Applications](/workforce-prep/industry-applications) - How different industries use AI tools and expect AI literacy
+- [Portfolio Development](/workforce-prep/portfolio-building) - Demonstrating AI proficiency and ethical use to employers
+- [Interview Preparation](/workforce-prep/interviews) - Discussing AI skills and experience in job interviews
+
+### Professional Development
+- [Workplace AI Integration](/workforce-prep/workplace-integration) - Transitioning from academic to professional AI use
+- [Continuous Learning Framework](/workforce-prep/continuous-learning) - Staying current with AI developments throughout career
+- [Leadership & AI](/workforce-prep/leadership) - Preparing for roles managing AI-integrated teams and projects
+- [Entrepreneurship & AI](/workforce-prep/entrepreneurship) - Using AI skills for startup and business development
+
+## Learning Resources & Support
+
+### Tools & Comparisons  
+- [AI Platform Reviews](/resources/tool-comparisons) - Detailed evaluations of different AI platforms for student use
+- [Prompt Library](/resources/prompt-library) - Proven prompts for common student tasks and academic applications
+- [Template Collection](/resources/templates) - Study guides, project frameworks, and organizational tools
+- [Technical Setup Guides](/resources/setup-guides) - Step-by-step instructions for configuring AI tools for academic use
+
+### Academic Policy Navigation
+- [Understanding School AI Policies](/resources/academic-policies) - Interpreting and following institutional AI usage guidelines
+- [Academic Integrity Guidelines](/resources/academic-integrity) - Maintaining honesty and originality while using AI assistance
+- [Citation & Attribution](/resources/citation) - Proper ways to acknowledge AI assistance in academic work
+- [Policy Compliance Checklist](/resources/compliance) - Ensuring AI use aligns with academic standards
+
+## Parent & Educator Resources
+
+### For Parents
+- [AI Workforce Preparation for Parents](/parents/workforce-trends) - Understanding how AI is changing job markets and required skills
+- [Supporting Student AI Learning](/parents/supporting-learning) - How parents can help students develop healthy AI usage habits
+- [Safety & Privacy Guidance](/parents/safety-privacy) - Protecting student information while using AI tools
+- [Cost-Effective AI Learning](/parents/budget-friendly) - Affordable options for AI education and tools
+
+### For Educators  
+- [Classroom AI Integration](/educators/classroom-integration) - Incorporating AI literacy into existing curriculum
+- [Assessment Strategies](/educators/assessment) - Evaluating student work that incorporates AI assistance
+- [Professional Development](/educators/professional-development) - Teacher training on AI tools and pedagogical approaches
+- [Curriculum Planning](/educators/curriculum) - Structured approaches to teaching AI literacy across subjects
+
+## Specialized Learning Paths
+
+### By Academic Level
+- [High School AI Foundations](/learning-paths/high-school) - Age-appropriate introduction to AI for college preparation
+- [Undergraduate AI Skills](/learning-paths/undergraduate) - College-level AI integration for enhanced academic performance
+- [Graduate & Research Applications](/learning-paths/graduate) - Advanced AI use for thesis research and graduate-level work
+- [Professional & Continuing Education](/learning-paths/professional) - AI skills for adult learners and career transitions
+
+### By Subject Area
+- [STEM Applications](/learning-paths/stem) - AI tools for mathematics, science, engineering, and technology fields
+- [Humanities & Liberal Arts](/learning-paths/humanities) - AI applications for literature, history, philosophy, and cultural studies
+- [Business & Economics](/learning-paths/business) - AI skills for business analysis, economics research, and management studies
+- [Creative Fields](/learning-paths/creative) - AI tools for art, design, music, and creative writing applications
+
+## Community & Support
+- [Student Community Forum](/community/forum) - Peer support, discussion, and knowledge sharing among students
+- [Success Stories](/community/success-stories) - Case studies of students successfully integrating AI into their academic work
+- [Expert Q&A Sessions](/community/expert-qa) - Regular sessions with AI education specialists and industry experts
+- [Study Groups](/community/study-groups) - Collaborative learning opportunities and peer mentorship
+
+## Institutional Partnerships
+- [School & University Programs](/partnerships/institutions) - Custom AI literacy programs for educational institutions
+- [Bulk Training Solutions](/partnerships/bulk-training) - Group training options for schools and organizations
+- [Curriculum Consultation](/partnerships/curriculum-consultation) - Working with educators to develop AI literacy curriculum
+- [Professional Development Workshops](/partnerships/workshops) - Training sessions for educators and administrators
+
+Contact available for institutional partnerships, bulk training programs, and educational consultation services.
